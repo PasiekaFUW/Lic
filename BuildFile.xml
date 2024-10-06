@@ -1,0 +1,53 @@
+<use   name="root"/>
+<use   name="FWCore/Framework"/>
+<use   name="FWCore/ParameterSet"/>
+<use   name="SimDataFormats/Track"/>
+<use   name="SimDataFormats/CrossingFrame"/>
+<use   name="SimDataFormats/GeneratorProducts"/>
+<use   name="SimDataFormats/TrackingAnalysis"/>
+<use   name="SimGeneral/HepPDTRecord"/>
+<use   name="DataFormats/L1DTTrackFinder"/>
+<use   name="TrackingTools/TransientTrack"/>
+<use   name="TrackingTools/TrajectoryParametrization"/>
+<use   name="DataFormats/L1Trigger"/>
+<use   name="DataFormats/RPCDigi"/>
+<use   name="DataFormats/CSCDigi"/>
+<use   name="DataFormats/L1CSCTrackFinder"/>
+<use   name="DataFormats/FEDRawData"/>
+<use   name="DataFormats/L1GlobalMuonTrigger"/>
+<use   name="DataFormats/L1GlobalTrigger"/>
+<use   name="DataFormats/MuonReco"/>
+<use   name="DataFormats/TrackReco"/>
+<use   name="CondFormats/L1TObjects"/>
+<use   name="CondFormats/RPCObjects"/>
+<use   name="L1Trigger/CSCTrackFinder"/>
+<use   name="L1Trigger/RPCTrigger"/>
+<use   name="L1Trigger/L1TMuonOverlap"/>
+<use   name="HLTrigger/HLTcore"/>
+<use   name="DQMServices/Core"/>
+<use   name="Geometry/RPCGeometry"/>
+<use   name="Geometry/CommonDetUnit"/>
+<use   name="Geometry/Records"/>
+<use   name="EventFilter/RPCRawToDigi"/>
+<use   name="EventFilter/L1TRawToDigi"/>
+<use   name="CommonTools/UtilAlgos"/>
+<use   name="PhysicsTools/UtilAlgos"/>
+
+<use   name="TrackingTools/Records"/>
+<use   name="RecoVertex/VertexPrimitives"/>
+<use   name="RecoVertex/KalmanVertexFit"/>
+<use   name="clhep"/>
+<use   name="hepmc"/>
+<use   name="heppdt"/>
+<use   name="TrackingTools/TrajectoryState"/>
+<use   name="TrackingTools/GeomPropagators"/>
+<use   name="TrackingTools/PatternTools"/>
+<use   name="SimTracker/TrackerHitAssociation"/>
+<use   name="SimDataFormats/TrackerDigiSimLink"/>
+<use   name="SimDataFormats/TrackingHit"/>
+<use   name="FWCore/PluginManager"/>
+<use   name="xerces-c"/>
+<library   file="LicDigiAnalysis.cc" name="LicDigiAnalysis">
+  <flags   EDM_PLUGIN="1"/>
+</library>
+

@@ -1,0 +1,1788 @@
+command:  ls -1 /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/|grep root | grep m_99
+Number of files in direcotry: /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/  --->  11
+29-May-2024 19:20:01 CEST  Initiating request to open file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+29-May-2024 19:20:02 CEST  Successfully opened file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+Begin processing the 1st record. Run 1, Event 392001, LumiSection 3921 on stream 0 at 29-May-2024 19:20:04.376 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 67
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1814
+1771
+1771
+3896
+1739
+1254
+1231
+951
+881
+880
+879
+4525
+4525
+4669
+4729
+4729
+4729
+4729
+4729
+4729
+5013
+4744
+5298
+5345
+598
+5496
+597
+trackPosition:  (342.743,241.205,-533.262) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (19.7144,-111.998,-0.065) 
+ Local position after propagation:  (16.9632,-116.422,0) 
+ The difference:  (2.75115,4.42393,-0.065) 
+ Simulated momentum at entry: 15.4485
+ Propagated momentum at entry: 15.4074
+trackPosition:  (343.869,241.855,-533.263) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (20.0238,-110.718,0) 
+ Local position after propagation:  (17.2736,-115.109,0) 
+ The difference:  (2.75027,4.39066,0) 
+ Simulated momentum at entry: 15.4475
+ Propagated momentum at entry: 15.4059
+trackPosition:  (344.995,242.506,-533.263) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (20.3494,-109.37,0) 
+ Local position after propagation:  (17.5837,-113.795,0) 
+ The difference:  (2.76566,4.42497,0) 
+ Simulated momentum at entry: 15.4467
+ Propagated momentum at entry: 15.4044
+trackPosition:  (346.12,243.156,-533.263) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (20.6746,-108.023,0) 
+ Local position after propagation:  (17.8936,-112.482,0) 
+ The difference:  (2.78098,4.45945,0) 
+ Simulated momentum at entry: 15.4451
+ Propagated momentum at entry: 15.4029
+trackPosition:  (357.409,252.103,-533.266) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (93.2297,22.1322,-0.0244474) 
+ Local position after propagation:  (98.0885,19.1778,0) 
+ The difference:  (-4.85889,2.95439,-0.0244474) 
+ Simulated momentum at entry: 15.4389
+ Propagated momentum at entry: 15.3862
+trackPosition:  (358.534,252.753,-533.266) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (91.824,22.4693,-0.0815397) 
+ Local position after propagation:  (96.7756,19.4855,0) 
+ The difference:  (-4.95154,2.9838,-0.0815397) 
+ Simulated momentum at entry: 15.4371
+ Propagated momentum at entry: 15.3847
+trackPosition:  (359.66,253.403,-533.267) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (90.7614,22.7244,0.192165) 
+ Local position after propagation:  (95.4625,19.7929,0) 
+ The difference:  (-4.70115,2.9315,0.192165) 
+ Simulated momentum at entry: 15.4364
+ Propagated momentum at entry: 15.3832
+trackPosition:  (359.66,253.403,-533.267) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (90.1683,22.8667,-0.380616) 
+ Local position after propagation:  (95.4625,19.7929,0) 
+ The difference:  (-5.29421,3.07383,-0.380616) 
+ Simulated momentum at entry: 15.4357
+ Propagated momentum at entry: 15.3832
+trackPosition:  (360.786,254.054,-533.267) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (89.2834,23.0785,0.065) 
+ Local position after propagation:  (94.1495,20.1001,0) 
+ The difference:  (-4.86617,2.9784,0.065) 
+ Simulated momentum at entry: 15.4342
+ Propagated momentum at entry: 15.3817
+trackPosition:  (362.041,254.779,-533.267) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (23.4538,-87.7144,0) 
+ Local position after propagation:  (20.4426,-92.685,0) 
+ The difference:  (3.01112,4.9706,0) 
+ Simulated momentum at entry: 15.4306
+ Propagated momentum at entry: 15.38
+trackPosition:  (363.167,255.429,-533.267) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (23.7757,-86.368,0) 
+ Local position after propagation:  (20.7495,-91.3719,0) 
+ The difference:  (3.02616,5.00392,0) 
+ Simulated momentum at entry: 15.4291
+ Propagated momentum at entry: 15.3785
+trackPosition:  (364.292,256.08,-533.268) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (24.0975,-85.0216,0) 
+ Local position after propagation:  (21.0563,-90.059,0) 
+ The difference:  (3.04127,5.03735,0) 
+ Simulated momentum at entry: 15.4283
+ Propagated momentum at entry: 15.3769
+trackPosition:  (365.418,256.73,-533.268) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (24.4032,-83.7425,0.065) 
+ Local position after propagation:  (21.3628,-88.7459,0) 
+ The difference:  (3.04038,5.00344,0.065) 
+ Simulated momentum at entry: 15.4272
+ Propagated momentum at entry: 15.3754
+trackPosition:  (441.551,232.906,-533.397) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (95.7537,-28.2401,0) 
+ Local position after propagation:  (92.3051,-34.4501,0) 
+ The difference:  (3.4486,6.20999,0) 
+ Simulated momentum at entry: 14.4901
+ Propagated momentum at entry: 14.72
+trackPosition:  (442.677,233.556,-533.398) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (96.035,-26.9164,0) 
+ Local position after propagation:  (92.5847,-33.1473,0) 
+ The difference:  (3.45026,6.23095,0) 
+ Simulated momentum at entry: 14.4882
+ Propagated momentum at entry: 14.7185
+trackPosition:  (442.753,236.025,-533.399) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (94.2161,-25.5915,-0.00156778) 
+ Local position after propagation:  (90.7642,-31.8445,0) 
+ The difference:  (3.45192,6.25294,-0.00156778) 
+ Simulated momentum at entry: 14.4862
+ Propagated momentum at entry: 14.717
+trackPosition:  (443.879,236.675,-533.4) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (94.4177,-24.6417,0.364689) 
+ Local position after propagation:  (91.0435,-30.5416,0) 
+ The difference:  (3.37411,5.8999,0.364689) 
+ Simulated momentum at entry: 14.4847
+ Propagated momentum at entry: 14.7155
+trackPosition:  (443.879,236.675,-533.4) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (94.5853,-23.852,-0.411874) 
+ Local position after propagation:  (91.0435,-30.5416,0) 
+ The difference:  (3.54178,6.68964,-0.411874) 
+ Simulated momentum at entry: 14.4815
+ Propagated momentum at entry: 14.7155
+trackPosition:  (459.32,238.431,-533.407) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (9.71908,103.785,-0.065) 
+ Local position after propagation:  (16.2592,100.298,0) 
+ The difference:  (-6.54016,3.48643,-0.065) 
+ Simulated momentum at entry: 14.475
+ Propagated momentum at entry: 14.699
+trackPosition:  (460.446,239.081,-533.408) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (8.69039,104.002,0.223362) 
+ Local position after propagation:  (14.9562,100.576,0) 
+ The difference:  (-6.26576,3.42628,0.223362) 
+ Simulated momentum at entry: 14.4735
+ Propagated momentum at entry: 14.6975
+trackPosition:  (460.446,239.081,-533.408) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (8.17286,104.112,-0.285548) 
+ Local position after propagation:  (14.9562,100.576,0) 
+ The difference:  (-6.7833,3.53594,-0.285548) 
+ Simulated momentum at entry: 14.4727
+ Propagated momentum at entry: 14.6975
+trackPosition:  (461.571,239.731,-533.409) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (7.20727,104.317,0.065) 
+ Local position after propagation:  (13.6531,100.854,0) 
+ The difference:  (-6.4458,3.46313,0.065) 
+ Simulated momentum at entry: 14.4706
+ Propagated momentum at entry: 14.696
+trackPosition:  (462.697,240.381,-533.409) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (5.81922,104.611,0) 
+ Local position after propagation:  (12.35,101.132,0) 
+ The difference:  (-6.53076,3.47963,0) 
+ Simulated momentum at entry: 14.4691
+ Propagated momentum at entry: 14.6945
+trackPosition:  (464.003,241.019,-533.41) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (105.023,-4.34507,0) 
+ Local position after propagation:  (101.541,-10.8966,0) 
+ The difference:  (3.48177,6.5515,0) 
+ Simulated momentum at entry: 14.4671
+ Propagated momentum at entry: 14.6928
+trackPosition:  (465.129,241.669,-533.411) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (105.302,-3.02321,0) 
+ Local position after propagation:  (101.819,-9.59342,0) 
+ The difference:  (3.48342,6.57021,0) 
+ Simulated momentum at entry: 14.4654
+ Propagated momentum at entry: 14.6913
+trackPosition:  (465.205,244.138,-533.412) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (103.481,-1.70095,0) 
+ Local position after propagation:  (99.9962,-8.29023,0) 
+ The difference:  (3.48491,6.58928,0) 
+ Simulated momentum at entry: 14.4639
+ Propagated momentum at entry: 14.6898
+trackPosition:  (466.33,244.788,-533.413) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (103.76,-0.378818,0) 
+ Local position after propagation:  (100.273,-6.98702,0) 
+ The difference:  (3.48627,6.6082,0) 
+ Simulated momentum at entry: 14.4631
+ Propagated momentum at entry: 14.6883
+trackPosition:  (515.05,319.935,-533.398) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (79.3344,80.3451,0) 
+ Local position after propagation:  (75.6724,73.0225,0) 
+ The difference:  (3.66197,7.32258,0) 
+ Simulated momentum at entry: 12.5922
+ Propagated momentum at entry: 13.3213
+trackPosition:  (516.176,320.585,-533.397) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (79.59,81.6546,0) 
+ Local position after propagation:  (75.9219,74.3239,0) 
+ The difference:  (3.66807,7.3307,0) 
+ Simulated momentum at entry: 12.5904
+ Propagated momentum at entry: 13.3198
+trackPosition:  (516.253,323.054,-533.396) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (77.7455,82.9645,0) 
+ Local position after propagation:  (74.0714,75.6253,0) 
+ The difference:  (3.67413,7.3392,0) 
+ Simulated momentum at entry: 12.5891
+ Propagated momentum at entry: 13.3183
+trackPosition:  (517.378,323.704,-533.396) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (78.0009,84.2743,0) 
+ Local position after propagation:  (74.3208,76.9266,0) 
+ The difference:  (3.68007,7.34766,0) 
+ Simulated momentum at entry: 12.5877
+ Propagated momentum at entry: 13.3168
+trackPosition:  (529.346,331.476,-533.389) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-98.4087,80.0003,0.22041) 
+ Local position after propagation:  (-91.192,76.3023,0) 
+ The difference:  (-7.21671,3.69797,0.22041) 
+ Simulated momentum at entry: 12.5806
+ Propagated momentum at entry: 13.3005
+trackPosition:  (529.346,331.476,-533.389) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-98.9221,80.0998,-0.289091) 
+ Local position after propagation:  (-91.192,76.3023,0) 
+ The difference:  (-7.73015,3.79747,-0.289091) 
+ Simulated momentum at entry: 12.5795
+ Propagated momentum at entry: 13.3005
+trackPosition:  (530.472,332.126,-533.389) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-99.8805,80.2852,0.0602381) 
+ Local position after propagation:  (-92.4933,76.5512,0) 
+ The difference:  (-7.38715,3.734,0.0602381) 
+ Simulated momentum at entry: 12.5778
+ Propagated momentum at entry: 13.2991
+trackPosition:  (531.598,332.776,-533.388) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-101.252,80.5503,0) 
+ Local position after propagation:  (-93.7948,76.8002,0) 
+ The difference:  (-7.45741,3.75008,0) 
+ Simulated momentum at entry: 12.5765
+ Propagated momentum at entry: 13.2976
+trackPosition:  (532.723,333.426,-533.387) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-102.564,80.8035,0) 
+ Local position after propagation:  (-95.0962,77.049,0) 
+ The difference:  (-7.46743,3.75442,0) 
+ Simulated momentum at entry: 12.5757
+ Propagated momentum at entry: 13.2961
+trackPosition:  (535.404,331.682,-533.387) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.9361,104.027,0) 
+ Local position after propagation:  (80.1766,96.5479,0) 
+ The difference:  (3.75954,7.47951,0) 
+ Simulated momentum at entry: 12.5637
+ Propagated momentum at entry: 13.2944
+trackPosition:  (536.53,332.332,-533.386) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.1895,105.34,0) 
+ Local position after propagation:  (80.4253,97.8493,0) 
+ The difference:  (3.76417,7.49061,0) 
+ Simulated momentum at entry: 12.5622
+ Propagated momentum at entry: 13.2929
+trackPosition:  (536.606,334.801,-533.385) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (82.3427,106.652,0) 
+ Local position after propagation:  (78.574,99.1507,0) 
+ The difference:  (3.76873,7.50167,0) 
+ Simulated momentum at entry: 12.5607
+ Propagated momentum at entry: 13.2914
+trackPosition:  (537.732,335.45,-533.385) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (82.6083,108.031,-0.065) 
+ Local position after propagation:  (78.8227,100.452,0) 
+ The difference:  (3.78563,7.57854,-0.065) 
+ Simulated momentum at entry: 12.5591
+ Propagated momentum at entry: 13.29
+1, muon Track Id: 1
+ pid: 13 pt: 13.4479 eta: -0.867111 phi: 0.48128 vtx[r,z]:  [0.0495233, -2.25239] time: -1.29621e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 1 phi:   570 phiB:   55 code(q): 6
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 1 phi:   636 phiB:   47 code(q): 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 1 phi:   664 phiB:   15 code(q): 6
+=========> Analyzed #1 DtPh: 3  DtTh: 0
+Begin processing the 2nd record. Run 1, Event 392002, LumiSection 3921 on stream 0 at 29-May-2024 19:20:34.985 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 22
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+698
+287
+trackPosition:  (380.338,-176.222,-533.337) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (72.4877,-2.33606,0.0168635) 
+ Local position after propagation:  (43.8925,-20.4129,0) 
+ The difference:  (28.5952,18.0768,0.0168635) 
+ Simulated momentum at entry: 4.38038
+ Propagated momentum at entry: 5.60894
+trackPosition:  (381.464,-176.872,-533.336) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (73.2232,-0.478363,0) 
+ Local position after propagation:  (44.4892,-18.7014,0) 
+ The difference:  (28.734,18.2231,0) 
+ Simulated momentum at entry: 4.37921
+ Propagated momentum at entry: 5.60727
+trackPosition:  (382.589,-177.523,-533.335) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (73.9833,1.4477,-0.065) 
+ Local position after propagation:  (45.0847,-16.9901,0) 
+ The difference:  (28.8986,18.4378,-0.065) 
+ Simulated momentum at entry: 4.37723
+ Propagated momentum at entry: 5.60561
+trackPosition:  (383.715,-178.174,-533.334) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (74.6335,3.09939,0.065) 
+ Local position after propagation:  (45.679,-15.2789,0) 
+ The difference:  (28.9545,18.3783,0.065) 
+ Simulated momentum at entry: 4.37298
+ Propagated momentum at entry: 5.60394
+trackPosition:  (397.102,-183.487,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-22.8685,80.194,0.326851) 
+ Local position after propagation:  (-3.47377,50.0162,0) 
+ The difference:  (-19.3948,30.1778,0.326851) 
+ Simulated momentum at entry: 4.36291
+ Propagated momentum at entry: 5.58567
+trackPosition:  (397.102,-183.487,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-23.6528,80.4914,-0.229282) 
+ Local position after propagation:  (-3.47377,50.0162,0) 
+ The difference:  (-20.179,30.4752,-0.229282) 
+ Simulated momentum at entry: 4.36219
+ Propagated momentum at entry: 5.58567
+trackPosition:  (398.228,-184.138,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-24.7436,80.9042,0.297947) 
+ Local position after propagation:  (-5.18423,50.5965,0) 
+ The difference:  (-19.5593,30.3077,0.297947) 
+ Simulated momentum at entry: 4.36118
+ Propagated momentum at entry: 5.584
+trackPosition:  (398.228,-184.138,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-25.6209,81.2352,-0.323071) 
+ Local position after propagation:  (-5.18423,50.5965,0) 
+ The difference:  (-20.4366,30.6387,-0.323071) 
+ Simulated momentum at entry: 4.36016
+ Propagated momentum at entry: 5.584
+trackPosition:  (399.353,-184.789,-533.324) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-26.7118,81.6461,0.205449) 
+ Local position after propagation:  (-6.89463,51.1757,0) 
+ The difference:  (-19.8172,30.4704,0.205449) 
+ Simulated momentum at entry: 4.35852
+ Propagated momentum at entry: 5.58234
+trackPosition:  (399.353,-184.789,-533.324) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-27.4988,81.9423,-0.350468) 
+ Local position after propagation:  (-6.89463,51.1757,0) 
+ The difference:  (-20.6042,30.7667,-0.350468) 
+ Simulated momentum at entry: 4.35795
+ Propagated momentum at entry: 5.58234
+trackPosition:  (400.479,-185.439,-533.323) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-28.6822,82.3869,0.114559) 
+ Local position after propagation:  (-8.60509,51.7538,0) 
+ The difference:  (-20.0771,30.6332,0.114559) 
+ Simulated momentum at entry: 4.35618
+ Propagated momentum at entry: 5.58067
+trackPosition:  (401.734,-186.165,-533.322) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.2178,30.8993,0) 
+ Local position after propagation:  (52.3972,10.5129,0) 
+ The difference:  (30.8206,20.3864,0) 
+ Simulated momentum at entry: 4.35012
+ Propagated momentum at entry: 5.57881
+trackPosition:  (402.86,-186.816,-533.321) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.8027,32.4656,0.194707) 
+ Local position after propagation:  (52.9729,12.2233,0) 
+ The difference:  (30.8298,20.2423,0.194707) 
+ Simulated momentum at entry: 4.34818
+ Propagated momentum at entry: 5.57715
+trackPosition:  (402.86,-186.816,-533.321) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.1029,33.2708,-0.373351) 
+ Local position after propagation:  (52.9729,12.2233,0) 
+ The difference:  (31.13,21.0475,-0.373351) 
+ Simulated momentum at entry: 4.34646
+ Propagated momentum at entry: 5.57715
+trackPosition:  (403.985,-187.466,-533.32) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.5914,34.5854,0) 
+ Local position after propagation:  (53.5475,13.9337,0) 
+ The difference:  (31.0439,20.6517,0) 
+ Simulated momentum at entry: 4.34442
+ Propagated momentum at entry: 5.57549
+trackPosition:  (405.111,-188.117,-533.319) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (85.275,36.4278,0) 
+ Local position after propagation:  (54.121,15.6442,0) 
+ The difference:  (31.154,20.7836,0) 
+ Simulated momentum at entry: 4.34307
+ Propagated momentum at entry: 5.57383
+trackPosition:  (498.749,-19.0542,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-98.8502,102.927,0) 
+ Local position after propagation:  (-132.424,97.2639,0) 
+ The difference:  (33.5743,5.66309,0) 
+ Simulated momentum at entry: 3.64526
+ Propagated momentum at entry: 4.48783
+trackPosition:  (500.049,-19.054,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-99.0048,104.71,0) 
+ Local position after propagation:  (-132.727,98.9203,0) 
+ The difference:  (33.722,5.78986,0) 
+ Simulated momentum at entry: 3.64321
+ Propagated momentum at entry: 4.45828
+trackPosition:  (501.348,-16.9538,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-101.261,106.492,0) 
+ Local position after propagation:  (-135.135,100.582,0) 
+ The difference:  (33.8746,5.91051,0) 
+ Simulated momentum at entry: 3.63893
+ Propagated momentum at entry: 4.42869
+trackPosition:  (502.648,-16.9537,-533.308) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-101.418,108.276,0) 
+ Local position after propagation:  (-135.45,102.248,0) 
+ The difference:  (34.032,6.02765,0) 
+ Simulated momentum at entry: 3.63731
+ Propagated momentum at entry: 4.39903
+1, muon Track Id: 1
+ pid: 13 pt: 5.98742 eta: -0.993109 phi: -0.738624 vtx[r,z]:  [0.0488934, -2.15733] time: -1.70348e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 0 phi:   -949 phiB:   67 code(q): 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 11 phi:   1088 phiB:   118 code(q): 6
+Begin processing the 3rd record. Run 1, Event 392003, LumiSection 3921 on stream 0 at 29-May-2024 19:20:34.991 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 1.54877 eta: -0.931301 phi: -0.361674 vtx[r,z]:  [0.0490077, -2.62133] time: 8.53671e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 4th record. Run 1, Event 392004, LumiSection 3921 on stream 0 at 29-May-2024 19:20:34.991 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 40
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+825
+714
+705
+2646
+290
+290
+290
+290
+2926
+2926
+3041
+269
+268
+trackPosition:  (-342.861,-241.268,-533.438) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (91.2556,-59.4978,0) 
+ Local position after propagation:  (88.9705,-60.1859,0) 
+ The difference:  (2.2851,0.688065,0) 
+ Simulated momentum at entry: 38.9902
+ Propagated momentum at entry: 39.0687
+trackPosition:  (-343.987,-241.918,-533.438) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (91.7005,-58.0783,0.065) 
+ Local position after propagation:  (89.4258,-58.6967,0) 
+ The difference:  (2.2746,0.61845,0.065) 
+ Simulated momentum at entry: 38.9892
+ Propagated momentum at entry: 39.0669
+trackPosition:  (-345.113,-242.568,-533.438) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (92.1921,-56.5092,0) 
+ Local position after propagation:  (89.881,-57.2076,0) 
+ The difference:  (2.31105,0.698391,0) 
+ Simulated momentum at entry: 38.9867
+ Propagated momentum at entry: 39.0651
+trackPosition:  (-346.239,-243.218,-533.438) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (92.6602,-55.0147,0) 
+ Local position after propagation:  (90.3362,-55.7184,0) 
+ The difference:  (2.32401,0.703678,0) 
+ Simulated momentum at entry: 38.9851
+ Propagated momentum at entry: 39.0633
+trackPosition:  (-357.53,-252.161,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (38.5868,95.6994,-0.0412561) 
+ Local position after propagation:  (39.3977,93.2184,0) 
+ The difference:  (-0.810886,2.48098,-0.0412561) 
+ Simulated momentum at entry: 38.9267
+ Propagated momentum at entry: 39.0435
+trackPosition:  (-358.656,-252.811,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (37.0662,96.1745,-0.065) 
+ Local position after propagation:  (37.909,93.6724,0) 
+ The difference:  (-0.842789,2.50218,-0.065) 
+ Simulated momentum at entry: 38.9251
+ Propagated momentum at entry: 39.0417
+trackPosition:  (-359.782,-253.461,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (35.9619,96.5196,0.273518) 
+ Local position after propagation:  (36.4204,94.1262,0) 
+ The difference:  (-0.45845,2.39341,0.273518) 
+ Simulated momentum at entry: 38.923
+ Propagated momentum at entry: 39.0399
+trackPosition:  (-359.782,-253.461,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (35.3112,96.7229,-0.293083) 
+ Local position after propagation:  (36.4204,94.1262,0) 
+ The difference:  (-1.10915,2.59667,-0.293083) 
+ Simulated momentum at entry: 38.9223
+ Propagated momentum at entry: 39.0399
+trackPosition:  (-360.908,-254.111,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (34.2401,97.0575,0.0741725) 
+ Local position after propagation:  (34.9318,94.58,0) 
+ The difference:  (-0.691647,2.47758,0.0741725) 
+ Simulated momentum at entry: 38.9192
+ Propagated momentum at entry: 39.0381
+trackPosition:  (-362.163,-254.835,-533.441) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (97.6042,-32.4898,0) 
+ Local position after propagation:  (95.086,-33.2715,0) 
+ The difference:  (2.51822,0.781647,0) 
+ Simulated momentum at entry: 38.9164
+ Propagated momentum at entry: 39.0361
+trackPosition:  (-363.289,-255.485,-533.442) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (98.0703,-30.9968,0) 
+ Local position after propagation:  (95.5395,-31.7829,0) 
+ The difference:  (2.53074,0.786093,0) 
+ Simulated momentum at entry: 38.9154
+ Propagated momentum at entry: 39.0343
+trackPosition:  (-364.415,-256.135,-533.442) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (98.5059,-29.601,0.0845874) 
+ Local position after propagation:  (95.993,-30.2944,0) 
+ The difference:  (2.51283,0.693382,0.0845874) 
+ Simulated momentum at entry: 38.9138
+ Propagated momentum at entry: 39.0325
+trackPosition:  (-365.541,-256.785,-533.442) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (99.002,-28.0113,0) 
+ Local position after propagation:  (96.4465,-28.8059,0) 
+ The difference:  (2.55551,0.794579,0) 
+ Simulated momentum at entry: 38.9108
+ Propagated momentum at entry: 39.0307
+trackPosition:  (-265.868,-422.304,-533.233) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-91.5615,20.8021,0) 
+ Local position after propagation:  (-94.3485,21.2631,0) 
+ The difference:  (2.78694,-0.460995,0) 
+ Simulated momentum at entry: 37.8534
+ Propagated momentum at entry: 38.291
+trackPosition:  (-266.519,-423.43,-533.234) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-91.8114,22.2421,0) 
+ Local position after propagation:  (-94.6053,22.697,0) 
+ The difference:  (2.79395,-0.45484,0) 
+ Simulated momentum at entry: 37.8519
+ Propagated momentum at entry: 38.2893
+trackPosition:  (-265.352,-425.606,-533.235) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-94.1612,23.6823,0) 
+ Local position after propagation:  (-96.9623,24.1308,0) 
+ The difference:  (2.80109,-0.44849,0) 
+ Simulated momentum at entry: 37.8503
+ Propagated momentum at entry: 38.2876
+trackPosition:  (-266.002,-426.732,-533.236) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-94.3802,24.9453,0.160177) 
+ Local position after propagation:  (-97.2192,25.5646,0) 
+ The difference:  (2.839,-0.619293,0.160177) 
+ Simulated momentum at entry: 37.8485
+ Propagated momentum at entry: 38.2858
+trackPosition:  (-278.503,-435.964,-533.243) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-40.9867,-90.9654,-0.065) 
+ Local position after propagation:  (-41.2815,-93.8398,0) 
+ The difference:  (0.294838,2.87437,-0.065) 
+ Simulated momentum at entry: 37.8389
+ Propagated momentum at entry: 38.2668
+trackPosition:  (-279.153,-437.09,-533.244) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-41.8985,-91.1243,0.41209) 
+ Local position after propagation:  (-42.7154,-94.0975,0) 
+ The difference:  (0.816902,2.97315,0.41209) 
+ Simulated momentum at entry: 37.8374
+ Propagated momentum at entry: 38.2651
+trackPosition:  (-279.153,-437.09,-533.244) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-42.5287,-91.2341,-0.156565) 
+ Local position after propagation:  (-42.7154,-94.0975,0) 
+ The difference:  (0.186691,2.8633,-0.156565) 
+ Simulated momentum at entry: 37.8367
+ Propagated momentum at entry: 38.2651
+trackPosition:  (-279.804,-438.215,-533.245) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-43.5969,-91.4203,0.17967) 
+ Local position after propagation:  (-44.1493,-94.3551,0) 
+ The difference:  (0.552395,2.93478,0.17967) 
+ Simulated momentum at entry: 37.8357
+ Propagated momentum at entry: 38.2634
+trackPosition:  (-279.804,-438.215,-533.245) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-44.195,-91.5246,-0.360049) 
+ Local position after propagation:  (-44.1493,-94.3551,0) 
+ The difference:  (-0.0457726,2.83051,-0.360049) 
+ Simulated momentum at entry: 37.834
+ Propagated momentum at entry: 38.2634
+trackPosition:  (-280.455,-439.341,-533.246) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-45.1647,-91.6936,0.065) 
+ Local position after propagation:  (-45.5831,-94.6129,0) 
+ The difference:  (0.418461,2.91931,0.065) 
+ Simulated momentum at entry: 37.8314
+ Propagated momentum at entry: 38.2616
+trackPosition:  (-281.267,-440.546,-533.247) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-91.8859,46.8437,0) 
+ Local position after propagation:  (-94.8004,47.1824,0) 
+ The difference:  (2.91449,-0.338772,0) 
+ Simulated momentum at entry: 37.8289
+ Propagated momentum at entry: 38.2597
+trackPosition:  (-281.918,-441.671,-533.248) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-92.1367,48.2845,0) 
+ Local position after propagation:  (-95.0583,48.6162,0) 
+ The difference:  (2.92153,-0.331768,0) 
+ Simulated momentum at entry: 37.8269
+ Propagated momentum at entry: 38.258
+trackPosition:  (-280.751,-443.848,-533.249) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-94.4876,49.7251,0) 
+ Local position after propagation:  (-97.4161,50.0501,0) 
+ The difference:  (2.92854,-0.324963,0) 
+ Simulated momentum at entry: 37.8239
+ Propagated momentum at entry: 38.2562
+trackPosition:  (-281.401,-444.973,-533.25) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-94.7386,51.1655,0) 
+ Local position after propagation:  (-97.6741,51.484,0) 
+ The difference:  (2.9355,-0.318489,0) 
+ Simulated momentum at entry: 37.8221
+ Propagated momentum at entry: 38.2545
+1, muon Track Id: 1
+ pid: 13 pt: 29.1948 eta: -0.937385 phi: -2.40283 vtx[r,z]:  [0.0479111, -1.18438] time: -1.31885e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 1
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 7 phi:   1231 phiB:   22 code(q): 6
+Begin processing the 5th record. Run 1, Event 392005, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.000 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 51
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1657
+1655
+1296
+1108
+954
+629
+628
+570
+570
+570
+570
+3313
+3312
+trackPosition:  (241.195,-342.726,-533.239) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-11.0827,-108.268,0.065) 
+ Local position after propagation:  (0.496667,-108.488,0) 
+ The difference:  (-11.5794,0.22084,0.065) 
+ Simulated momentum at entry: 2.73703
+ Propagated momentum at entry: 2.81506
+trackPosition:  (241.845,-343.852,-533.239) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-10.312,-106.714,0) 
+ Local position after propagation:  (1.19137,-107.028,0) 
+ The difference:  (-11.5034,0.313934,0) 
+ Simulated momentum at entry: 2.7352
+ Propagated momentum at entry: 2.81357
+trackPosition:  (242.495,-344.978,-533.24) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-9.54734,-105.164,-0.065) 
+ Local position after propagation:  (1.88458,-105.568,0) 
+ The difference:  (-11.4319,0.404633,-0.065) 
+ Simulated momentum at entry: 2.73336
+ Propagated momentum at entry: 2.81209
+trackPosition:  (243.145,-346.104,-533.24) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-8.89338,-103.836,0.065) 
+ Local position after propagation:  (2.57632,-104.108,0) 
+ The difference:  (-11.4697,0.271988,0.065) 
+ Simulated momentum at entry: 2.7313
+ Propagated momentum at entry: 2.81061
+trackPosition:  (252.088,-357.395,-533.244) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (87.6402,-3.11299,0) 
+ Local position after propagation:  (88.102,7.96484,0) 
+ The difference:  (-0.461807,-11.0778,0) 
+ Simulated momentum at entry: 2.72471
+ Propagated momentum at entry: 2.79441
+trackPosition:  (252.738,-358.52,-533.245) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (86.1688,-2.40841,0) 
+ Local position after propagation:  (86.6413,8.63984,0) 
+ The difference:  (-0.472542,-11.0483,0) 
+ Simulated momentum at entry: 2.72375
+ Propagated momentum at entry: 2.79293
+trackPosition:  (253.388,-359.646,-533.245) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.6981,-1.70512,0) 
+ Local position after propagation:  (85.1806,9.31352,0) 
+ The difference:  (-0.482513,-11.0186,0) 
+ Simulated momentum at entry: 2.72287
+ Propagated momentum at entry: 2.79145
+trackPosition:  (254.038,-360.772,-533.245) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.1494,-0.964369,-0.065) 
+ Local position after propagation:  (83.7197,9.98591,0) 
+ The difference:  (-0.570305,-10.9503,-0.065) 
+ Simulated momentum at entry: 2.71999
+ Propagated momentum at entry: 2.78998
+trackPosition:  (254.763,-362.028,-533.246) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-0.21214,-81.5746,0) 
+ Local position after propagation:  (10.7344,-82.09,0) 
+ The difference:  (-10.9466,0.515457,0) 
+ Simulated momentum at entry: 2.71823
+ Propagated momentum at entry: 2.78833
+trackPosition:  (255.413,-363.154,-533.246) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (0.52784,-80.0218,-0.065) 
+ Local position after propagation:  (11.4042,-80.6287,0) 
+ The difference:  (-10.8763,0.606964,-0.065) 
+ Simulated momentum at entry: 2.71103
+ Propagated momentum at entry: 2.78685
+trackPosition:  (256.063,-364.28,-533.246) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (1.14977,-78.7131,0.0847221) 
+ Local position after propagation:  (12.0726,-79.1673,0) 
+ The difference:  (-10.9229,0.454147,0.0847221) 
+ Simulated momentum at entry: 2.71017
+ Propagated momentum at entry: 2.78538
+trackPosition:  (256.713,-365.405,-533.247) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (1.89831,-77.1378,0) 
+ Local position after propagation:  (12.7399,-77.7056,0) 
+ The difference:  (-10.8415,0.567863,0) 
+ Simulated momentum at entry: 2.70874
+ Propagated momentum at entry: 2.78391
+trackPosition:  (232.866,-441.425,-533.274) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (85.7119,-17.061,0) 
+ Local position after propagation:  (95.2311,-18.6156,0) 
+ The difference:  (-9.51916,1.55467,0) 
+ Simulated momentum at entry: 1.84851
+ Propagated momentum at entry: 2.16904
+trackPosition:  (233.515,-442.551,-533.273) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (86.184,-15.6598,0) 
+ Local position after propagation:  (95.6916,-17.2409,0) 
+ The difference:  (-9.50758,1.58111,0) 
+ Simulated momentum at entry: 1.84718
+ Propagated momentum at entry: 2.16768
+trackPosition:  (235.984,-442.628,-533.273) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.5752,-14.1875,-0.065) 
+ Local position after propagation:  (94.0513,-15.866,0) 
+ The difference:  (-9.47608,1.67842,-0.065) 
+ Simulated momentum at entry: 1.84571
+ Propagated momentum at entry: 2.16631
+trackPosition:  (236.633,-443.754,-533.273) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (85.0161,-12.8558,0) 
+ Local position after propagation:  (94.51,-14.4908,0) 
+ The difference:  (-9.4939,1.63492,0) 
+ Simulated momentum at entry: 1.84476
+ Propagated momentum at entry: 2.16495
+trackPosition:  (238.383,-459.195,-533.266) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-2.69821,96.2595,-0.0807698) 
+ Local position after propagation:  (-0.598496,105.679,0) 
+ The difference:  (-2.09971,-9.41969,-0.0807698) 
+ Simulated momentum at entry: 1.8395
+ Propagated momentum at entry: 2.15002
+trackPosition:  (239.033,-460.321,-533.265) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-3.76416,96.6008,0.231447) 
+ Local position after propagation:  (-1.97644,106.127,0) 
+ The difference:  (-1.78772,-9.52628,0.231447) 
+ Simulated momentum at entry: 1.8387
+ Propagated momentum at entry: 2.14866
+trackPosition:  (239.033,-460.321,-533.265) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-4.37928,96.7982,-0.338822) 
+ Local position after propagation:  (-1.97644,106.127,0) 
+ The difference:  (-2.40283,-9.32893,-0.338822) 
+ Simulated momentum at entry: 1.83767
+ Propagated momentum at entry: 2.14866
+trackPosition:  (239.683,-461.447,-533.265) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-5.34322,97.1074,0.065) 
+ Local position after propagation:  (-3.35464,106.574,0) 
+ The difference:  (-1.98859,-9.46674,0.065) 
+ Simulated momentum at entry: 1.83605
+ Propagated momentum at entry: 2.1473
+trackPosition:  (240.332,-462.573,-533.264) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-6.80891,97.5771,0) 
+ Local position after propagation:  (-4.73307,107.02,0) 
+ The difference:  (-2.07583,-9.44328,0) 
+ Simulated momentum at entry: 1.83426
+ Propagated momentum at entry: 2.14594
+trackPosition:  (240.97,-463.879,-533.264) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (98.1558,8.29562,0.065) 
+ Local position after propagation:  (107.617,6.27085,0) 
+ The difference:  (-9.46114,2.02477,0.065) 
+ Simulated momentum at entry: 1.83246
+ Propagated momentum at entry: 2.14442
+trackPosition:  (241.62,-465.005,-533.263) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (98.6276,9.76029,0) 
+ Local position after propagation:  (108.061,7.64978,0) 
+ The difference:  (-9.43365,2.11051,0) 
+ Simulated momentum at entry: 1.8304
+ Propagated momentum at entry: 2.14306
+trackPosition:  (244.088,-465.082,-533.263) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (96.9748,11.1528,0) 
+ Local position after propagation:  (106.405,9.02903,0) 
+ The difference:  (-9.42981,2.12377,0) 
+ Simulated momentum at entry: 1.82887
+ Propagated momentum at entry: 2.1417
+trackPosition:  (244.738,-466.208,-533.262) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (97.4216,12.5466,0) 
+ Local position after propagation:  (106.847,10.4085,0) 
+ The difference:  (-9.42547,2.13808,0) 
+ Simulated momentum at entry: 1.82612
+ Propagated momentum at entry: 2.14034
+trackPosition:  (319.901,-514.948,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (72.4986,89.2883,0) 
+ Local position after propagation:  (85.0656,93.5582,0) 
+ The difference:  (-12.567,-4.26985,0) 
+ Simulated momentum at entry: 0.728232
+ Propagated momentum at entry: 0.954058
+trackPosition:  (320.551,-516.074,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (72.5408,90.2035,0) 
+ Local position after propagation:  (85.2375,94.8777,0) 
+ The difference:  (-12.6967,-4.67414,0) 
+ Simulated momentum at entry: 0.727707
+ Propagated momentum at entry: 0.952838
+trackPosition:  (323.02,-516.15,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (70.4812,91.1144,0) 
+ Local position after propagation:  (83.3088,96.1973,0) 
+ The difference:  (-12.8276,-5.08285,0) 
+ Simulated momentum at entry: 0.72707
+ Propagated momentum at entry: 0.951618
+trackPosition:  (323.669,-517.276,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (70.5181,92.0285,0) 
+ Local position after propagation:  (83.4795,97.5169,0) 
+ The difference:  (-12.9614,-5.48837,0) 
+ Simulated momentum at entry: 0.72648
+ Propagated momentum at entry: 0.950398
+trackPosition:  (331.442,-529.243,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-102.132,70.1573,0.065) 
+ Local position after propagation:  (-111.982,84.553,0) 
+ The difference:  (9.84981,-14.3957,0.065) 
+ Simulated momentum at entry: 0.72019
+ Propagated momentum at entry: 0.937037
+trackPosition:  (332.091,-530.369,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-103.106,70.2005,0) 
+ Local position after propagation:  (-113.301,84.7131,0) 
+ The difference:  (10.1946,-14.5126,0) 
+ Simulated momentum at entry: 0.718731
+ Propagated momentum at entry: 0.935819
+trackPosition:  (332.741,-531.495,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-104.035,70.2422,0) 
+ Local position after propagation:  (-114.621,84.8718,0) 
+ The difference:  (10.5851,-14.6296,0) 
+ Simulated momentum at entry: 0.718045
+ Propagated momentum at entry: 0.934602
+trackPosition:  (333.391,-532.621,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-104.791,70.276,0.242684) 
+ Local position after propagation:  (-115.94,85.0288,0) 
+ The difference:  (11.1488,-14.7527,0.242684) 
+ Simulated momentum at entry: 0.716893
+ Propagated momentum at entry: 0.933384
+trackPosition:  (333.391,-532.621,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-105.173,70.2931,-0.293476) 
+ Local position after propagation:  (-115.94,85.0288,0) 
+ The difference:  (10.7667,-14.7357,-0.293476) 
+ Simulated momentum at entry: 0.715789
+ Propagated momentum at entry: 0.933384
+trackPosition:  (331.647,-535.302,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (73.1822,105.999,0) 
+ Local position after propagation:  (88.0517,117.412,0) 
+ The difference:  (-14.8695,-11.4129,0) 
+ Simulated momentum at entry: 0.713487
+ Propagated momentum at entry: 0.932027
+trackPosition:  (332.297,-536.428,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (73.227,106.926,0) 
+ Local position after propagation:  (88.2049,118.731,0) 
+ The difference:  (-14.9779,-11.8055,0) 
+ Simulated momentum at entry: 0.712386
+ Propagated momentum at entry: 0.93081
+trackPosition:  (334.766,-536.504,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (71.1716,107.851,0) 
+ Local position after propagation:  (86.256,120.051,0) 
+ The difference:  (-15.0844,-12.2003,0) 
+ Simulated momentum at entry: 0.711208
+ Propagated momentum at entry: 0.929593
+trackPosition:  (335.415,-537.63,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (71.2134,108.777,0) 
+ Local position after propagation:  (86.4053,121.371,0) 
+ The difference:  (-15.1918,-12.5941,0) 
+ Simulated momentum at entry: 0.709099
+ Propagated momentum at entry: 0.928377
+1, muon Track Id: 1
+ pid: 13 pt: 4.41049 eta: -0.836477 phi: -1.55985 vtx[r,z]:  [0.0498325, -1.87225] time: -1.07575e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 10 phi:   566 phiB:   103 code(q): 6
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 10 phi:   605 phiB:   -61 code(q): 6
+Begin processing the 6th record. Run 1, Event 392006, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.011 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 10.5317 eta: -1.24698 phi: 0.840311 vtx[r,z]:  [0.0511864, 2.38515] time: 3.68707e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 7th record. Run 1, Event 392007, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.011 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 40
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1825
+1012
+751
+3371
+3487
+143
+142
+trackPosition:  (-39.6304,435.79,-533.535) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (109.219,68.648,0) 
+ Local position after propagation:  (116.415,68.7546,0) 
+ The difference:  (-7.1965,-0.106651,0) 
+ Simulated momentum at entry: 28.7082
+ Propagated momentum at entry: 30.1202
+trackPosition:  (-39.6311,437.09,-533.536) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (107.897,69.0425,0) 
+ Local position after propagation:  (115.138,69.1489,0) 
+ The difference:  (-7.24102,-0.106316,0) 
+ Simulated momentum at entry: 28.7073
+ Propagated momentum at entry: 30.1186
+trackPosition:  (-39.6318,438.39,-533.536) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (106.51,69.4568,-0.065) 
+ Local position after propagation:  (113.861,69.543,0) 
+ The difference:  (-7.35152,-0.0862045,-0.065) 
+ Simulated momentum at entry: 28.7055
+ Propagated momentum at entry: 30.117
+trackPosition:  (-39.6325,439.69,-533.537) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (105.452,69.7727,0.194345) 
+ Local position after propagation:  (112.584,69.9371,0) 
+ The difference:  (-7.13248,-0.164467,0.194345) 
+ Simulated momentum at entry: 28.7044
+ Propagated momentum at entry: 30.1154
+trackPosition:  (-39.6325,439.69,-533.537) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (104.869,69.9468,-0.379593) 
+ Local position after propagation:  (112.584,69.9371,0) 
+ The difference:  (-7.71594,0.00971985,-0.379593) 
+ Simulated momentum at entry: 28.7036
+ Propagated momentum at entry: 30.1154
+trackPosition:  (-39.6333,441.14,-533.537) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (70.2716,-103.78,0) 
+ Local position after propagation:  (70.3766,-111.16,0) 
+ The difference:  (-0.105011,7.37968,0) 
+ Simulated momentum at entry: 28.7005
+ Propagated momentum at entry: 30.1136
+trackPosition:  (-39.634,442.44,-533.537) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (70.6462,-102.525,0.065) 
+ Local position after propagation:  (70.7705,-109.883,0) 
+ The difference:  (-0.124321,7.35822,0.065) 
+ Simulated momentum at entry: 28.6998
+ Propagated momentum at entry: 30.112
+trackPosition:  (-39.6347,443.74,-533.538) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (71.0602,-101.137,0) 
+ Local position after propagation:  (71.1644,-108.606,0) 
+ The difference:  (-0.104225,7.46889,0) 
+ Simulated momentum at entry: 28.6983
+ Propagated momentum at entry: 30.1104
+trackPosition:  (-39.6354,445.04,-533.538) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (71.3272,-100.242,0.419289) 
+ Local position after propagation:  (71.5582,-107.329,0) 
+ The difference:  (-0.230972,7.08719,0.419289) 
+ Simulated momentum at entry: 28.6966
+ Propagated momentum at entry: 30.1088
+trackPosition:  (-39.6354,445.04,-533.538) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (71.5271,-99.5718,-0.240153) 
+ Local position after propagation:  (71.5582,-107.329,0) 
+ The difference:  (-0.0310822,7.7574,-0.240153) 
+ Simulated momentum at entry: 28.6942
+ Propagated momentum at entry: 30.1088
+trackPosition:  (-232.836,441.479,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-120.981,-41.9618,0) 
+ Local position after propagation:  (-120.854,-51.2615,0) 
+ The difference:  (-0.127197,9.29969,0) 
+ Simulated momentum at entry: 27.1382
+ Propagated momentum at entry: 29.4084
+trackPosition:  (-233.486,442.605,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-121.3,-40.6627,0) 
+ Local position after propagation:  (-121.17,-50.0011,0) 
+ The difference:  (-0.129105,9.33836,0) 
+ Simulated momentum at entry: 27.1367
+ Propagated momentum at entry: 29.4068
+trackPosition:  (-235.955,442.681,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-123.718,-39.3638,0) 
+ Local position after propagation:  (-123.587,-48.7406,0) 
+ The difference:  (-0.131111,9.37674,0) 
+ Simulated momentum at entry: 27.1344
+ Propagated momentum at entry: 29.4052
+trackPosition:  (-238.361,459.247,-533.31) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (23.8878,-121.322,0.065) 
+ Local position after propagation:  (33.6623,-121.174,0) 
+ The difference:  (-9.77449,-0.148376,0.065) 
+ Simulated momentum at entry: 27.1101
+ Propagated momentum at entry: 29.3863
+trackPosition:  (-239.011,460.373,-533.31) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (22.5231,-121.658,0) 
+ Local position after propagation:  (32.4017,-121.491,0) 
+ The difference:  (-9.87857,-0.16777,0) 
+ Simulated momentum at entry: 27.1081
+ Propagated momentum at entry: 29.3847
+trackPosition:  (-239.661,461.499,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (21.2234,-121.979,0) 
+ Local position after propagation:  (31.1409,-121.808,0) 
+ The difference:  (-9.91756,-0.171173,0) 
+ Simulated momentum at entry: 27.1072
+ Propagated momentum at entry: 29.3831
+trackPosition:  (-240.311,462.625,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (19.8588,-122.315,-0.065) 
+ Local position after propagation:  (29.8802,-122.125,0) 
+ The difference:  (-10.0214,-0.190575,-0.065) 
+ Simulated momentum at entry: 27.1058
+ Propagated momentum at entry: 29.3815
+trackPosition:  (-240.95,463.93,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-122.557,-18.4744,0) 
+ Local position after propagation:  (-122.378,-28.474,0) 
+ The difference:  (-0.178146,9.99961,0) 
+ Simulated momentum at entry: 27.1043
+ Propagated momentum at entry: 29.3797
+trackPosition:  (-241.6,465.056,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-122.877,-17.175,0) 
+ Local position after propagation:  (-122.696,-27.2132,0) 
+ The difference:  (-0.18129,10.0382,0) 
+ Simulated momentum at entry: 27.1035
+ Propagated momentum at entry: 29.3782
+trackPosition:  (-244.068,465.132,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-125.281,-15.9406,0.065) 
+ Local position after propagation:  (-125.113,-25.9525,0) 
+ The difference:  (-0.168358,10.0119,0.065) 
+ Simulated momentum at entry: 27.1027
+ Propagated momentum at entry: 29.3766
+trackPosition:  (-19.5234,605.973,-533.368) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (138.347,63.3708,0) 
+ Local position after propagation:  (138.626,50.6173,0) 
+ The difference:  (-0.279053,12.7536,0) 
+ Simulated momentum at entry: 25.7391
+ Propagated momentum at entry: 27.9201
+trackPosition:  (-19.5229,607.273,-533.367) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (138.752,64.8308,-0.136181) 
+ Local position after propagation:  (138.992,51.8864,0) 
+ The difference:  (-0.239578,12.9444,-0.136181) 
+ Simulated momentum at entry: 25.736
+ Propagated momentum at entry: 27.9185
+trackPosition:  (-21.6223,608.574,-533.366) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (136.98,66.0136,0) 
+ Local position after propagation:  (137.257,53.1556,0) 
+ The difference:  (-0.276993,12.858,0) 
+ Simulated momentum at entry: 25.7334
+ Propagated momentum at entry: 27.9169
+trackPosition:  (-21.6218,609.874,-533.365) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (137.354,67.3627,-0.0276352) 
+ Local position after propagation:  (137.623,54.4247,0) 
+ The difference:  (-0.268326,12.9381,-0.0276352) 
+ Simulated momentum at entry: 25.732
+ Propagated momentum at entry: 27.9153
+trackPosition:  (-22.3658,624.124,-533.352) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-81.5987,140.55,0.212485) 
+ Local position after propagation:  (-68.3363,140.877,0) 
+ The difference:  (-13.2624,-0.327057,0.212485) 
+ Simulated momentum at entry: 25.7077
+ Propagated momentum at entry: 27.8979
+trackPosition:  (-22.3658,624.124,-533.352) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-82.116,140.694,-0.296469) 
+ Local position after propagation:  (-68.3363,140.877,0) 
+ The difference:  (-13.7797,-0.183685,-0.296469) 
+ Simulated momentum at entry: 25.707
+ Propagated momentum at entry: 27.8979
+trackPosition:  (-22.3652,625.424,-533.351) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-83.0697,140.958,0.065) 
+ Local position after propagation:  (-69.6054,141.243,0) 
+ The difference:  (-13.4643,-0.284607,0.065) 
+ Simulated momentum at entry: 25.7049
+ Propagated momentum at entry: 27.8963
+trackPosition:  (-22.3647,626.724,-533.35) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-84.4568,141.343,0) 
+ Local position after propagation:  (-70.8745,141.608,0) 
+ The difference:  (-13.5823,-0.265396,0) 
+ Simulated momentum at entry: 25.7035
+ Propagated momentum at entry: 27.8947
+trackPosition:  (-22.3641,628.024,-533.349) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-85.7777,141.709,0) 
+ Local position after propagation:  (-72.1437,141.973,0) 
+ The difference:  (-13.634,-0.264435,0) 
+ Simulated momentum at entry: 25.7027
+ Propagated momentum at entry: 27.8932
+trackPosition:  (-19.5135,629.473,-533.347) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (145.029,87.4733,-0.218482) 
+ Local position after propagation:  (145.231,73.5592,0) 
+ The difference:  (-0.201691,13.9141,-0.218482) 
+ Simulated momentum at entry: 25.6971
+ Propagated momentum at entry: 27.8914
+trackPosition:  (-19.513,630.773,-533.346) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (145.334,88.5726,0) 
+ Local position after propagation:  (145.596,74.8284,0) 
+ The difference:  (-0.262222,13.7442,0) 
+ Simulated momentum at entry: 25.6957
+ Propagated momentum at entry: 27.8898
+trackPosition:  (-21.6124,632.074,-533.345) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (143.618,89.9603,-0.065) 
+ Local position after propagation:  (143.861,76.0975,0) 
+ The difference:  (-0.242828,13.8628,-0.065) 
+ Simulated momentum at entry: 25.694
+ Propagated momentum at entry: 27.8882
+trackPosition:  (-21.6119,633.374,-533.344) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (143.966,91.216,0) 
+ Local position after propagation:  (144.226,77.3666,0) 
+ The difference:  (-0.260132,13.8494,0) 
+ Simulated momentum at entry: 25.6929
+ Propagated momentum at entry: 27.8866
+1, muon Track Id: 1
+ pid: 13 pt: 24.568 eta: -0.838109 phi: 1.71804 vtx[r,z]:  [0.0494309, 5.52522] time: 6.18941e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 3 phi:   1000 phiB:   24 code(q): 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 3 phi:   1045 phiB:   12 code(q): 6
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 4 phi:   -1118 phiB:   16 code(q): 4
+Begin processing the 8th record. Run 1, Event 392008, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.020 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 1.86288 eta: -0.886476 phi: 0.692085 vtx[r,z]:  [0.0488786, -7.65971] time: 4.98733e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 9th record. Run 1, Event 392009, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.020 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 25
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+517
+507
+337
+336
+335
+trackPosition:  (380.338,-176.222,-533.337) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.107,6.90105,0) 
+ Local position after propagation:  (48.4001,-21.8667,0) 
+ The difference:  (34.7069,28.7677,0) 
+ Simulated momentum at entry: 3.19204
+ Propagated momentum at entry: 3.33667
+trackPosition:  (381.464,-176.872,-533.336) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (83.8492,8.43194,0.333039) 
+ Local position after propagation:  (49.183,-20.0374,0) 
+ The difference:  (34.6662,28.4693,0.333039) 
+ Simulated momentum at entry: 3.19008
+ Propagated momentum at entry: 3.33496
+trackPosition:  (381.464,-176.872,-533.336) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (84.2551,9.27123,-0.196808) 
+ Local position after propagation:  (49.183,-20.0374,0) 
+ The difference:  (35.0721,29.3086,-0.196808) 
+ Simulated momentum at entry: 3.18893
+ Propagated momentum at entry: 3.33496
+trackPosition:  (382.589,-177.523,-533.335) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (85.0488,10.9146,0.065) 
+ Local position after propagation:  (49.9636,-18.2084,0) 
+ The difference:  (35.0852,29.1229,0.065) 
+ Simulated momentum at entry: 3.18692
+ Propagated momentum at entry: 3.33325
+trackPosition:  (383.715,-178.174,-533.334) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (86.089,13.0734,0) 
+ Local position after propagation:  (50.7419,-16.3795,0) 
+ The difference:  (35.3471,29.4528,0) 
+ Simulated momentum at entry: 3.18434
+ Propagated momentum at entry: 3.33154
+trackPosition:  (397.102,-183.487,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-35.1096,94.4226,0.241662) 
+ Local position after propagation:  (-3.65802,57.023,0) 
+ The difference:  (-31.4516,37.3997,0.241662) 
+ Simulated momentum at entry: 3.14418
+ Propagated momentum at entry: 3.31285
+trackPosition:  (397.102,-183.487,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-35.9785,94.8208,-0.309585) 
+ Local position after propagation:  (-3.65802,57.023,0) 
+ The difference:  (-32.3205,37.7978,-0.309585) 
+ Simulated momentum at entry: 3.14348
+ Propagated momentum at entry: 3.31285
+trackPosition:  (398.228,-184.138,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-37.1844,95.3718,0.225887) 
+ Local position after propagation:  (-5.48539,57.7742,0) 
+ The difference:  (-31.699,37.5976,0.225887) 
+ Simulated momentum at entry: 3.14123
+ Propagated momentum at entry: 3.31115
+trackPosition:  (398.228,-184.138,-533.325) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-38.0536,95.7685,-0.325331) 
+ Local position after propagation:  (-5.48539,57.7742,0) 
+ The difference:  (-32.5682,37.9943,-0.325331) 
+ Simulated momentum at entry: 3.14057
+ Propagated momentum at entry: 3.31115
+trackPosition:  (399.353,-184.789,-533.324) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-39.2595,96.317,0.211044) 
+ Local position after propagation:  (-7.3127,58.5232,0) 
+ The difference:  (-31.9468,37.7938,0.211044) 
+ Simulated momentum at entry: 3.13822
+ Propagated momentum at entry: 3.30945
+trackPosition:  (399.353,-184.789,-533.324) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-40.1305,96.713,-0.340069) 
+ Local position after propagation:  (-7.3127,58.5232,0) 
+ The difference:  (-32.8178,38.1898,-0.340069) 
+ Simulated momentum at entry: 3.13755
+ Propagated momentum at entry: 3.30945
+trackPosition:  (400.479,-185.439,-533.323) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-41.3364,97.2624,0.194787) 
+ Local position after propagation:  (-9.14007,59.2701,0) 
+ The difference:  (-32.1963,37.9924,0.194787) 
+ Simulated momentum at entry: 3.13535
+ Propagated momentum at entry: 3.30775
+trackPosition:  (400.479,-185.439,-533.323) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-42.2043,97.6581,-0.356502) 
+ Local position after propagation:  (-9.14007,59.2701,0) 
+ The difference:  (-33.0643,38.388,-0.356502) 
+ Simulated momentum at entry: 3.13481
+ Propagated momentum at entry: 3.30775
+trackPosition:  (401.734,-186.165,-533.322) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (98.3791,43.7836,0.0890369) 
+ Local position after propagation:  (60.1006,11.1782,0) 
+ The difference:  (38.2785,32.6054,0.0890369) 
+ Simulated momentum at entry: 3.13044
+ Propagated momentum at entry: 3.30585
+trackPosition:  (402.86,-186.816,-533.321) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (99.3748,45.9628,0) 
+ Local position after propagation:  (60.8429,13.0055,0) 
+ The difference:  (38.5319,32.9573,0) 
+ Simulated momentum at entry: 3.12574
+ Propagated momentum at entry: 3.30415
+trackPosition:  (403.985,-187.466,-533.32) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (100.304,48.0014,0) 
+ Local position after propagation:  (61.5831,14.8327,0) 
+ The difference:  (38.7206,33.1687,0) 
+ Simulated momentum at entry: 3.12451
+ Propagated momentum at entry: 3.30245
+trackPosition:  (498.749,-19.0542,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-80.5054,107.229,0) 
+ Local position after propagation:  (-119.355,94.3868,0) 
+ The difference:  (38.8496,12.8422,0) 
+ Simulated momentum at entry: 2.5483
+ Propagated momentum at entry: 2.58449
+trackPosition:  (500.049,-19.054,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-80.5178,108.997,0) 
+ Local position after propagation:  (-119.531,96.0422,0) 
+ The difference:  (39.0128,12.9549,0) 
+ Simulated momentum at entry: 2.54737
+ Propagated momentum at entry: 2.58299
+trackPosition:  (501.348,-16.9538,-533.307) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-82.6307,110.763,0) 
+ Local position after propagation:  (-121.807,97.6982,0) 
+ The difference:  (39.1766,13.0645,0) 
+ Simulated momentum at entry: 2.54633
+ Propagated momentum at entry: 2.58149
+trackPosition:  (502.648,-16.9537,-533.308) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-82.6449,112.53,0) 
+ Local position after propagation:  (-121.985,99.3545,0) 
+ The difference:  (39.3402,13.1754,0) 
+ Simulated momentum at entry: 2.54551
+ Propagated momentum at entry: 2.57999
+1, muon Track Id: 1
+ pid: 13 pt: 4.5614 eta: -0.972598 phi: -0.891949 vtx[r,z]:  [0.0493471, 4.03915] time: 1.26145e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 0 phi:   -804 phiB:   100 code(q): 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 11 phi:   1205 phiB:   175 code(q): 5
+Begin processing the 10th record. Run 1, Event 392010, LumiSection 3921 on stream 0 at 29-May-2024 19:20:35.026 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 42
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1924
+1923
+1870
+4033
+4033
+4033
+4033
+4033
+4033
+4032
+4032
+4032
+4942
+4941
+4941
+5019
+5005
+873
+439
+274
+trackPosition:  (-37.5207,417.641,-533.531) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (100.283,-67.8561,0) 
+ Local position after propagation:  (96.6192,-49.9994,0) 
+ The difference:  (3.66418,-17.8567,0) 
+ Simulated momentum at entry: 7.8206
+ Propagated momentum at entry: 7.81735
+trackPosition:  (-37.5214,418.941,-533.531) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (101.055,-66.3094,-0.10022) 
+ Local position after propagation:  (97.3073,-48.3875,0) 
+ The difference:  (3.74773,-17.9219,-0.10022) 
+ Simulated momentum at entry: 7.8132
+ Propagated momentum at entry: 7.81568
+trackPosition:  (-37.5221,420.241,-533.531) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (101.715,-64.9842,0) 
+ Local position after propagation:  (97.9947,-46.7758,0) 
+ The difference:  (3.72046,-18.2085,0) 
+ Simulated momentum at entry: 7.81139
+ Propagated momentum at entry: 7.814
+trackPosition:  (-232.836,441.479,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-73.2458,-1.90985,0) 
+ Local position after propagation:  (-77.3458,27.4473,0) 
+ The difference:  (4.09998,-29.3571,0) 
+ Simulated momentum at entry: 7.30083
+ Propagated momentum at entry: 7.15598
+trackPosition:  (-233.486,442.605,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-73.3621,-0.665299,0) 
+ Local position after propagation:  (-77.4527,28.895,0) 
+ The difference:  (4.09058,-29.5603,0) 
+ Simulated momentum at entry: 7.29937
+ Propagated momentum at entry: 7.1545
+trackPosition:  (-236.605,443.807,-533.313) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-75.6961,1.82255,0) 
+ Local position after propagation:  (-79.7672,31.7907,0) 
+ The difference:  (4.07109,-29.9681,0) 
+ Simulated momentum at entry: 7.29132
+ Propagated momentum at entry: 7.15153
+trackPosition:  (-238.361,459.247,-533.31) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-15.523,-70.7909,-0.065) 
+ Local position after propagation:  (-47.6616,-74.7639,0) 
+ The difference:  (32.1385,3.97299,-0.065) 
+ Simulated momentum at entry: 7.28585
+ Propagated momentum at entry: 7.13524
+trackPosition:  (-239.011,460.373,-533.31) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-16.507,-70.8858,0.206599) 
+ Local position after propagation:  (-49.1095,-74.8747,0) 
+ The difference:  (32.6024,3.98889,0.206599) 
+ Simulated momentum at entry: 7.28411
+ Propagated momentum at entry: 7.13375
+trackPosition:  (-239.011,460.373,-533.31) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-16.9975,-70.9331,-0.30639) 
+ Local position after propagation:  (-49.1095,-74.8747,0) 
+ The difference:  (32.112,3.94165,-0.30639) 
+ Simulated momentum at entry: 7.28217
+ Propagated momentum at entry: 7.13375
+trackPosition:  (-239.661,461.499,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-17.885,-71.0189,0.065) 
+ Local position after propagation:  (-50.5574,-74.9859,0) 
+ The difference:  (32.6724,3.96709,0.065) 
+ Simulated momentum at entry: 7.28057
+ Propagated momentum at entry: 7.13227
+trackPosition:  (-240.311,462.625,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-19.1891,-71.1447,0) 
+ Local position after propagation:  (-52.0053,-75.0974,0) 
+ The difference:  (32.8162,3.95275,0) 
+ Simulated momentum at entry: 7.27906
+ Propagated momentum at entry: 7.13078
+trackPosition:  (-240.95,463.93,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-71.1776,20.5742,0) 
+ Local position after propagation:  (-75.1221,53.6203,0) 
+ The difference:  (3.94447,-33.0461,0) 
+ Simulated momentum at entry: 7.27749
+ Propagated momentum at entry: 7.12913
+trackPosition:  (-241.6,465.056,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-71.2954,21.8051,0.0117382) 
+ Local position after propagation:  (-75.2342,55.0682,0) 
+ The difference:  (3.93873,-33.2631,0.0117382) 
+ Simulated momentum at entry: 7.27533
+ Propagated momentum at entry: 7.12764
+trackPosition:  (-244.068,465.132,-533.309) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-73.5156,23.0585,0) 
+ Local position after propagation:  (-77.4465,56.516,0) 
+ The difference:  (3.93092,-33.4576,0) 
+ Simulated momentum at entry: 7.27385
+ Propagated momentum at entry: 7.12615
+trackPosition:  (-244.718,466.258,-533.308) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-73.6353,24.3006,0) 
+ Local position after propagation:  (-77.5592,57.964,0) 
+ The difference:  (3.92389,-33.6633,0) 
+ Simulated momentum at entry: 7.27229
+ Propagated momentum at entry: 7.12467
+trackPosition:  (-319.814,514.901,-533.238) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-124.788,99.3151,0) 
+ Local position after propagation:  (-126.87,146.947,0) 
+ The difference:  (2.08247,-47.6322,0) 
+ Simulated momentum at entry: 5.61487
+ Propagated momentum at entry: 5.9249
+trackPosition:  (-320.464,516.027,-533.238) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-124.997,100.515,0) 
+ Local position after propagation:  (-127.035,148.405,0) 
+ The difference:  (2.03778,-47.8892,0) 
+ Simulated momentum at entry: 5.61371
+ Propagated momentum at entry: 5.92343
+trackPosition:  (-322.932,516.103,-533.238) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-127.306,101.715,0) 
+ Local position after propagation:  (-129.3,149.862,0) 
+ The difference:  (1.99324,-48.147,0) 
+ Simulated momentum at entry: 5.61279
+ Propagated momentum at entry: 5.92196
+trackPosition:  (-323.582,517.228,-533.238) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-127.516,102.914,0) 
+ Local position after propagation:  (-129.465,151.319,0) 
+ The difference:  (1.94893,-48.4054,0) 
+ Simulated momentum at entry: 5.61135
+ Propagated momentum at entry: 5.92049
+trackPosition:  (-331.357,529.194,-533.241) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-116.127,-130.588,-0.065) 
+ Local position after propagation:  (-167.3,-132.062,0) 
+ The difference:  (51.1725,1.47478,-0.065) 
+ Simulated momentum at entry: 5.58556
+ Propagated momentum at entry: 5.90434
+trackPosition:  (-332.007,530.32,-533.241) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-117.135,-130.765,0.141024) 
+ Local position after propagation:  (-168.758,-132.234,0) 
+ The difference:  (51.6231,1.46898,0.141024) 
+ Simulated momentum at entry: 5.58376
+ Propagated momentum at entry: 5.90287
+trackPosition:  (-332.657,531.446,-533.241) 
+ Is PROPAGATION VALID: 1
+ Local position from PSimHit:  (-118.463,-130.998,0) 
+ Local position after propagation:  (-170.217,-132.406,0) 
+ The difference:  (51.7537,1.40817,0) 
+ Simulated momentum at entry: 5.5816
+ Propagated momentum at entry: 5.90139
+1, muon Track Id: 1
+ pid: 13 pt: 7.67184 eta: -0.938047 phi: 1.56408 vtx[r,z]:  [0.0478996, -0.475911] time: -4.41952e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 1
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 4 phi:   -741 phiB:   41 code(q): 4
+29-May-2024 19:20:35 CEST  Closed file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+AT THE END: =========> Analyzed #10 DtPh: 14  DtTh: 0

@@ -1,0 +1,8 @@
+****************************************
+Minimizer is Linear / Migrad
+Chi2                      =      1983.59
+NDf                       =           82
+p0                        = -1.36786e-08   +/-   8.84901e-09 
+p1                        =      1.00091   +/-   0.00193651  
+
+Hence the unit of time is a second.

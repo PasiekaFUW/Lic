@@ -1,0 +1,598 @@
+command:  ls -1 /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/|grep root | grep m_99
+Number of files in direcotry: /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/  --->  11
+25-May-2024 12:18:52 CEST  Initiating request to open file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+25-May-2024 12:18:53 CEST  Successfully opened file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+Begin processing the 1st record. Run 1, Event 392001, LumiSection 3921 on stream 0 at 25-May-2024 12:18:55.068 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 67
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1814
+1771
+1771
+3896
+1739
+1254
+1231
+951
+881
+880
+879
+4525
+4525
+4669
+4729
+4729
+4729
+4729
+4729
+4729
+5013
+4744
+5298
+5345
+598
+5496
+597
+1, muon Track Id: 1
+ pid: 13 pt: 13.4479 eta: -0.867111 phi: 0.48128 vtx[r,z]:  [0.0495233, -2.25239] time: -1.29621e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 1 phi:   570 phiB:   55 code(q): 6
+ Generated starting Global position:  (0.0457267,-0.0190164,-2.25239) 
+ Position of the Detector:  (353.806,249.444,-533.265) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (18.6235,-102.583,0) 
+ Global position after propagation:  (344.513,265.572,-430.68) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (19.5865,-112.526,0.445) 
+PSimHit Global Entry Point:  (343.648,266.183,-420.737) 
+PSimHit Local Exit Point:  (82.7074,108.546,-0.575) 
+PSimHit Global Exit Point:  (312.905,321.344,-641.803) 
+Brief energy from the first SimTrack: 18.8286
+Simulated total energy loss: 0.000282869
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 1 phi:   636 phiB:   47 code(q): 3
+ Generated starting Global position:  (0.0457267,-0.0190164,-2.25239) 
+ Position of the Detector:  (454.591,237.721,-533.405) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (97.5958,-20.7196,0) 
+ Global position after propagation:  (405.802,322.248,-512.69) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (19.5865,-112.526,0.445) 
+PSimHit Global Entry Point:  (444.464,254.497,-420.879) 
+PSimHit Local Exit Point:  (82.7074,108.546,-0.575) 
+PSimHit Global Exit Point:  (413.684,309.6,-641.955) 
+Brief energy from the first SimTrack: 18.8286
+Simulated total energy loss: 0.000282869
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 1 phi:   664 phiB:   15 code(q): 6
+ Generated starting Global position:  (0.0457267,-0.0190164,-2.25239) 
+ Position of the Detector:  (524.082,328.092,-533.392) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (75.4048,84.9351,0) 
+ Global position after propagation:  (486.425,393.42,-618.328) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (19.5865,-112.526,0.445) 
+PSimHit Global Entry Point:  (513.861,344.809,-420.866) 
+PSimHit Local Exit Point:  (82.7074,108.546,-0.575) 
+PSimHit Global Exit Point:  (483.283,400.037,-641.939) 
+Brief energy from the first SimTrack: 18.8286
+Simulated total energy loss: 0.000282869
+Propagateted total energy loss: For now lack of such data.
+=========> Analyzed #1 DtPh: 3  DtTh: 0
+Begin processing the 2nd record. Run 1, Event 392002, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.469 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 22
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+698
+287
+1, muon Track Id: 1
+ pid: 13 pt: 5.98742 eta: -0.993109 phi: -0.738624 vtx[r,z]:  [0.0488934, -2.15733] time: -1.70348e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 0 phi:   -949 phiB:   67 code(q): 2
+ Generated starting Global position:  (0.0456349,-0.0175506,-2.15733) 
+ Position of the Detector:  (512.449,-21.4024,-533.311) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (-133.481,114.893,0) 
+ Global position after propagation:  (512.434,-154.868,-648.223) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (72.1754,-3.12341,0.575) 
+PSimHit Global Entry Point:  (511.865,50.7725,-530.177) 
+PSimHit Local Exit Point:  (-101.488,109.065,-0.575) 
+PSimHit Global Exit Point:  (513.006,-122.875,-642.39) 
+Brief energy from the first SimTrack: 9.19141
+Simulated total energy loss: 9.71097e-05
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 11 phi:   1088 phiB:   118 code(q): 6
+ Generated starting Global position:  (0.0456349,-0.0175506,-2.15733) 
+ Position of the Detector:  (393,-181.693,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (48.521,-2.38153,0) 
+ Global position after propagation:  (417.283,-139.685,-530.956) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (72.1754,-3.12341,0.575) 
+PSimHit Global Entry Point:  (428.623,-118.918,-530.219) 
+PSimHit Local Exit Point:  (-101.488,109.065,-0.575) 
+PSimHit Global Exit Point:  (342.756,-269.897,-642.373) 
+Brief energy from the first SimTrack: 9.19141
+Simulated total energy loss: 9.71097e-05
+Propagateted total energy loss: For now lack of such data.
+Begin processing the 3rd record. Run 1, Event 392003, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.551 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 1.54877 eta: -0.931301 phi: -0.361674 vtx[r,z]:  [0.0490077, -2.62133] time: 8.53671e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 4th record. Run 1, Event 392004, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.552 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 40
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+825
+714
+705
+2646
+290
+290
+290
+290
+2926
+2926
+3041
+269
+268
+1, muon Track Id: 1
+ pid: 13 pt: 29.1948 eta: -0.937385 phi: -2.40283 vtx[r,z]:  [0.0479111, -1.18438] time: -1.31885e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 1
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 7 phi:   1231 phiB:   22 code(q): 6
+ Generated starting Global position:  (0.0450667,-0.0162626,-1.18438) 
+ Position of the Detector:  (-353.926,-249.503,-533.44) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (92.1638,-44.4939,0) 
+ Global position after propagation:  (-307.855,-329.329,-488.952) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (91.0485,-60.1587,0.575) 
+PSimHit Global Entry Point:  (-307.916,-328.077,-473.287) 
+PSimHit Local Exit Point:  (-94.8245,51.6585,-0.445) 
+PSimHit Global Exit Point:  (-401.712,-167.595,-585.092) 
+Brief energy from the first SimTrack: 42.9888
+Simulated total energy loss: 0.00013184
+Propagateted total energy loss: For now lack of such data.
+Begin processing the 5th record. Run 1, Event 392005, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.599 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 51
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1657
+1655
+1296
+1108
+954
+629
+628
+570
+570
+570
+570
+3313
+3312
+1, muon Track Id: 1
+ pid: 13 pt: 4.41049 eta: -0.836477 phi: -1.55985 vtx[r,z]:  [0.0498325, -1.87225] time: -1.07575e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 10 phi:   566 phiB:   103 code(q): 6
+ Generated starting Global position:  (0.0470726,-0.016354,-1.87225) 
+ Position of the Detector:  (237.676,-454.466,-533.268) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (102.389,-4.11664,0) 
+ Global position after propagation:  (326.365,-403.302,-529.161) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (-11.3726,-108.848,0.575) 
+PSimHit Global Entry Point:  (227.524,-459.605,-424.419) 
+PSimHit Local Exit Point:  (71.2322,109.186,-0.575) 
+PSimHit Global Exit Point:  (299.679,-419.416,-642.461) 
+Brief energy from the first SimTrack: 6.04651
+Simulated total energy loss: 0.000157745
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 10 phi:   605 phiB:   -61 code(q): 6
+ Generated starting Global position:  (0.0470726,-0.016354,-1.87225) 
+ Position of the Detector:  (328.058,-523.98,-533.329) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (84.0662,105.638,0) 
+ Global position after propagation:  (400.873,-481.956,-638.962) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (-3.05176e-05,3.05176e-05,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (-11.3726,-108.848,0.575) 
+PSimHit Global Entry Point:  (317.917,-529.172,-424.481) 
+PSimHit Local Exit Point:  (71.2322,109.186,-0.575) 
+PSimHit Global Exit Point:  (390.045,-488.869,-642.511) 
+Brief energy from the first SimTrack: 6.04651
+Simulated total energy loss: 0.000157745
+Propagateted total energy loss: For now lack of such data.
+Begin processing the 6th record. Run 1, Event 392006, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.690 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 10.5317 eta: -1.24698 phi: 0.840311 vtx[r,z]:  [0.0511864, 2.38515] time: 3.68707e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 7th record. Run 1, Event 392007, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.691 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 40
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1825
+1012
+751
+3371
+3487
+143
+142
+1, muon Track Id: 1
+ pid: 13 pt: 24.568 eta: -0.838109 phi: 1.71804 vtx[r,z]:  [0.0494309, 5.52522] time: 6.18941e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 3
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 3 phi:   1000 phiB:   24 code(q): 3
+ Generated starting Global position:  (0.0464953,-0.0167809,5.52522) 
+ Position of the Detector:  (-39.128,431.34,-533.534) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (67.9044,-120.787,0) 
+ Global position after propagation:  (-107.015,431.338,-412.737) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (1.52588e-05,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (109.803,68.4734,0.575) 
+PSimHit Global Entry Point:  (-148.941,430.687,-601.992) 
+PSimHit Local Exit Point:  (144.128,91.8007,-0.575) 
+PSimHit Global Exit Point:  (-183.27,431.812,-625.314) 
+Brief energy from the first SimTrack: 33.7139
+Simulated total energy loss: 0.00014267
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 3 sector: 3 phi:   1045 phiB:   12 code(q): 6
+ Generated starting Global position:  (0.0464953,-0.0167809,5.52522) 
+ Position of the Detector:  (-22.0684,617.874,-533.358) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (139.421,62.2347,0) 
+ Global position after propagation:  (-161.474,617.988,-595.627) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (109.803,68.4734,0.575) 
+PSimHit Global Entry Point:  (-131.855,617.406,-601.859) 
+PSimHit Local Exit Point:  (144.128,91.8007,-0.575) 
+PSimHit Global Exit Point:  (-166.173,618.592,-625.193) 
+Brief energy from the first SimTrack: 33.7139
+Simulated total energy loss: 0.00014267
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 4 phi:   -1118 phiB:   16 code(q): 4
+ Generated starting Global position:  (0.0464953,-0.0167809,5.52522) 
+ Position of the Detector:  (-237.651,454.519,-533.311) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (-121.839,-37.9777,0) 
+ Global position after propagation:  (-132.135,515.437,-495.331) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (-1.52588e-05,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (109.803,68.4734,0.575) 
+PSimHit Global Entry Point:  (-332.459,399.126,-601.786) 
+PSimHit Local Exit Point:  (144.128,91.8007,-0.575) 
+PSimHit Global Exit Point:  (-362.761,382.962,-625.114) 
+Brief energy from the first SimTrack: 33.7139
+Simulated total energy loss: 0.00014267
+Propagateted total energy loss: For now lack of such data.
+Begin processing the 8th record. Run 1, Event 392008, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.800 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 0
+1, muon Track Id: 1
+ pid: 13 pt: 1.86288 eta: -0.886476 phi: 0.692085 vtx[r,z]:  [0.0488786, -7.65971] time: 4.98733e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 0
+Begin processing the 9th record. Run 1, Event 392009, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.800 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 25
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+517
+507
+337
+336
+335
+1, muon Track Id: 1
+ pid: 13 pt: 4.5614 eta: -0.972598 phi: -0.891949 vtx[r,z]:  [0.0493471, 4.03915] time: 1.26145e-10
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 2
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 0 phi:   -804 phiB:   100 code(q): 2
+ Generated starting Global position:  (0.0463414,-0.0169591,4.03915) 
+ Position of the Detector:  (512.449,-21.4024,-533.311) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (-118.911,111.854,0) 
+ Global position after propagation:  (512.433,-140.298,-645.182) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (82.6654,5.99071,0.575) 
+PSimHit Global Entry Point:  (511.861,61.2638,-539.29) 
+PSimHit Local Exit Point:  (-82.6515,113.313,-0.575) 
+PSimHit Global Exit Point:  (513.003,-104.038,-646.636) 
+Brief energy from the first SimTrack: 6.89515
+Simulated total energy loss: 7.94114e-05
+Propagateted total energy loss: For now lack of such data.
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 1 sector: 11 phi:   1205 phiB:   175 code(q): 5
+ Generated starting Global position:  (0.0463414,-0.0169591,4.03915) 
+ Position of the Detector:  (393,-181.693,-533.328) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (54.9348,-2.5978,0) 
+ Global position after propagation:  (420.493,-134.132,-530.741) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (82.6654,5.99071,0.575) 
+PSimHit Global Entry Point:  (433.878,-109.841,-539.335) 
+PSimHit Local Exit Point:  (-82.6515,113.313,-0.575) 
+PSimHit Global Exit Point:  (352.185,-253.592,-646.625) 
+Brief energy from the first SimTrack: 6.89515
+Simulated total energy loss: 7.94114e-05
+Propagateted total energy loss: For now lack of such data.
+Begin processing the 10th record. Run 1, Event 392010, LumiSection 3921 on stream 0 at 25-May-2024 12:19:25.892 CEST
+-------- Tracking Particles -----------
+ TRACKING PARTICLES: 1
+myPSimHits Size: 42
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1924
+1923
+1870
+4033
+4033
+4033
+4033
+4033
+4033
+4032
+4032
+4032
+4942
+4941
+4941
+5019
+5005
+873
+439
+274
+1, muon Track Id: 1
+ pid: 13 pt: 7.67184 eta: -0.938047 phi: 1.56408 vtx[r,z]:  [0.0478996, -0.475911] time: -4.41952e-11
+-------- HERE DIGI COMPARE DT ---------
+ DTPh digis from BMTF 1
+DtDataWord64 BMTF     bxNum: 0 whNum: -2 station: 2 sector: 4 phi:   -741 phiB:   41 code(q): 4
+ Generated starting Global position:  (0.0447249,-0.0171481,-0.475911) 
+ Position of the Detector:  (-237.651,454.519,-533.311) 
+ Is PROPAGATION VALID: 1
+ Local position after propagation:  (-76.1364,42.7053,0) 
+ Global position after propagation:  (-171.72,492.597,-576.015) 
+ The difference between Global position from stateAtDet and the one calculated from toGlobal Function:  (0,0,0) 
+ Local position change after 200 propagations:  (0,0,0) 
+ Global position change after 200 propagations:  (0,0,0) 
+PSimHit Local Entry Point:  (99.9665,-68.4913,0.575) 
+PSimHit Global Entry Point:  (-323.93,404.022,-464.821) 
+PSimHit Local Exit Point:  (-118.993,-131.091,-0.575) 
+PSimHit Global Exit Point:  (-134.881,514.496,-402.218) 
+Brief energy from the first SimTrack: 11.3026
+Simulated total energy loss: 0.000185868
+Propagateted total energy loss: For now lack of such data.
+25-May-2024 12:19:25 CEST  Closed file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+AT THE END: =========> Analyzed #10 DtPh: 14  DtTh: 0

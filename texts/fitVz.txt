@@ -1,0 +1,13 @@
+// Printed Results of cmsRun lic.py
+// The result is a collection of obtained fitted Gaussian parameters to the histogram hVz.
+
+
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+ FCN=15.0817 FROM MIGRAD    STATUS=CONVERGED      58 CALLS          59 TOTAL
+                     EDM=2.90405e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     9.60864e+01   3.73522e+00   8.28318e-03   2.87360e-06
+   2  Mean        -4.03697e-01   1.31623e-01   3.58767e-04   1.30592e-05
+   3  Sigma        4.15321e+00   9.43057e-02   1.68028e-05  -1.09328e-03
+                               ERR DEF= 0.5
