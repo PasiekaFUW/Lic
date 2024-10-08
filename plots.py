@@ -213,3 +213,34 @@ c19.Print("./plots/"+c19.GetName()+".png")
 c19.Update()
 input('press enter to exit')
 
+#zad 17.1
+c20 = TCanvas('cVPPGPT1', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry', 600, 600)
+histo20 = gROOT.FindObject('hVPPGPT1')
+histo20.DrawCopy('COL')
+c20.Print("./plots/"+c20.GetName()+".png")
+c20.Update()
+input('press enter to exit')
+
+#zad 17.2 
+c21= TCanvas('cVPPGPT2', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry', 600, 600)
+histo21 = gROOT.FindObject('hVPPGPT2')
+histo21.DrawCopy('COL')
+c21.Print("./plots/"+c21.GetName()+".png")
+c21.Update()
+input('press enter to exit')
+
+#zad 17.3 
+c22 = TCanvas('cVSPT1', 'Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry', 600, 600)
+histo22 = gROOT.FindObject('hVSPT1')
+histo22.DrawCopy('COL')
+c22.Print("./plots/"+c22.GetName()+".png")
+c22.Update()
+input('press enter to exit')
+
+#zad 17.4 
+c23 = TCanvas('cVSPT2', 'Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry', 600, 600)
+histo23 = gROOT.FindObject('hVSPT2')
+histo23.DrawCopy('COL')
+c23.Print("./plots/"+c23.GetName()+".png")
+c23.Update()
+input('press enter to exit')

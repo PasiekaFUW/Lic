@@ -248,13 +248,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   for (const auto & tp : myTP) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
-    int pt_P = 0; //zad 17
-    int pt_S = 0; //zad 17
+    //int pt_P = 0; //zad 17
+    //int pt_S = 0; //zad 17
 
     //#PPG
     if ( abs( tp.pdgId())==13  && tp.pt() > 1. && gtp.charge()==0) {
       for(const auto & ah: myPSimHits) {
-        if (ah.trackId() == 1 && tp.numberOfTrackerHits() == 1) {
+        if (ah.trackId() == 1) {
 
           const auto & vtx = tp.parentVertex()->position();
           const auto & mom = tp.momentum();
@@ -285,14 +285,33 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
           hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
           
           DTChamberId dtChamberId(ah.detUnitId()); //zad 17
+          
           if(station_P!=chamber.station() && station_S!=dtChamberId.station()){
             station_P=chamber.station();
             station_S=dtChamberId.station();
             if(station_P!=1){
               //hPHPT->Fill(pt_P - sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)), pt_S - ah.pabs());
             }
-            pt_P=sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2));
-            pt_S=ah.pabs();
+            //pt_P=sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2));
+            //pt_S=ah.pabs();
+          }
+
+          //zad 17.1
+          if(tp.numberOfTrackerHits() == 1 && station_P == 1) {
+          hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2))); 
+          }
+
+          //zad 17.2
+          if(tp.numberOfTrackerHits() == 1 && station_P == 2) {
+          hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2))); 
+          }
+          //zad 17.3
+          if(tp.numberOfTrackerHits() == 1 && station_S == 1) {
+          hVSPT1->Fill(tp.pt(), ah.pabs()); 
+          }
+          //zad 17.4 
+          if(tp.numberOfTrackerHits() == 1 && station_S == 2) {
+          hVSPT2->Fill(tp.pt(), ah.pabs()); 
           }
 
           //zad 18.1
