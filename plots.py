@@ -215,7 +215,13 @@ input('press enter to exit')
 
 #zad 17.1
 c20 = TCanvas('cVPPGPT1', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry', 600, 600)
+c20.SetLeftMargin(0.15)  #Space for printing Y label
 histo20 = gROOT.FindObject('hVPPGPT1')
+histo20.GetXaxis().SetTitle("From Vertex")
+histo20.GetYaxis().SetTitle("Propagated")
+fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+histo20.Fit("fitFunc1", "R", " ")
+fitFunc1.Draw('same')
 histo20.DrawCopy('COL')
 c20.Print("./plots/"+c20.GetName()+".png")
 c20.Update()
@@ -223,7 +229,13 @@ input('press enter to exit')
 
 #zad 17.2 
 c21= TCanvas('cVPPGPT2', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry', 600, 600)
+c21.SetLeftMargin(0.15)  #Space for printing Y label
 histo21 = gROOT.FindObject('hVPPGPT2')
+histo21.GetXaxis().SetTitle("From Vertex")
+histo21.GetYaxis().SetTitle("Propagated")
+fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+histo21.Fit("fitFunc1", "R", " ")
+fitFunc1.Draw('same')
 histo21.DrawCopy('COL')
 c21.Print("./plots/"+c21.GetName()+".png")
 c21.Update()
@@ -231,7 +243,13 @@ input('press enter to exit')
 
 #zad 17.3 
 c22 = TCanvas('cVSPT1', 'Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry', 600, 600)
+c22.SetLeftMargin(0.15)  #Space for printing Y label
 histo22 = gROOT.FindObject('hVSPT1')
+histo22.GetXaxis().SetTitle("From Vertex")
+histo22.GetYaxis().SetTitle("Simulated")
+fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+histo22.Fit("fitFunc1", "R", " ")
+fitFunc1.Draw('same')
 histo22.DrawCopy('COL')
 c22.Print("./plots/"+c22.GetName()+".png")
 c22.Update()
@@ -239,8 +257,18 @@ input('press enter to exit')
 
 #zad 17.4 
 c23 = TCanvas('cVSPT2', 'Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry', 600, 600)
+c23.SetLeftMargin(0.15)  #Space for printing Y label
 histo23 = gROOT.FindObject('hVSPT2')
+histo23.GetXaxis().SetTitle("From Vertex")
+histo23.GetYaxis().SetTitle("Simulated")
+fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+histo23.Fit("fitFunc1", "R", " ")
+fitFunc1.Draw('same')
 histo23.DrawCopy('COL')
 c23.Print("./plots/"+c23.GetName()+".png")
 c23.Update()
 input('press enter to exit')
+
+
+
+

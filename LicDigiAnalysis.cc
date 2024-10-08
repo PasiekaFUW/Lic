@@ -209,10 +209,10 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 40, 0, 400); //zad 11
   hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 300, 400, 700, 800, -200, -1000); //zad 13
   hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, 1000); //zad 16
-  hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 40, -20, 20, 40, -20, 20); //zad 17.1
-  hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 40, -20, 20, 40, -20, 20); //zad 17.2
-  hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 40, -20, 20, 40, -20, 20); //zad 17.3
-  hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 40, -20, 20, 40, -20, 20); //zad 17.4
+  hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.1
+  hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.2
+  hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.3
+  hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.4
   hPvSX1 = new TH1D("hPvSX1", "The difference in X plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.1
   hPvSX2 = new TH1D("hPvSX2", "The difference in X plane position obtained from propagation and simulation for 20-25 GeV Pt", 60, -60, 60); //zad 18.2
   hPvSY1 = new TH1D("hPvSY1", "The difference in Y plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.3
@@ -253,8 +253,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
     //#PPG
     if ( abs( tp.pdgId())==13  && tp.pt() > 1. && gtp.charge()==0) {
+      int i_hits = 0;
       for(const auto & ah: myPSimHits) {
         if (ah.trackId() == 1) {
+          i_hits++;
 
           const auto & vtx = tp.parentVertex()->position();
           const auto & mom = tp.momentum();
@@ -296,21 +298,21 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
             //pt_S=ah.pabs();
           }
 
-          //zad 17.1
-          if(tp.numberOfTrackerHits() == 1 && station_P == 1) {
+          //zad 17.1 tp.numberOfTrackerHits() == 1
+          if(i_hits==1 && station_P == 1) {
           hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2))); 
           }
 
           //zad 17.2
-          if(tp.numberOfTrackerHits() == 1 && station_P == 2) {
+          if(i_hits==1 && station_P == 2) {
           hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2))); 
           }
           //zad 17.3
-          if(tp.numberOfTrackerHits() == 1 && station_S == 1) {
+          if(i_hits==1 && station_S == 1) {
           hVSPT1->Fill(tp.pt(), ah.pabs()); 
           }
           //zad 17.4 
-          if(tp.numberOfTrackerHits() == 1 && station_S == 2) {
+          if(i_hits==1 && station_S == 2) {
           hVSPT2->Fill(tp.pt(), ah.pabs()); 
           }
 
