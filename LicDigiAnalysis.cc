@@ -157,10 +157,10 @@ private:
   TH1D *hPPGvS; //zad 11
   TH2D *hPSimHitRZ; //zad 13
   TH2D *hPSimHitXY; //zad 16
-  TH2D hVPPGPT1; //zad 17.1
-  TH2D hVPPGPT2; //zad 17.2
-  TH2D hVSPT1; //zad 17.3
-  TH2D hVSPT2; //zad 17.4
+  TH2D *hVPPGPT1; //zad 17.1
+  TH2D *hVPPGPT2; //zad 17.2
+  TH2D *hVSPT1; //zad 17.3
+  TH2D *hVSPT2; //zad 17.4
   TH1D *hPvSX1; //zad 18.1
   TH1D *hPvSX2; //zad 18.2
   TH1D *hPvSY1; //zad 18.3
@@ -250,10 +250,12 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     int station_S = 0; //zad 17
     int pt_P = 0; //zad 17
     int pt_S = 0; //zad 17
+
     //#PPG
     if ( abs( tp.pdgId())==13  && tp.pt() > 1. && gtp.charge()==0) {
       for(const auto & ah: myPSimHits) {
-        if (ah.trackId() == 1) {
+        if (ah.trackId() == 1 && tp.numberOfTrackerHits() == 1) {
+
           const auto & vtx = tp.parentVertex()->position();
           const auto & mom = tp.momentum();
           gtp=GlobalTrajectoryParameters(GlobalPoint(vtx.x(), vtx.y(), vtx.z()), GlobalVector(mom.x(), mom.y(), mom.z()), tp.charge(), field);
