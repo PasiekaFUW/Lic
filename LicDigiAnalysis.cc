@@ -102,7 +102,10 @@ public:
     hPPGvS->Write(); //zad 11
     hPSimHitRZ->Write(); //zad 13
     hPSimHitXY->Write(); //zad 16
-    hPHPT->Write(); //zad 17
+    hVPPGPT1->Write(); //zad 17.1
+    hVPPGPT2->Write(); //zad 17.2
+    hVSPT1->Write(); //zad 17.3
+    hVSPT2->Write(); //zad 17.4
     hPvSX1->Write(); //zad 18.1
     hPvSX2->Write(); //zad 18.2
     hPvSY1->Write(); //zad 18.3
@@ -154,7 +157,10 @@ private:
   TH1D *hPPGvS; //zad 11
   TH2D *hPSimHitRZ; //zad 13
   TH2D *hPSimHitXY; //zad 16
-  TH2D *hPHPT; //zad 17
+  TH2D hVPPGPT1; //zad 17.1
+  TH2D hVPPGPT2; //zad 17.2
+  TH2D hVSPT1; //zad 17.3
+  TH2D hVSPT2; //zad 17.4
   TH1D *hPvSX1; //zad 18.1
   TH1D *hPvSX2; //zad 18.2
   TH1D *hPvSY1; //zad 18.3
@@ -203,7 +209,10 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 40, 0, 400); //zad 11
   hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 300, 400, 700, 800, -200, -1000); //zad 13
   hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, 1000); //zad 16
-  hPHPT = new TH2D("hPHPT", "Comparison of Tranverse Momentum from Propagation and Simulation at Station entry", 40, -20, 20, 40, -20, 20); //zad 17
+  hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 40, -20, 20, 40, -20, 20); //zad 17.1
+  hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 40, -20, 20, 40, -20, 20); //zad 17.2
+  hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 40, -20, 20, 40, -20, 20); //zad 17.3
+  hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 40, -20, 20, 40, -20, 20); //zad 17.4
   hPvSX1 = new TH1D("hPvSX1", "The difference in X plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.1
   hPvSX2 = new TH1D("hPvSX2", "The difference in X plane position obtained from propagation and simulation for 20-25 GeV Pt", 60, -60, 60); //zad 18.2
   hPvSY1 = new TH1D("hPvSY1", "The difference in Y plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.3
@@ -235,7 +244,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       std::cout << ah.trackId() << std::endl;
     }
   }
- 
+  //zad 17 plots.py nie ma canva's zaktualizowanych
   for (const auto & tp : myTP) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
@@ -278,7 +287,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
             station_P=chamber.station();
             station_S=dtChamberId.station();
             if(station_P!=1){
-              hPHPT->Fill(pt_P - sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)), pt_S - ah.pabs());
+              //hPHPT->Fill(pt_P - sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)), pt_S - ah.pabs());
             }
             pt_P=sqrt(pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2));
             pt_S=ah.pabs();
