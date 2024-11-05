@@ -195,7 +195,7 @@ histo17.DrawCopy('COL')
 c17.Print("./plots/"+c17.GetName()+".png")
 c17.Update()
 input('press enter to exit')
-'''
+
 
 #zad 19
 c18 = TCanvas('cPtX', 'Full width at half maximum of X histogram in relation to Pt value', 600, 600)
@@ -212,6 +212,7 @@ histo19.DrawCopy('COL')
 c19.Print("./plots/"+c19.GetName()+".png")
 c19.Update()
 input('press enter to exit')
+'''
 
 #zad 17.1
 c20 = TCanvas('cVPPGPT1', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry', 600, 600)
@@ -269,6 +270,14 @@ c23.Print("./plots/"+c23.GetName()+".png")
 c23.Update()
 input('press enter to exit')
 
-
+#zad 17.5
+c24 = TCanvas('c1Dtest', 'Transverse momentum tp.pt = 30.4892', 600, 600)
+histo24 = gROOT.FindObject('h1Dtest')
+histo24.GetXaxis().SetTitle("Simulated/Gen")
+#c24.SetLeftMargin(0.15)  #Space for printing Y label
+histo24.DrawCopy('COL')
+c24.Print("./plots/"+c24.GetName()+".png")
+c24.Update()
+input('press enter to exit')
 
 

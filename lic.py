@@ -81,7 +81,7 @@ process.GlobalTag.globaltag = '131X_mcRun4_realistic_v7'
 # message logger
 #
 process.load('FWCore.MessageService.MessageLogger_cfi')
-process.MessageLogger.cerr.FwkReport.reportEvery = 1
+process.MessageLogger.cerr.FwkReport.reportEvery = 1 #mozna modyfikowac 
 process.MessageLogger.cerr.enableStatistics = False
 process.MessageLogger.cout.enable =False 
 process.MessageLogger.suppressWarning  = cms.untracked.vstring('*')

@@ -1,0 +1,32 @@
+****************************************
+Minimizer is Linear / Migrad
+Chi2                      =      1036.36
+NDf                       =          146
+p0                        =     -2.35882   +/-   0.058681    
+p1                        =     0.990243   +/-   0.00184286  
+Info in <TCanvas::Print>: png file ./plots/cVPPGPT1.png has been created
+press enter to exit
+****************************************
+Minimizer is Linear / Migrad
+Chi2                      =      46.7665
+NDf                       =          103
+p0                        =     -2.75165   +/-   0.0543913   
+p1                        =     0.984882   +/-   0.00172496  
+Info in <TCanvas::Print>: png file ./plots/cVPPGPT2.png has been created
+press enter to exit
+****************************************
+Minimizer is Linear / Migrad
+Chi2                      =      15492.3
+NDf                       =          382
+p0                        =     -2.35119   +/-   0.140263    
+p1                        =     0.982052   +/-   0.00440493  
+Info in <TCanvas::Print>: png file ./plots/cVSPT1.png has been created
+press enter to exit
+****************************************
+Minimizer is Linear / Migrad
+Chi2                      =      1102.92
+NDf                       =          157
+p0                        =     -2.68558   +/-   0.213945    
+p1                        =     0.977917   +/-   0.00678506  
+Info in <TCanvas::Print>: png file ./plots/cVSPT2.png has been created
+press enter to exit
