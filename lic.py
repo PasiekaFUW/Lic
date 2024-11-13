@@ -42,7 +42,7 @@ fileNames = cms.untracked.vstring(files),
 #skipEvents =  cms.untracked.uint32(220)
 )
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) ) #Number of Events
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44000) ) #Number of Events
 
 #
 # import of standard configurations
@@ -81,7 +81,7 @@ process.GlobalTag.globaltag = '131X_mcRun4_realistic_v7'
 # message logger
 #
 process.load('FWCore.MessageService.MessageLogger_cfi')
-process.MessageLogger.cerr.FwkReport.reportEvery = 1 #mozna modyfikowac 
+process.MessageLogger.cerr.FwkReport.reportEvery = 4000 #mozna modyfikowac 
 process.MessageLogger.cerr.enableStatistics = False
 process.MessageLogger.cout.enable =False 
 process.MessageLogger.suppressWarning  = cms.untracked.vstring('*')

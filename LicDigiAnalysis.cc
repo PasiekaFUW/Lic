@@ -107,13 +107,10 @@ public:
     hVSPT1->Write(); //zad 17.3
     hVSPT2->Write(); //zad 17.4
     h1Dtest->Write(); //zad 17.5
-    hPvSX1->Write(); //zad 18.1
-    hPvSX2->Write(); //zad 18.2
-    hPvSY1->Write(); //zad 18.3
-    hPvSY2->Write(); //zad 18.4
-    hHelp->Write(); //zad 19.0
-    hPtX->Write(); //zad 19
-    hSPt->Write(); //zad 20
+    h2Dtest->Write(); //zad 18.0
+    hLandau->Write(); //zad 18
+    hPhiComp->Write(); //zad 19
+    hPhiB->Write(); //zad 20
     f.Write();
 
 
@@ -163,15 +160,10 @@ private:
   TH2D *hVSPT1; //zad 17.3
   TH2D *hVSPT2; //zad 17.4
   TH1D *h1Dtest; //zad 17.5
-  TH1D *hPvSX1; //zad 18.1
-  TH1D *hPvSX2; //zad 18.2
-  TH1D *hPvSY1; //zad 18.3
-  TH1D *hPvSY2; //zad 18.4
-  TH1D *hHelp; //zad 19.0
-  TH2D *hPtX; //zad 19
-  TH2D *hSPt; //zad 20
-
- 
+  TH1D *h2Dtest; //zad 18.0
+  TH1D *hLandau; //zad 18
+  TH2D *hPhiComp; //zad 19
+  TH2D *hPhiB; //zad 20
 };
 
 void LicDigiAnalysis::printStat()
@@ -215,19 +207,17 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.2
   hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.3
   hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.4
-  h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt", 100, 0.75, 1); //zad 17.5
-  hPvSX1 = new TH1D("hPvSX1", "The difference in X plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.1
-  hPvSX2 = new TH1D("hPvSX2", "The difference in X plane position obtained from propagation and simulation for 20-25 GeV Pt", 60, -60, 60); //zad 18.2
-  hPvSY1 = new TH1D("hPvSY1", "The difference in Y plane position obtained from propagation and simulation for 5-6 GeV Pt", 30, -60, 60); //zad 18.3
-  hPvSY2 = new TH1D("hPvSY2", "The difference in Y plane position obtained from propagation and simulation for 20-25 GeV Pt", 60, -60, 60); //zad 18.4
-  hHelp = new TH1D("hHelp", "", 60, -60, 60); //zad 19.0
-  hPtX = new TH2D("hPtX", "Full width at half maximum of X histogram in relation to Pt value", 100, 0, 100, 10, -5, 5); //zad 19
-  hSPt = new TH2D("hSPt", "Spread in relation to Pt", 100, 0, 100, 100, 0, 100); //zad 20
+  h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
+  h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
+  hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 60, 0, 3); //zad 18
+  hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -5, 5, 100, -5, 5); //zad 19
+  hPhiB = new TH2D("hPhiB", "PhiB in a function of pt", 100, 0, 50, 100, -5, 5); //zad 20
+
 }
+
 int FailedPPG = 0; //Debuging variable
 void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es) {
   if (debug) std::cout << "-------- Tracking Particles -----------" << std::endl;
-
   //#PPG
   GlobalTrajectoryParameters gtp;
   const MagneticField * field = &es.getData(theFieldToken);
@@ -261,11 +251,15 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   FreeTrajectoryState fts(gtp);
 
   int i_hits = 0;
+  int firsttime = 0; //zad 17
+  double firstmom = 0; //zad 18
+  int count = 0; //zad 19
+
   for(const auto & ah: myPSimHits) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
     i_hits++;
-    int i_iterations = 0;
+     //std::cout << "ile hitow " << i_hits << std::endl;
     if (ah.trackId() != 1) continue;
     //GlobalPoint trackPosition = globalGeometry.idToDet(ah.detUnitId())->position(); //not track but rather a detector
     //if(debug) std::cout << "trackPosition: " << trackPosition << std::endl; 
@@ -325,40 +319,28 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     hVSPT2->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
     }
     //zad 17.5
-    if(i_hits==1 && station_S == 1 && 25 <  tp.pt() && tp.pt() < 45 && i_iterations == 0) {
-      //i_mom = tp.pt();
+    if(firsttime==0 && station_S == 1 && 25 <  tp.pt() && tp.pt() < 45 ) {
       h1Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) / tp.pt() );
-      i_iterations++;
+      firstmom = sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) );
+      firsttime++;
     }
-    //std::cout << "i_mom = " << i_mom << std::endl;
-    //zad 18.1
-    if(tp.pt()>5 && tp.pt()<6){
-      if(chamber.station()==2 && dtChamberId.station()==2){
-        hPvSX1->Fill(ah.localPosition().x()-stateAtDet.localPosition().x());
-      }
+   
+   
+    //zad 18
+    if(firsttime==1 && station_S == 2) {
+      h2Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) /tp.pt() );
+      hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
+      firsttime++;
     }
-    //zad 18.2
-    if(tp.pt()>20 && tp.pt()<25){
-      if(chamber.station()==2 && dtChamberId.station()==2){
-        hPvSX2->Fill(ah.localPosition().x()-stateAtDet.localPosition().x());
-      }
-    }
-    //zad 18.3
-    if(tp.pt()>5 && tp.pt()<6){
-      if(chamber.station()==2 && dtChamberId.station()==2){
-        hPvSY1->Fill(ah.localPosition().y()-stateAtDet.localPosition().y());
-      }
-    }
-    //zad 18.4
-    if(tp.pt()>20 && tp.pt()<25){
-      if(chamber.station()==2 && dtChamberId.station()==2){
-        hPvSY2->Fill(ah.localPosition().y()-stateAtDet.localPosition().y());
-      }
-    }
-    
+
     //zad 19
-    hHelp->Fill(ah.localPosition().x()-stateAtDet.localPosition().x());
-    
+    if(tp.pt() < 50 && station_S == 1 && count == 0) {
+      count++;
+      hPhiComp -> Fill(ah.phiAtEntry(), ah.thetaAtEntry());
+    }
+
+    //zad 20
+
     
 
     if(debug) std::cout << "Station: " << dtChamberId.station() << std::endl;
@@ -373,82 +355,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   }
 
 
-  /*
-  for (const auto & tp : myTP) {
-    int station_P = 0; //zad 17
-    int station_S = 0; //zad 17
-    //int pt_P = 0; //zad 17
-    //int pt_S = 0; //zad 17
 
-    //#PPG
-    if ( abs( tp.pdgId())==13  && tp.pt() > 1. && gtp.charge()==0) {
-      int i_hits = 0;
-      int i_iterations = 0;
-      double i_mom = 0;
-      for(const auto & ah: myPSimHits) {
-        if (ah.trackId() != 1) continue;
-        i_hits++;
-
-        const auto & vtx = tp.parentVertex()->position();
-        const auto & mom = tp.momentum();
-        gtp=GlobalTrajectoryParameters(GlobalPoint(vtx.x(), vtx.y(), vtx.z()), GlobalVector(mom.x(), mom.y(), mom.z()), tp.charge(), field);
-        //std::cout << "gtp = " << gtp << std::endl;
-        FreeTrajectoryState fts(gtp);
-        
-      }
-    } 
-    //zad 19
-    int nBins = hHelp->GetNbinsX();
-    double halfMax = hHelp->GetMaximum() / 2;
-    int leftBin = -1;
-    int rightBin = -1;
-    for (int i = 1; i <= nBins; ++i) {
-        if (hHelp->GetBinContent(i) >= halfMax) {
-            leftBin = i;
-        }
-        if (hHelp->GetBinContent(i) >= halfMax) {
-            rightBin = i;
-        }
-    }
-    double FWHM = hHelp->GetBinCenter(rightBin) - hHelp->GetBinCenter(leftBin);
-    hPtX->Fill(tp.pt(), FWHM);
-    hHelp->Reset(); 
-
-    if(abs(tp.pdgId())==13){
-      const auto & simTracks = tp.g4Tracks();
-      if (simTracks.size() > 0) {
-        if(debug) std::cout << simTracks.size() << ", muon Track Id: " << simTracks[0].trackId() << std::endl;
-      }
-      hPt->Fill(tp.pt()); //zad 1
-      hVz->Fill(tp.parentVertex()->position().z()); //zad 2
-      hEta->Fill(tp.eta()); //zad 3
-      hVxy->Fill(tp.parentVertex()->position().x(), tp.parentVertex()->position().y()); //zad 4 
-    }
-    if(myTP.size()==2){ //zad 5 
-      double spdl = 29979245800; //speed of light cm/s
-      double z_muon = 0;
-      double rho_e = 0;
-      double z_e = 0;
-      if(abs(tp.pdgId())==13){
-        z_muon = tp.parentVertex()->position().z();
-      }
-      if(abs(tp.pdgId())==11){
-        rho_e = tp.parentVertex()->position().Rho();
-        z_e = tp.parentVertex()->position().z();
-      }
-      
-      hT->Fill(tp.parentVertex()->position().T(), sqrt(pow(rho_e, 2)+pow(z_muon - z_e, 2))/ spdl); 
-    }
-    hPSimHit->Fill(tp.numberOfHits()); //zad 7 Equivalent to trackPSimHit().size()
-    hPSimTrackerHit->Fill(tp.numberOfTrackerHits()); //zad 7 Equivalent to trackPSimHit(DetId::Tracker).size()
-    hPSimHitVector->Fill(myPSimHits.size()); //zad 7
-
-  
-//    if ( abs( tp.pdgId())!=13  || tp.pt() < 1. || tp.parentVertex()->position().Rho()>200. ||  fabs(tp.parentVertex()->position().T()) > 24.) continue;
-    
-    if (debug) std::cout << print(tp)<<std::endl; 
-  }
-  */
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
   edm::Handle<L1MuDTChambPhContainer> digiCollectionDTPh_leg;
@@ -473,104 +380,11 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         << std::endl;
     hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
 
-    //Implementation of the Propagation Code #PPG
-  /*
-    if (gtp.charge() !=0) {  //petla po simhit powinna byc
-      std::cout<<" Generated starting Global position: "<< gtp.position() << std::endl;
-      FreeTrajectoryState fts(gtp);
-      DTChamberId dtChamberId(chDigi.whNum(),chDigi.stNum(),chDigi.scNum()+1);
-      GlobalPoint detPosition = globalGeometry.idToDet(dtChamberId)->position(); //zamiast dtChamberId->detUnitId 
-      std::cout<<" Position of the Detector: "<< detPosition << std::endl;
-      //const DTChamber * chamber = geomDt.chamber(dtChamberId);
-      const GeomDet * geomDet = globalGeometry.idToDet(dtChamberId);
-      const Propagator & propagator = es.getData(thePropagatorToken);
-      TrajectoryStateOnSurface stateAtDet =  propagator.propagate(fts, geomDet->surface());
-      std::cout <<" Is PROPAGATION VALID: "<<stateAtDet.isValid() <<std::endl;
-      LocalPoint localPositionBefore;
-      GlobalPoint globalPositionBefore;
-      if (stateAtDet.isValid() == 1) {
-        localPositionBefore = stateAtDet.localPosition();
-        globalPositionBefore = stateAtDet.globalPosition();
-        std::cout<<" Local position after propagation: "<< localPositionBefore <<std::endl;
-        std::cout<<" Global position after propagation: "<< globalPositionBefore <<std::endl; 
-        // std::cout<<" The difference between Global position from stateAtDet and the one calculated from toGlobal Function: "<< geomDet->toGlobal(stateAtDet.localPosition()) - stateAtDet.globalPosition() << std::endl; //zad 9
-      //   for(int i=0; i<200; ++i) { //zad 10 mozna usunac, porownujemy w ramach okreslonego detektora, trzeba sprawdzac czy trackId=1
-      //     TrajectoryStateOnSurface stateAtDet =  propagator.propagate(fts, geomDet->surface());
-      //     //std::cout<< "Debug global: " << stateAtDet.globalPosition() << std::endl;
-      //     if(stateAtDet.isValid() == 1) continue;
-      //   }
-      //  std::cout<<" Local position change after 200 propagations: "<< stateAtDet.localPosition() - localPositionBefore <<std::endl;
-      //  std::cout<<" Global position change after 200 propagations: "<< stateAtDet.globalPosition() - globalPositionBefore <<std::endl;  
-      }
-      int i = 0;
-      int j=0;
-      for (const auto & ah: myPSimHits) {
-        if(ah.trackId()==1){
-        j++;
-        }
-      }
-      //std::cout<< j << std::endl;
-      GlobalPoint simulatedPosition;
-      for (const auto & ah: myPSimHits) {
-        if(ah.trackId() == 1){
-          auto globalEntryHisto = geomDet->toGlobal(ah.entryPoint());
-          hPSimHitRZ->Fill(sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2)), globalEntryHisto.z()); //zad 13 
-        }
-        if(ah.trackId()==1 && i==0) {
-          std::cout<< "PSimHit Local Entry Point: " << ah.entryPoint() << std::endl;
-          std::cout<< "PSimHit Global Entry Point: " << geomDet->toGlobal(ah.entryPoint()) << std::endl;
-        }
-        if(ah.trackId()==1 && i==j-1) {
-          std::cout<< "PSimHit Local Exit Point: " << ah.exitPoint() << std::endl;
-          std::cout<< "PSimHit Global Exit Point: " << geomDet->toGlobal(ah.exitPoint()) << std::endl;
-          simulatedPosition = geomDet->toGlobal(ah.exitPoint());
-        }
-        i++;
-      }
-      //std::cout<< "test= " << simulatedPosition << std::endl;
-      hPPGvS->Fill(globalPositionBefore.x() - simulatedPosition.x(), globalPositionBefore.y() - simulatedPosition.y(), globalPositionBefore.z() - simulatedPosition.z()); //zad 11
-      double simulatedEnergyLoss = 0;
-      for (const auto & ah: myPSimHits) {
-      simulatedEnergyLoss = simulatedEnergyLoss + ah.energyLoss(); //to nie sa wszystkie kroki, straty energie brac z pedu pbabs
-      //std::cout<<"The energy deposit in the PSimHit: "<< ah.energyLoss() << std::endl;
-      }
-      for(const auto & tp: myTP) {
-      std::cout << "Brief energy from the first SimTrack: " << tp.energy() << std::endl; 
-      }
-      std::cout << "Simulated total energy loss: " << simulatedEnergyLoss << std::endl; //zad 12
-      std::cout << "Propagateted total energy loss: " << "For now lack of such data." << std::endl;
-      //end of function
-    }*/
+
   }
 
 
-/*
-  edm::Handle<L1MuDTChambThContainer> digiCollectionDTTh_BMTF;
-  ev.getByToken(inputDTTh_BMTF, digiCollectionDTTh_BMTF);
-  const L1MuDTChambThContainer& dtthDigisBMTF = *digiCollectionDTTh_BMTF.product();
-  if (debug) std::cout <<" DTTh digis from BMTF " << dtthDigisBMTF.getContainer()->size()<< std::endl;
-  for (const auto &  chDigi : *dtthDigisBMTF.getContainer() ) {
-    unsigned int eta = 0;
-    unsigned int etaQ = 0;
-    for (unsigned int ipos=0; ipos <7; ipos++) {
-     if (chDigi.position(ipos) >1 ) if (debug) std::cout <<" HERE PROBLEM !!!!" << std::endl;
-     if (chDigi.position(ipos)==1) eta |= (1 <<ipos);
-     if (chDigi.quality(ipos)==1) etaQ |= (1 <<ipos);
-    }
-    if (chDigi.bxNum() != 0) continue;
-//    if (abs(chDigi.bxNum()) >2) continue;
-    if (eta==0 || etaQ==0) continue;
-    if (abs(chDigi.whNum()) != 2) continue;
-    if (debug) std::cout <<"DtDataWord64 BMTF TH " 
-        <<" bxNum: "<<chDigi.bxNum()
-        <<" whNum: "<<chDigi.whNum()
-        <<" station: "<< chDigi.stNum()
-        <<" sector: "<< chDigi.scNum()
-        <<" eta: " << eta
-        <<" etaQ: " << etaQ
-        << std::endl;
-  }
-*/
+
 }
 
 DEFINE_FWK_MODULE(LicDigiAnalysis);
