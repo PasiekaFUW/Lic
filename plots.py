@@ -279,7 +279,18 @@ histo24.DrawCopy('COL')
 c24.Print("./plots/"+c24.GetName()+".png")
 c24.Update()
 input('press enter to exit')
-'''
+
+#zad 18.0
+c26 = TCanvas('c2Dtest', 'Transverse momentum tp.pt 2', 600, 600)
+histo26 = gROOT.FindObject('h2Dtest')
+histo26.GetXaxis().SetTitle("Simulated/Gen")
+#c24.SetLeftMargin(0.15)  #Space for printing Y label
+histo26.DrawCopy('COL')
+c26.Print("./plots/"+c26.GetName()+".png")
+c26.Update()
+input('press enter to exit')
+
+
 #zad 18
 c25 = TCanvas('cLandau', 'Landau', 600, 600)
 histo25 = gROOT.FindObject('hLandau')
@@ -296,16 +307,8 @@ histo25.DrawCopy('COL')
 c25.Print("./plots/"+c25.GetName()+".png")
 c25.Update()
 input('press enter to exit')
-'''
-#zad 18.0
-c26 = TCanvas('c2Dtest', 'Transverse momentum tp.pt 2', 600, 600)
-histo26 = gROOT.FindObject('h2Dtest')
-histo26.GetXaxis().SetTitle("Simulated/Gen")
-#c24.SetLeftMargin(0.15)  #Space for printing Y label
-histo26.DrawCopy('COL')
-c26.Print("./plots/"+c26.GetName()+".png")
-c26.Update()
-input('press enter to exit')
+
+
 
 
 #zad 19
@@ -314,9 +317,9 @@ c27.SetLeftMargin(0.15)  #Space for printing Y label
 histo27 = gROOT.FindObject('hPhiComp')
 histo27.GetXaxis().SetTitle("Phi")
 histo27.GetYaxis().SetTitle("PhiB")
-fitFunc1=TF1("fitFunc1", "pol1", -100, 100)
+#fitFunc1=TF1("fitFunc1", "pol1", -100, 100)
 histo27.Fit("fitFunc1", "R", " ")
-fitFunc1.Draw('same')
+#fitFunc1.Draw('same')
 histo27.DrawCopy('COL')
 c27.Print("./plots/"+c27.GetName()+".png")
 c27.Update()
@@ -326,8 +329,9 @@ input('press enter to exit')
 c28 = TCanvas('cPhiB', 'PhiB(Pt)', 600, 600)
 c28.SetLeftMargin(0.15)  #Space for printing Y label
 histo28 = gROOT.FindObject('hPhiB')
-histo28.GetXaxis().SetTitle("Pt")
+histo28.GetXaxis().SetTitle("Pt Vertex")
 histo28.GetYaxis().SetTitle("PhiB")
+histo28.SetTitle("PhiB at station 2 entry")
 #fitFunc1=TF1("fitFunc1", "pol1", -100, 100)
 #histo28.Fit("fitFunc1", "R", " ")
 #fitFunc1.Draw('same')
@@ -335,4 +339,45 @@ histo28.DrawCopy('COL')
 c28.Print("./plots/"+c28.GetName()+".png")
 c28.Update()
 input('press enter to exit')
+
+#zad 21
+c29 = TCanvas('cPhiBComp', 'PhiB Comb', 600, 600)
+c29.SetLeftMargin(0.15)  #Space for printing Y label
+histo29 = gROOT.FindObject('hPhiBComp')
+histo29.GetXaxis().SetTitle("PhiB Rec")
+histo29.GetYaxis().SetTitle("PhiB Sim")
+histo29.SetTitle("Comparing PhiB at Station 1 entry")
+#fitFunc1=TF1("fitFunc1", "pol1", 0, 300)
+#histo29.Fit("fitFunc1", "R", " ")
+#fitFunc1.Draw('same')
+histo29.DrawCopy('COL')
+c29.Print("./plots/"+c29.GetName()+".png")
+c29.Update()
+input('press enter to exit')
+
+#zad 22
+c30 = TCanvas('cHowMany1', 'Hits at station 1', 600, 600)
+c30.SetLeftMargin(0.15)  #Space for printing Y label
+histo30 = gROOT.FindObject('hHowMany1')
+#histo30.GetXaxis().SetTitle("PhiB Rec")
+#histo30.GetYaxis().SetTitle("PhiB Sim")
+histo30.SetTitle("Hits at Station 1")
+#fitFunc1=TF1("fitFunc1", "pol1", 0, 300)
+#histo29.Fit("fitFunc1", "R", " ")
+#fitFunc1.Draw('same')
+histo30.DrawCopy('COL')
+c30.Print("./plots/"+c30.GetName()+".png")
+c30.Update()
+input('press enter to exit')
 '''
+#zad 22.5
+c31 = TCanvas('cCheck0', 'Comparing vector sizes', 600, 600)
+c31.SetLeftMargin(0.15)  #Space for printing Y label
+histo31 = gROOT.FindObject('hCheck0')
+histo31.GetXaxis().SetTitle("Rec vector")
+histo31.GetYaxis().SetTitle("Sim vector")
+histo31.SetTitle("Size comparison")
+histo31.DrawCopy('COL')
+c31.Print("./plots/"+c31.GetName()+".png")
+c31.Update()
+input('press enter to exit')

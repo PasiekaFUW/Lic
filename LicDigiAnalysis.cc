@@ -111,6 +111,9 @@ public:
     hLandau->Write(); //zad 18
     hPhiComp->Write(); //zad 19
     hPhiB->Write(); //zad 20
+    hPhiBComp->Write(); //zad 21
+    hHowMany1->Write(); //zad 22
+    hCheck0->Write(); //zad 22.5
     f.Write();
 
 
@@ -164,6 +167,9 @@ private:
   TH1D *hLandau; //zad 18
   TH2D *hPhiComp; //zad 19
   TH2D *hPhiB; //zad 20
+  TH2D *hPhiBComp; //zad 21
+  TH1D *hHowMany1; //zad 22
+  TH2D *hCheck0; //zad 22.5
 };
 
 void LicDigiAnalysis::printStat()
@@ -210,8 +216,11 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
   h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
   hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 60, 0, 3); //zad 18
-  hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -5, 5, 100, -5, 5); //zad 19
-  hPhiB = new TH2D("hPhiB", "PhiB in a function of pt", 100, 0, 50, 100, -5, 5); //zad 20
+  hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
+  hPhiB = new TH2D("hPhiB", "PhiB in a function of pt", 100, 0, 100, 200, -1, 1); //zad 20
+  hPhiBComp = new TH2D("hPhiBComp", "PhiB Comparison", 1000, -150, 400, 200, -0.2, 0.8); //zad 21
+  hHowMany1 = new TH1D("hHowMany1", "Number of hits at station 1", 100, 0, 100); //zad 22
+  hCheck0 = new TH2D("hCheck0", "Checking vectors size", 10, 0, 10, 10, 0, 10); //zad 22.5
 
 }
 
@@ -237,6 +246,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       std::cout << ah.trackId() << std::endl;
     }
   }
+
   const TrackingParticle *myMuon = 0;
   for (const auto & tp : myTP) {
     if ( abs( tp.pdgId())==13  && tp.pt() > 1.) {
@@ -250,11 +260,14 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   gtp=GlobalTrajectoryParameters(GlobalPoint(vtx.x(), vtx.y(), vtx.z()), GlobalVector(mom.x(), mom.y(), mom.z()), tp.charge(), field);
   FreeTrajectoryState fts(gtp);
 
-  int i_hits = 0;
+  int i_hits = 0; 
   int firsttime = 0; //zad 17
   double firstmom = 0; //zad 18
   int count = 0; //zad 19
-
+  int ft = 0; //zad 20
+  int ftt = 0; //zad 21
+  int hits = 0; //zad 22
+  std::vector<double> PhiB_Sim; //zad 21
   for(const auto & ah: myPSimHits) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
@@ -332,14 +345,39 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
       firsttime++;
     }
-
-    //zad 19
+    
+    GlobalPoint entry = geomDet->toGlobal(ah.entryPoint());
+    //GlobalPoint exit = geomDet->toGlobal(ah.exitPoint());
+    //GlobalPoint globalHit = geomDet->toGlobal(ah.localPosition());
+    //zad 19 
     if(tp.pt() < 50 && station_S == 1 && count == 0) {
       count++;
-      hPhiComp -> Fill(ah.phiAtEntry(), ah.thetaAtEntry());
+      //hPhiComp -> Fill(ah.phiAtEntry(), globalMomentumPSimHit.phi());
+      //hPhiComp -> Fill(globalHit.phi(), abs(exit.phi() - entry.phi()));
+      //std::cout << "zad 19: phi= " << entry.phi() << "phiB= " << globalMomentumPSimHit.phi() - entry.phi() << std::endl;
+      hPhiComp -> Fill(entry.phi(), globalMomentumPSimHit.phi() - entry.phi());
+
     }
 
     //zad 20
+    if(station_S==2 && ft == 0){
+      ft++; 
+      //hPhiB -> Fill( sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ), abs(exit.phi() - entry.phi()) );
+      hPhiB -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
+
+    }
+
+    if(ftt == 0 && station_S == 1){
+      PhiB_Sim.push_back(globalMomentumPSimHit.phi() - entry.phi()); //zad 21
+      ftt++;
+    }
+
+    //zad 22
+    if(station_S == 1 && tp.pt() > 50){
+      hits++;
+      hHowMany1 -> Fill(hits);
+    }
+
 
     
 
@@ -355,7 +393,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   }
 
 
-
+  std::vector<double> PhiB_Rec; //zad 21
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
   edm::Handle<L1MuDTChambPhContainer> digiCollectionDTPh_leg;
@@ -363,6 +401,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   const L1MuDTChambPhContainer& dtphDigisLeg= *digiCollectionDTPh_leg.product();
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
+    if(chDigi.stNum() == 1){
+      PhiB_Rec.push_back(chDigi.phiB()); //zad 21
+    }
+    //std::cout << chDigi.phiB() << "phiB" << std::endl;
     if (abs(chDigi.whNum()) != 2) continue;
     if (chDigi.stNum() ==4) continue;
     if (chDigi.bxNum() != 0) continue;
@@ -382,8 +424,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
 
   }
-
-
+  //zad 22.5
+  hCheck0->Fill(PhiB_Rec.size(), PhiB_Sim.size());
+  //zad 21 dla stacji 1 i 2 osobno, phiB zdefiniowac jako phi z pedu - phi z polozenia
+  for(size_t k = 0; k < std::min(PhiB_Sim.size(), PhiB_Rec.size()); ++k){
+    hPhiBComp -> Fill(PhiB_Rec[k], PhiB_Sim[k]); //zad 21
+  }
+  
 
 }
 
