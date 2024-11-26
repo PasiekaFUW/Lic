@@ -148,7 +148,7 @@ private:
   TH2D *hLicExample; //Example
   TH1D *hPt; //zad 1
   TH1D *hVz; //zad 2
-  TH1D *hEta; //zad 3
+  TH2D *hEta; //zad 3
   TH2D *hVxy; //zad 4
   TH2D *hT; //zad 5
   TH1D *hPSimHit; //zad 7
@@ -199,7 +199,7 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hLicExample = new TH2D("hLicExample","hLicExample", 12,0.5,12.5, 8,-0.5,7.5); //Example
   hPt = new TH1D("hPt", "Muon Transverse Momentum", 105, 0, 105); //zad 1
   hVz = new TH1D("hVz", "Muon Vertex Z", 30, -15, 15); //zad 2
-  hEta = new TH1D("hEta", "Muon Pseudorapidity", 100, -2, 2); //zad 3
+  hEta = new TH2D("hEta", "Muon Pseudorapidity", 100, -2, 2, 100, -2, 2); //zad 3
   hVxy = new TH2D("hVxy", "Muon Vertex X and Y", 1000, -0.005, 0.005, 1000, -0.005, 0.005); //zad 4
   hT = new TH2D("hT", "Determining the time's unit - ns", 1000, 0, 1e-9, 1000, 0, 1e-9); //zad 5 
   hPSimHit = new TH1D("hPSimHit", "Size of numberOfHits", 100, 0, 100); //zad 7
@@ -268,6 +268,9 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int ftt = 0; //zad 21
   int hits = 0; //zad 22
   std::vector<double> PhiB_Sim; //zad 21
+
+  hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
+
   for(const auto & ah: myPSimHits) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
@@ -394,6 +397,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
 
   std::vector<double> PhiB_Rec; //zad 21
+  int ftt_rec_1 = 0; //zad 21
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
   edm::Handle<L1MuDTChambPhContainer> digiCollectionDTPh_leg;
@@ -401,7 +405,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   const L1MuDTChambPhContainer& dtphDigisLeg= *digiCollectionDTPh_leg.product();
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
-    if(chDigi.stNum() == 1){
+    if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
+      ftt_rec_1++;
       PhiB_Rec.push_back(chDigi.phiB()); //zad 21
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;

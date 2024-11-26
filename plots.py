@@ -45,17 +45,24 @@ c2.Print("./plots/"+c2.GetName()+".png")
 c2.Update()
 input('press enter to exit')
 
-
-#zad 3
-c3 = TCanvas('cEta','Histogram of Eta',600,600)
+'''
+#zad 3 / 24
+c3 = TCanvas('cEta', 'Eta', 600, 600)
+c3.SetLeftMargin(0.15)  #Space for printing Y label
 histo3 = gROOT.FindObject('hEta')
-histo3.DrawCopy('hist text')
+histo3.GetXaxis().SetTitle("Eta")
+histo3.GetYaxis().SetTitle("Eta * Charge")
+histo3.SetTitle("Muon Pseudorapidity and charge analysis")
+fitFunc1=TF1("fitFunc1", "pol1", -2, 2)
+histo3.Fit("fitFunc1", "R", " ")
+fitFunc1.Draw('same')
+histo3.DrawCopy('COL')
 c3.Print("./plots/"+c3.GetName()+".png")
 c3.Update()
 input('press enter to exit')
 
 
-
+'''
 #zad 4
 c4 = TCanvas('cVxy', 'Histogram of Vertex X and Y', 600, 600)
 histo4 = gROOT.FindObject('hVxy')
