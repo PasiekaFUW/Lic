@@ -110,13 +110,16 @@ public:
     h2Dtest->Write(); //zad 18.0
     hLandau->Write(); //zad 18
     hPhiComp->Write(); //zad 19
-    hPhiB->Write(); //zad 20
+    hPhiB_st1->Write(); //zad 27
+    hPhiB_st2->Write(); //zad 20
     hPhiBCompSt1->Write(); //zad 21
+    hPhiBCompSt2->Write(); //zad 26
     hHowMany1->Write(); //zad 22
     hCheck0->Write(); //zad 22.5
     hPhiCompSt1->Write(); //zad 25.1
     hPhiCompSt2->Write(); //zad 25.2
-    hPhiBCompSt2->Write(); //zad 26
+
+
 
     f.Write();
 
@@ -170,13 +173,15 @@ private:
   TH1D *h2Dtest; //zad 18.0
   TH1D *hLandau; //zad 18
   TH2D *hPhiComp; //zad 19
-  TH2D *hPhiB; //zad 20
+  TH2D *hPhiB_st1; //zad 27
+  TH2D *hPhiB_st2; //zad 20
   TH2D *hPhiBCompSt1; //zad 21
+  TH2D *hPhiBCompSt2; //zad 26
   TH1D *hHowMany1; //zad 22
   TH2D *hCheck0; //zad 22.5
   TH2D *hPhiCompSt1; //zad 25.1
   TH2D *hPhiCompSt2; //zad 25.2
-  TH2D *hPhiBCompSt2; //zad 26
+
 };
 
 void LicDigiAnalysis::printStat()
@@ -224,12 +229,13 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
   hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 60, 0, 3); //zad 18
   hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
-  hPhiB = new TH2D("hPhiB", "PhiB in a function of pt", 100, 0, 100, 200, -1, 1); //zad 20
+  hPhiB_st1 = new TH2D("hPhiB_st1", "PhiB in a function of pt st 1", 4096, 0, 100, 2000, -0.5, 0.5); //zad 27
+  hPhiB_st2 = new TH2D("hPhiB_st2", "PhiB in a function of pt st 2", 4096, 0, 100, 2000, -0.5, 0.5); //zad 20
   hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 200, -0.2, 0.8, 1000, -150, 400); //zad 21
-  hHowMany1 = new TH1D("hHowMany1", "Number of hits at station 1", 100, 0, 100); //zad 22
-  hCheck0 = new TH2D("hCheck0", "Checking vectors size", 10, 0, 10, 10, 0, 10); //zad 22.5
-  hPhiCompSt1 = new TH2D("hPhiCompSt1", "Comparing phi at station 1", 80, -4, 4, 2200, -700, 1500); //zad 25.1
-  hPhiCompSt2 = new TH2D("hPhiCompSt2", "Comparing phi at station 2", 80, -4, 4, 2200, -1200, 1000); //zad 25.2
+  hHowMany1 = new TH1D("hHowMany1", "Checking", 4096, -2500, 1500); //zad 22
+  hCheck0 = new TH2D("hCheck0", "Checking", 10, 0, 10, 10, 0, 10); //zad 22.5
+  hPhiCompSt1 = new TH2D("hPhiCompSt1", "Comparing phi at station 1", 4096, -4, 4, 4096, -4, 4); //zad 25.1
+  hPhiCompSt2 = new TH2D("hPhiCompSt2", "Comparing phi at station 2", 4096, -4, 4, 4096, -4, 4); //zad 25.2
   hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 200, -0.2, 0.8, 1000, -150, 400); //zad 26
 }
 int FailedPPG = 0; //Debuging variable
@@ -273,6 +279,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double firstmom = 0; //zad 18
   int count = 0; //zad 19
   int ft = 0; //zad 20
+  int ftst2 = 0; //zad 27
   int ftt = 0; //zad 21
   int hits = 0; //zad 22
   double PhiB_Sim_St1 = 0; //zad 21
@@ -377,11 +384,17 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
     }
 
+       //zad 27
+    if(station_S==1 && ftst2 == 0){
+      ftst2++; 
+      hPhiB_st1 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
+    }
+
     //zad 20
     if(station_S==2 && ft == 0){
       ft++; 
       //hPhiB -> Fill( sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ), abs(exit.phi() - entry.phi()) );
-      hPhiB -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
+      hPhiB_st2 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
 
     }
 
@@ -397,11 +410,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       Phi_Sim_St2 = position.phi(); //zad 25.2
     }
 
-    //zad 22
-    if(station_S == 1 && tp.pt() > 50){
-      hits++;
-      hHowMany1 -> Fill(hits);
-    }
+
 
 
     
@@ -431,15 +440,22 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   const L1MuDTChambPhContainer& dtphDigisLeg= *digiCollectionDTPh_leg.product();
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
+    //zad 22
+    if(chDigi.stNum()==1 && chDigi.scNum()==2) {
+      hHowMany1->Fill(chDigi.phi());
+    }
+
+
     if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
       ftt_rec_1++;
       PhiB_Rec_St1 = chDigi.phiB(); //zad 21
-      Phi_Rec_St1 = chDigi.phi(); //zad 25.1
+      //Seemmingly locally  constant
+      Phi_Rec_St1 = (chDigi.phi() / 4096) + M_PI/6 * (chDigi.scNum() - 1) + M_PI/12 - M_PI; //zad 25.1
     }
     if(chDigi.stNum() == 2 && ftt_rec_2 == 0){
       ftt_rec_2++;
       PhiB_Rec_St2 = chDigi.phiB(); //zad 26
-      Phi_Rec_St2 = chDigi.phi(); //zad 25.2
+      Phi_Rec_St2 = chDigi.phi()/4096 + chDigi.scNum()* M_PI/6  + M_PI/12 - M_PI; //zad 25.2
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
     if (abs(chDigi.whNum()) != 2) continue;

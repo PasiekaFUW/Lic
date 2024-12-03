@@ -42,7 +42,7 @@ fileNames = cms.untracked.vstring(files),
 #skipEvents =  cms.untracked.uint32(220)
 )
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44000) ) #Number of Events
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44000) ) #Number of Events, Max == 44000
 
 #
 # import of standard configurations
