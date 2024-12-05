@@ -118,7 +118,10 @@ public:
     hCheck0->Write(); //zad 22.5
     hPhiCompSt1->Write(); //zad 25.1
     hPhiCompSt2->Write(); //zad 25.2
-
+    hDeltaPhiB1->Write(); //zad 28.1
+    hDeltaPhiB2->Write(); //zad 28.2
+    hDeltaPhi1->Write(); //zad 29.1
+    hDeltaPhi2->Write(); //zad 29.2
 
 
     f.Write();
@@ -181,6 +184,10 @@ private:
   TH2D *hCheck0; //zad 22.5
   TH2D *hPhiCompSt1; //zad 25.1
   TH2D *hPhiCompSt2; //zad 25.2
+  TH1D *hDeltaPhiB1; //zad 28.1
+  TH1D *hDeltaPhiB2; //zad 28.2
+  TH1D *hDeltaPhi1; //zad 29.1
+  TH1D *hDeltaPhi2; //zad 29.2
 
 };
 
@@ -231,12 +238,17 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
   hPhiB_st1 = new TH2D("hPhiB_st1", "PhiB in a function of pt st 1", 4096, 0, 100, 2000, -0.5, 0.5); //zad 27
   hPhiB_st2 = new TH2D("hPhiB_st2", "PhiB in a function of pt st 2", 4096, 0, 100, 2000, -0.5, 0.5); //zad 20
-  hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 200, -0.2, 0.8, 1000, -150, 400); //zad 21
-  hHowMany1 = new TH1D("hHowMany1", "Checking", 4096, -2500, 1500); //zad 22
+  hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 1000, -1, 1, 1000, -1, 1); //zad 21
+  hHowMany1 = new TH1D("hHowMany1", "Checking", 4096, -2500, 1596); //zad 22
   hCheck0 = new TH2D("hCheck0", "Checking", 10, 0, 10, 10, 0, 10); //zad 22.5
   hPhiCompSt1 = new TH2D("hPhiCompSt1", "Comparing phi at station 1", 4096, -4, 4, 4096, -4, 4); //zad 25.1
   hPhiCompSt2 = new TH2D("hPhiCompSt2", "Comparing phi at station 2", 4096, -4, 4, 4096, -4, 4); //zad 25.2
-  hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 200, -0.2, 0.8, 1000, -150, 400); //zad 26
+  hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 1000, -1, 1, 1000, -1, 1); //zad 26
+  hDeltaPhiB1 = new TH1D("hDeltaPhiB1", "Delta PhiB at station 1 entry", 2000, -0.1, 0.1); //zad 28.1
+  hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
+  hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.1, 0.1); //zad 29.1
+  hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
+ 
 }
 int FailedPPG = 0; //Debuging variable
 void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es) {
@@ -281,7 +293,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int ft = 0; //zad 20
   int ftst2 = 0; //zad 27
   int ftt = 0; //zad 21
-  int hits = 0; //zad 22
+  //int hits = 0; //zad 22
   double PhiB_Sim_St1 = 0; //zad 21
   double Phi_Sim_St1 = 0; //zad 25.1
   double Phi_Sim_St2 = 0; //zad 25.2
@@ -449,13 +461,32 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
       ftt_rec_1++;
       PhiB_Rec_St1 = chDigi.phiB(); //zad 21
-      //Seemmingly locally  constant
-      Phi_Rec_St1 = (chDigi.phi() / 4096) + M_PI/6 * (chDigi.scNum() - 1) + M_PI/12 - M_PI; //zad 25.1
+      PhiB_Rec_St1 /= 512;
+      Phi_Rec_St1 = chDigi.phi();
+      Phi_Rec_St1 /= 4096;
+      Phi_Rec_St1 += M_PI/6 * (chDigi.scNum() + 0) ;//+ M_PI/12; //zad 25.1
+      if(Phi_Rec_St1 > M_PI){
+        Phi_Rec_St1 -= 2*M_PI;
+      }
+      if(Phi_Rec_St1 < -M_PI){
+        Phi_Rec_St1 += 2*M_PI;
+      }
+      //std::cout << chDigi.scNum() << std::endl;
+      //scNum() from 0 to 11
     }
     if(chDigi.stNum() == 2 && ftt_rec_2 == 0){
       ftt_rec_2++;
-      PhiB_Rec_St2 = chDigi.phiB(); //zad 26
-      Phi_Rec_St2 = chDigi.phi()/4096 + chDigi.scNum()* M_PI/6  + M_PI/12 - M_PI; //zad 25.2
+      PhiB_Rec_St2 = chDigi.phiB(); // / 512; //zad 26
+      PhiB_Rec_St2 /= 512;
+      Phi_Rec_St2 = chDigi.phi();
+      Phi_Rec_St2 /= 4096;
+      Phi_Rec_St2 += M_PI/6 * (chDigi.scNum() + 0) ;// + M_PI/12; //zad 25.2
+      if(Phi_Rec_St2 > M_PI){
+        Phi_Rec_St2 -= 2*M_PI;
+      }
+      if(Phi_Rec_St2 < -M_PI){
+        Phi_Rec_St2 += 2*M_PI;
+      }
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
     if (abs(chDigi.whNum()) != 2) continue;
@@ -485,15 +516,19 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   //}
   if(Phi_Rec_St1 != 0 && Phi_Sim_St1 != 0) {
     hPhiCompSt1 -> Fill(Phi_Sim_St1, Phi_Rec_St1); //zad 25.1
+    hDeltaPhi1 -> Fill(Phi_Sim_St1 - Phi_Rec_St1); //zad 29.1
   }
   if(Phi_Rec_St2 != 0 && Phi_Sim_St2 != 0) {
     hPhiCompSt2 -> Fill(Phi_Sim_St2, Phi_Rec_St2); //zad 25.2
+    hDeltaPhi2 -> Fill(Phi_Sim_St2 - Phi_Rec_St2); //zad 29.2
   }
  if(PhiB_Rec_St1 != 0 && PhiB_Sim_St1 != 0) {
     hPhiBCompSt1 -> Fill(PhiB_Sim_St1, PhiB_Rec_St1); //zad 21
+    hDeltaPhiB1 -> Fill(PhiB_Sim_St1 - PhiB_Rec_St1); //zad 28.1
   }
   if(PhiB_Rec_St2 != 0 && PhiB_Sim_St2 != 0) {
    hPhiBCompSt2 -> Fill(PhiB_Sim_St2, PhiB_Rec_St2); //zad 26
+   hDeltaPhiB2 -> Fill(PhiB_Sim_St2 - PhiB_Rec_St2); //zad 28.2
   }
  
  

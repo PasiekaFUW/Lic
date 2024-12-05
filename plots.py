@@ -347,7 +347,7 @@ histo29.DrawCopy('COL')
 #histo29.Fit("fitFunc1", "R", " ")
 #fitFunc1.Draw('same')
 
-line = TLine(-0.2, -100, 0.8, 400)
+line = TLine(-1, -1, 1, 1)
 line.SetLineColor(2)
 #line.SetLineWidth(2)
 line.Draw("same")
@@ -367,7 +367,7 @@ histo34.SetTitle("Comparing PhiB at Station 2")
 #histo29.Fit("fitFunc1", "R", " ")
 #fitFunc1.Draw('same')
 histo34.DrawCopy('COL')
-line = TLine(-0.2, -100, 0.8, 400)
+line = TLine(-1, -1, 1, 1)
 line.SetLineColor(2)
 #line.SetLineWidth(2)
 line.Draw("same")
@@ -375,7 +375,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-
+'''
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
 c30.SetLeftMargin(0.15)  #Space for printing Y label
@@ -390,7 +390,7 @@ histo30.DrawCopy('COL')
 c30.Print("./plots/"+c30.GetName()+".png")
 c30.Update()
 input('press enter to exit')
-'''
+
 #zad 22.5
 c31 = TCanvas('cCheck0', 'Comparing vector sizes', 600, 600)
 c31.SetLeftMargin(0.15)  #Space for printing Y label
@@ -427,7 +427,7 @@ c33.Print("./plots/"+c33.GetName()+".png")
 c33.Update()
 input('press enter to exit')
 
-
+'''
 #zad 27
 c35 = TCanvas('cPhiB_st1', 'PhiB(Pt) St1', 600, 600)
 c35.SetLeftMargin(0.15)  #Space for printing Y label
@@ -460,5 +460,40 @@ histo28.DrawCopy('COL')
 c28.Print("./plots/"+c28.GetName()+".png")
 c28.Update()
 input('press enter to exit')
+'''
 
-#c36 next
+#zad 28.1
+c36 = TCanvas('cDeltaPhiB1', 'Delta PhiB at station 1 entry', 600, 600)
+histo36 = gROOT.FindObject('hDeltaPhiB1')
+histo36.SetTitle("Delta PhiB at station 1 entry")
+histo36.DrawCopy('COL')
+c36.Print("./plots/"+c36.GetName()+".png")
+c36.Update()
+input('press enter to exit')
+
+#zad 28.2
+c37 = TCanvas('cDeltaPhiB2', 'Delta PhiB at station 2 entry', 600, 600)
+histo37 = gROOT.FindObject('hDeltaPhiB2')
+histo37.SetTitle("Delta PhiB at station 2 entry")
+histo37.DrawCopy('COL')
+c37.Print("./plots/"+c37.GetName()+".png")
+c37.Update()
+input('press enter to exit')
+
+#zad 29.1
+c38 = TCanvas('cDeltaPhi1', 'Delta Phi at station 1 entry', 600, 600)
+histo38 = gROOT.FindObject('hDeltaPhi1')
+histo38.SetTitle("Delta Phi at station 1 entry")
+histo38.DrawCopy('COL')
+c38.Print("./plots/"+c38.GetName()+".png")
+c38.Update()
+input('press enter to exit')
+
+#zad 29.2
+c39 = TCanvas('cDeltaPhi2', 'Delta Phi at station 2 entry', 600, 600)
+histo39 = gROOT.FindObject('hDeltaPhi2')
+histo39.SetTitle("Delta PhiB at station 2 entry")
+histo39.DrawCopy('COL')
+c39.Print("./plots/"+c39.GetName()+".png")
+c39.Update()
+input('press enter to exit')
