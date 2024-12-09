@@ -532,6 +532,7 @@ for (code_value) in range(2, 7):
     c40 = TCanvas(f'cSt1Code{code_value}', f'Delta PhiB in Station 1 code {code_value}', 600, 600)
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value})')
     histo_projection.GetYaxis().SetTitle('Entries')
+    histo_projection.SetTitle('Delta PhiB in Station 1')
     histo_projection.Draw("COL")
 
     c40.Print(f"./plots/{c40.GetName()}.png")
@@ -548,6 +549,7 @@ for (code_value) in range(2, 7):
     c41 = TCanvas(f'cSt2Code{code_value}', f'Delta PhiB in Station 2 code {code_value}', 600, 600)
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value})')
     histo_projection.GetYaxis().SetTitle('Entries')
+    histo_projection.SetTitle('Delta PhiB in Station 2')
     histo_projection.Draw("COL")
 
     c41.Print(f"./plots/{c41.GetName()}.png")
