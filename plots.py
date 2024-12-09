@@ -331,7 +331,7 @@ histo27.DrawCopy('COL')
 c27.Print("./plots/"+c27.GetName()+".png")
 c27.Update()
 input('press enter to exit')
-'''
+
 
 
 #zad 21
@@ -375,7 +375,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-'''
+
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
 c30.SetLeftMargin(0.15)  #Space for printing Y label
@@ -402,7 +402,7 @@ histo31.DrawCopy('COL')
 c31.Print("./plots/"+c31.GetName()+".png")
 c31.Update()
 input('press enter to exit')
-'''
+
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
 c32.SetLeftMargin(0.15)  #Space for printing Y label
@@ -411,6 +411,10 @@ histo32.GetYaxis().SetTitle("Phi Rec")
 histo32.GetXaxis().SetTitle("Phi Sim")
 histo32.SetTitle("Comparing Phi at Station 1 entry")
 histo32.DrawCopy('COL')
+line = TLine(-4, -4, 4, 4)
+line.SetLineColor(2)
+#line.SetLineWidth(2)
+line.Draw("same")
 c32.Print("./plots/"+c32.GetName()+".png")
 c32.Update()
 input('press enter to exit')
@@ -423,11 +427,15 @@ histo33.GetYaxis().SetTitle("Phi Rec")
 histo33.GetXaxis().SetTitle("Phi Sim")
 histo33.SetTitle("Comparing Phi at Station 2 entry")
 histo33.DrawCopy('COL')
+line = TLine(-4, -4, 4, 4)
+line.SetLineColor(2)
+#line.SetLineWidth(2)
+line.Draw("same")
 c33.Print("./plots/"+c33.GetName()+".png")
 c33.Update()
 input('press enter to exit')
 
-'''
+
 #zad 27
 c35 = TCanvas('cPhiB_st1', 'PhiB(Pt) St1', 600, 600)
 c35.SetLeftMargin(0.15)  #Space for printing Y label
@@ -460,7 +468,7 @@ histo28.DrawCopy('COL')
 c28.Print("./plots/"+c28.GetName()+".png")
 c28.Update()
 input('press enter to exit')
-'''
+
 
 #zad 28.1
 c36 = TCanvas('cDeltaPhiB1', 'Delta PhiB at station 1 entry', 600, 600)
@@ -497,3 +505,52 @@ histo39.DrawCopy('COL')
 c39.Print("./plots/"+c39.GetName()+".png")
 c39.Update()
 input('press enter to exit')
+
+
+
+#zad 30.1 To jest szkic dla konkretnego code 
+c40 = TCanvas('cDeltaBCodeSt1', 'DeltaPhiB in the code function', 600, 600)
+#c40.SetLeftMargin(0.15)  #Space for printing Y label
+histo40 = gROOT.FindObject('hDeltaBCodeSt1')
+code_value = 2
+bin_code = histo40.GetXaxis().FindBin(code_value)
+histo41 = histo40.ProjectionY(f"histo41{code_value}", bin_code, bin_code)
+c41 = TCanvas('cSt1Code2', 'Delta PhiB in Station 1 code 2', 600, 600)
+histo41.GetXaxis().SetTitle(f'Code value = {code_value}')
+histo41.DrawCopy('COL')
+c41.Print("./plots/"+c41.GetName()+".png")
+c41.Update()
+input('press enter to exit')
+
+'''
+#zad 30.1
+histo40 = gROOT.FindObject('hDeltaBCodeSt1')
+for (code_value) in range(2, 7):
+    bin_code = histo40.GetXaxis().FindBin(code_value)
+    histo_projection = histo40.ProjectionY(f"histo_projection_{code_value}", bin_code, bin_code)
+
+    c40 = TCanvas(f'cSt1Code{code_value}', f'Delta PhiB in Station 1 code {code_value}', 600, 600)
+    histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value})')
+    histo_projection.GetYaxis().SetTitle('Entries')
+    histo_projection.Draw("COL")
+
+    c40.Print(f"./plots/{c40.GetName()}.png")
+    c40.Update()
+
+print("Finished generating projections and saving plots!")
+
+#zad 30.2
+histo41 = gROOT.FindObject('hDeltaBCodeSt2')
+for (code_value) in range(2, 7):
+    bin_code = histo41.GetXaxis().FindBin(code_value)
+    histo_projection = histo41.ProjectionY(f"histo_projection_{code_value}", bin_code, bin_code)
+
+    c41 = TCanvas(f'cSt2Code{code_value}', f'Delta PhiB in Station 2 code {code_value}', 600, 600)
+    histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value})')
+    histo_projection.GetYaxis().SetTitle('Entries')
+    histo_projection.Draw("COL")
+
+    c41.Print(f"./plots/{c41.GetName()}.png")
+    c41.Update()
+
+print("Finished generating projections and saving plots!")
