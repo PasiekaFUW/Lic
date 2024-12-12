@@ -538,7 +538,7 @@ for (code_value) in range(2, 7):
     c40.Print(f"./plots/{c40.GetName()}.png")
     c40.Update()
 
-print("Finished generating projections and saving plots!")
+print("Finished generating projections and saving plots")
 
 #zad 30.2
 histo41 = gROOT.FindObject('hDeltaBCodeSt2')
@@ -555,4 +555,4 @@ for (code_value) in range(2, 7):
     c41.Print(f"./plots/{c41.GetName()}.png")
     c41.Update()
 
-print("Finished generating projections and saving plots!")
+print("Finished generating projections and saving plots")

@@ -481,7 +481,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       }
       //std::cout << chDigi.scNum() << std::endl;
       //scNum() from 0 to 11
-      codeSt1 = chDigi.code();
+      codeSt1 = chDigi.code(); //zad 30.1
     }
     if(chDigi.stNum() == 2 && ftt_rec_2 == 0){
       ftt_rec_2++;
@@ -493,7 +493,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       if(Phi_Rec_St2 > M_PI){
         Phi_Rec_St2 -= 2.*M_PI;
       }
-      codeSt2 = chDigi.code();
+      codeSt2 = chDigi.code(); //zad 30.2
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
     if (abs(chDigi.whNum()) != 2) continue;
