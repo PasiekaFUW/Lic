@@ -453,7 +453,7 @@ histo31.DrawCopy('COL')
 c31.Print("./plots/"+c31.GetName()+".png")
 c31.Update()
 input('press enter to exit')
-'''
+
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
 c32.SetLeftMargin(0.15)  #Space for printing Y label
@@ -492,7 +492,7 @@ line.Draw("same")
 c33.Print("./plots/"+c33.GetName()+".png")
 c33.Update()
 input('press enter to exit')
-'''
+
 
 #zad 27
 c35 = TCanvas('cPhiB_st1', 'PhiB(Pt) St1', 600, 600)
