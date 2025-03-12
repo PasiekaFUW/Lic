@@ -109,6 +109,10 @@ public:
     h1Dtest->Write(); //zad 17.5
     h2Dtest->Write(); //zad 18.0
     hLandau->Write(); //zad 18
+    hPvSX1->Write(); //zad 18.1
+    hPvSX2->Write(); //zad 18.2
+    hPvSY1->Write(); //zad 18.3
+    hPvSY2->Write(); //zad 18.4
     hPhiComp->Write(); //zad 19
     hPhiB_st1->Write(); //zad 27
     hPhiB_st2->Write(); //zad 20
@@ -124,6 +128,7 @@ public:
     hDeltaPhi2->Write(); //zad 29.2
     hDeltaBCodeSt1->Write(); //zad 30.1
     hDeltaBCodeSt2->Write(); //zad 30.2
+    hELossSV->Write(); //zad 31
 
 
     f.Write();
@@ -177,6 +182,10 @@ private:
   TH1D *h1Dtest; //zad 17.5
   TH1D *h2Dtest; //zad 18.0
   TH1D *hLandau; //zad 18
+  TH1D *hPvSX1; //zad 18.1
+  TH1D *hPvSX2; //zad 18.2
+  TH1D *hPvSY1; //zad 18.3
+  TH1D *hPvSY2; //zad 18.4
   TH2D *hPhiComp; //zad 19
   TH2D *hPhiB_st1; //zad 27
   TH2D *hPhiB_st2; //zad 20
@@ -192,6 +201,7 @@ private:
   TH1D *hDeltaPhi2; //zad 29.2
   TH2D *hDeltaBCodeSt1; //zad 30.1
   TH2D *hDeltaBCodeSt2; //zad 30.2
+  TH2D *hELossSV; //zad 31
 
 
 };
@@ -230,7 +240,7 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPSimTrackerHit = new TH1D("hPSimTrackerHit", "Size of numberOfTrackerHits", 100, 0, 100); //zad 7
   hPSimHitVector = new TH1D("hPSimHitVector", "Size of PSimHit DT-Collection from Vector", 200, 0, 200); //zad 7
   hPSimHitXYZ = new TH3D("hPSimHitXYZ", "Position of PSimHit", 240, -120, 120, 200, -100, 100, 200, -1, 1); //zad 8
-  hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 40, 0, 400); //zad 11
+  hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 1000, -200, 200); //zad 11
   hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, -1000); //zad 13
   hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, 1000); //zad 16
   hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.1
@@ -239,7 +249,11 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.4
   h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
   h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
-  hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 60, 0, 3); //zad 18
+  hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 120, 0, 3); //zad 18
+  hPvSX1 = new TH1D("hPvSX1", "Propagation vs Simulation X coordinate station 1", 1000, -100, 100); //zad 18.1
+  hPvSX2 = new TH1D("hPvSX2", "Propagation vs Simulation X coordinate station 2", 1000, -100, 100); //zad 18.2
+  hPvSY1 = new TH1D("hPvSY1", "Propagation vs Simulation Y coordinate station 1", 1000, -100, 100); //zad 18.3
+  hPvSY2 = new TH1D("hPvSY2", "Propagation vs Simulation Y coordinate station 2", 1000, -100, 100); //zad 18.4
   hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
   hPhiB_st1 = new TH2D("hPhiB_st1", "PhiB in a function of pt st 1", 4096, 0, 100, 2000, -0.5, 0.5); //zad 27
   hPhiB_st2 = new TH2D("hPhiB_st2", "PhiB in a function of pt st 2", 4096, 0, 100, 2000, -0.5, 0.5); //zad 20
@@ -255,6 +269,7 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
   hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.1
   hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.2
+  hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
 
  
 }
@@ -307,6 +322,11 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double Phi_Sim_St2 = 0; //zad 25.2
   int ftt2 = 0; //zad 25.2
   double PhiB_Sim_St2 = 0; // zad 26
+  int n_elos = 0; //zad 31
+  int n_X1 = 0; //zad 18.1
+  int n_X2 = 0; //zad 18.2
+  int n_Y1 = 0; //zad 18.3
+  int n_Y2 = 0; //zad 18.4
 
 
   hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
@@ -338,7 +358,9 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       }
     }
     
-    hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
+    //hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
+    //Another take at zad 11
+    hPPGvS->Fill( sqrt(pow(ah.localPosition().x(), 2) + pow(ah.localPosition().y(), 2) ) - sqrt( pow(stateAtDet.localPosition().x(), 2) + pow(stateAtDet.localPosition().y(), 2)) );
     
     DTChamberId dtChamberId(ah.detUnitId()); //zad 17
     
@@ -377,7 +399,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //zad 17.5
     if(firsttime==0 && station_S == 1 && 25 <  tp.pt() && tp.pt() < 45 ) {
       h1Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) / tp.pt() );
-      firstmom = sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) );
+      firstmom = sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) + pow(globalMomentumPSimHit.z(), 2) );
       firsttime++;
     }
    
@@ -385,7 +407,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //zad 18
     if(firsttime==1 && station_S == 2) {
       h2Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) /tp.pt() );
-      hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
+      hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) + pow(globalMomentumPSimHit.z(), 2) ) );
       firsttime++;
     }
     
@@ -429,6 +451,35 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       PhiB_Sim_St2 = globalMomentumPSimHit.phi() - entry.phi(); //zad 26
       Phi_Sim_St2 = position.phi(); //zad 25.2
     }
+    //zad 31
+    if(n_elos == 0 && station_S == 1){
+      n_elos++;
+      hELossSV->Fill(tp.p(), tp.p() - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) + pow(globalMomentumPSimHit.z(), 2)) );
+    }
+
+    //zad 18.1
+    if(stateAtDet.isValid()==1 && n_X1 == 0 && station_S == 1){
+      n_X1++;
+      hPvSX1->Fill(ah.localPosition().x() - stateAtDet.localPosition().x());
+    }
+
+    //zad 18.2
+    if(stateAtDet.isValid()==1 && n_X2 == 0 && station_S == 2){
+      n_X2++;
+      hPvSX2->Fill(ah.localPosition().x() - stateAtDet.localPosition().x());
+    }
+
+    //zad 18.3
+    if(stateAtDet.isValid()==1 && n_Y1 == 0 && station_S == 1){
+      n_Y1++;
+      hPvSY1->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
+    }
+
+    //zad 18.4
+    if(stateAtDet.isValid()==1 && n_Y2 == 0 && station_S == 2){
+      n_Y2++;
+      hPvSY2->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
+    }
 
 
 
@@ -441,7 +492,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       std::cout<<" Propagated momentum at entry: " << sqrt( pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)) << std::endl; 
     }
     GlobalPoint globalEntryHisto = geomDet->toGlobal(ah.localPosition());
-    hPSimHitRZ->Fill(sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2)), globalEntryHisto.z()); //zad 13 
+    hPSimHitRZ->Fill(globalEntryHisto.z(), sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2))); //zad 13 
     hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
         
   }
