@@ -13,10 +13,8 @@ process = cms.Process('OmtfTree')
 # (there is 255 file limit though). Can be empty for crab.
 #
 
-
-#dataDir='/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_04_01_2024/SingleMu_ch0_OneOverPt_Run2029_13_1_0_04_01_2024/13_1_0_04_01_2024/240104_104036/0000/'
-#GJ
-dataDir='/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/'
+'''
+dataDir='/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_04_01_2024/SingleMu_ch0_OneOverPt_Run2029_13_1_0_04_01_2024/13_1_0_04_01_2024/240104_104036/0000/'
 lsCommand='ls -1 '+dataDir+'|grep root | grep m_99'
 
 print ('command: ',lsCommand)
@@ -25,15 +23,15 @@ files=[]
 for f in lsOutput.split():
   files.append('file:'+dataDir+f)
 print ("Number of files in direcotry:",dataDir," ---> ", len(files))
-
+'''
 
 process.source = cms.Source("PoolSource", 
-#GJ fileNames = cms.untracked.vstring( 'file:data.root',),
-#fileNames = cms.untracked.vstring('file:/eos/cms/store/group/dpg_trigger/comm_trigger/L1Trigger/OMTF/PrivateProductionForOMTFStudy/13_1_0_03_04_2024/SingleMu_ch0_OneOverPt_Run2029_13_1_0_03_04_2024/13_1_0_03_04_2024/240403_080928/0000/SingleMu_OneOverPt_1_100_m_1.root'),      
-fileNames = cms.untracked.vstring(files),
+#fileNames = cms.untracked.vstring( 'file:data.root',),
+fileNames = cms.untracked.vstring('file:/eos/cms/store/group/dpg_trigger/comm_trigger/L1Trigger/OMTF/PrivateProductionForOMTFStudy/13_1_0_03_04_2024/SingleMu_ch0_OneOverPt_Run2029_13_1_0_03_04_2024/13_1_0_03_04_2024/240403_080928/0000/SingleMu_OneOverPt_1_100_m_1.root'),      
+#fileNames = cms.untracked.vstring(files),
 #skipEvents =  cms.untracked.uint32(220)
 )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 
 #
 # import of standard configurations
@@ -45,8 +43,7 @@ process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 #process.load('Configuration.Geometry.GeometryExtended2023Reco_cff')
 #process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
 #process.load('Configuration.Geometry.GeometryExtended2026D95Reco_cff')
-#process.load('Configuration.Geometry.GeometryExtendedRun4D95Reco_cff')
-process.load('Configuration.Geometry.GeometryExtendedRun4D110Reco_cff')
+process.load('Configuration.Geometry.GeometryExtendedRun4D95Reco_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration.StandardSequences.EndOfProcess_cff')
 
@@ -56,11 +53,9 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 #
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 #process.GlobalTag.globaltag = '130X_dataRun3_Prompt_v3'
-#process.GlobalTag.globaltag = '141X_mcRun4_realistic_v3'
-from Configuration.AlCa.GlobalTag import GlobalTag
+#from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:phase2_realistic', '')
-process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:phase2_realistic_T33', '')
-
+process.GlobalTag.globaltag = '141X_mcRun4_realistic_v3'
 
 #
 # message logger
@@ -88,8 +83,6 @@ process.licDigiAnalysis = cms.EDAnalyzer("LicDigiAnalysis",
 
   srcDTPh_leg = cms.InputTag('simDtTriggerPrimitiveDigis'),
   srcDTTh_leg = cms.InputTag('simDtTriggerPrimitiveDigis'),
-  srcDTPh_upg = cms.InputTag('dtTriggerPhase2PrimitiveDigis'),
-  srcDTTh_upg = cms.InputTag('dtTriggerPhase2PrimitiveDigis'),
 )
 
 process.out = cms.OutputModule("PoolOutputModule", 

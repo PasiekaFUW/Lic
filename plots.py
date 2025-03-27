@@ -381,7 +381,7 @@ c27.Print("./plots/"+c27.GetName()+".png")
 c27.Update()
 input('press enter to exit')
 
-
+'''
 
 #zad 21
 c29 = TCanvas('cPhiBCompSt1', 'PhiB Comb', 600, 600)
@@ -426,7 +426,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-
+'''
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
 c30.SetLeftMargin(0.15)  #Space for printing Y label
@@ -453,7 +453,7 @@ histo31.DrawCopy('COL')
 c31.Print("./plots/"+c31.GetName()+".png")
 c31.Update()
 input('press enter to exit')
-
+'''
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
 c32.SetLeftMargin(0.15)  #Space for printing Y label
@@ -581,7 +581,7 @@ c39.Print("./plots/"+c39.GetName()+".png")
 c39.Update()
 input('press enter to exit')
 
-
+'''
 
 #zad 30.1 To jest szkic dla konkretnego code 
 c40 = TCanvas('cDeltaBCodeSt1', 'DeltaPhiB in the code function', 600, 600)
@@ -596,7 +596,7 @@ histo41.DrawCopy('COL')
 c41.Print("./plots/"+c41.GetName()+".png")
 c41.Update()
 input('press enter to exit')
-
+'''
 
 #zad 30.1
 histo40 = gROOT.FindObject('hDeltaBCodeSt1')
@@ -633,7 +633,7 @@ for (code_value) in range(2, 7):
     c41.Update()
 
 print("Finished generating projections and saving plots")
-
+'''
 #zad 31
 c42 = TCanvas('cELossSV', 'Energy loss at station 1 entry compared to energy at vertex', 600, 600)
 histo42 = gROOT.FindObject('hELossSV')

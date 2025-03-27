@@ -23,28 +23,29 @@
 #include "DataFormats/MuonDetId/interface/DTChamberId.h" //zad 17
 #include "DataFormats/L1DTTrackFinder/interface/L1MuDTChambPhContainer.h"
 #include "DataFormats/L1DTTrackFinder/interface/L1MuDTChambThContainer.h"
+#include "DataFormats/L1DTTrackFinder/interface/L1Phase2MuDTPhContainer.h" //Ph2
+#include "DataFormats/L1DTTrackFinder/interface/L1Phase2MuDTThContainer.h" //Ph2
 
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingParticle.h"
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingParticleFwd.h"
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingVertex.h"
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingVertexContainer.h"
 #include "SimDataFormats/TrackingHit/interface/PSimHit.h" //zad 7
-//#PDG
-#include "MagneticField/Engine/interface/MagneticField.h"
-#include "MagneticField/Records/interface/IdealMagneticFieldRecord.h"
+//#PDG #include "MagneticField/Engine/interface/MagneticField.h"
+//#include "MagneticField/Records/interface/IdealMagneticFieldRecord.h"
 #include "Geometry/CommonDetUnit/interface/GeomDet.h"
 #include "Geometry/CommonDetUnit/interface/GlobalTrackingGeometry.h"
 #include "Geometry/Records/interface/GlobalTrackingGeometryRecord.h"
 
-#include "TrackingTools/GeomPropagators/interface/Propagator.h"
-#include "TrackingTools/MaterialEffects/interface/PropagatorWithMaterial.h"
-#include "TrackingTools/Records/interface/TrackingComponentsRecord.h"
+// #include "TrackingTools/GeomPropagators/interface/Propagator.h"
+// #include "TrackingTools/MaterialEffects/interface/PropagatorWithMaterial.h"
+// #include "TrackingTools/Records/interface/TrackingComponentsRecord.h"
 
 
-#include "DataFormats/GeometryVector/interface/GlobalPoint.h"
-#include "DataFormats/GeometryVector/interface/GlobalVector.h"
-#include "TrackingTools/TrajectoryParametrization/interface/GlobalTrajectoryParameters.h"
-#include "TrackingTools/TrajectoryState/interface/TrajectoryStateOnSurface.h"
+// #include "DataFormats/GeometryVector/interface/GlobalPoint.h"
+// #include "DataFormats/GeometryVector/interface/GlobalVector.h"
+// #include "TrackingTools/TrajectoryParametrization/interface/GlobalTrajectoryParameters.h"
+// #include "TrackingTools/TrajectoryState/interface/TrajectoryStateOnSurface.h"
 //#PDG ^
 
 #include "FWCore/PluginManager/interface/ModuleDef.h"
@@ -89,7 +90,7 @@ public:
   virtual ~LicDigiAnalysis(){ 
     TFile f("licDigiHistos.root","RECREATE");
     f.cd();
-    hLicExample->Write(); // Example
+    /*hLicExample->Write(); // Example
     hPt->Write(); //zad 1
     hVz->Write(); //zad 2
     hEta->Write(); //zad 3
@@ -109,13 +110,14 @@ public:
     h1Dtest->Write(); //zad 17.5
     h2Dtest->Write(); //zad 18.0
     hLandau->Write(); //zad 18
-    hPhiComp->Write(); //zad 19
+    */
+    //hPhiComp->Write(); //zad 19
     hPhiB_st1->Write(); //zad 27
     hPhiB_st2->Write(); //zad 20
     hPhiBCompSt1->Write(); //zad 21
     hPhiBCompSt2->Write(); //zad 26
-    hHowMany1->Write(); //zad 22
-    hCheck0->Write(); //zad 22.5
+    //hHowMany1->Write(); //zad 22
+    //hCheck0->Write(); //zad 22.5
     hPhiCompSt1->Write(); //zad 25.1
     hPhiCompSt2->Write(); //zad 25.2
     hDeltaPhiB1->Write(); //zad 28.1
@@ -145,18 +147,23 @@ public:
 private:
   edm::EDGetTokenT<L1MuDTChambPhContainer> inputDTPh_leg;
   edm::EDGetTokenT<L1MuDTChambThContainer> inputDTTh_leg;
+  edm::EDGetTokenT<L1Phase2MuDTPhContainer> inputDTPh_upg; //Ph2
+  edm::EDGetTokenT<L1Phase2MuDTThContainer> inputDTTh_upg; //Ph2
+
   edm::EDGetTokenT<TrackingParticleCollection> inputTP;
 //  edm::EDGetTokenT<TrackingVertexCollection> inputTV, inputTV0;
   edm::EDGetTokenT<std::vector<PSimHit> > inputPSimHit; //zad 7
+  
 
   //#PPG
   edm::ESGetToken<GlobalTrackingGeometry, GlobalTrackingGeometryRecord> theGeomteryToken;
-  edm::ESGetToken<MagneticField, IdealMagneticFieldRecord> theFieldToken;
-  edm::ESGetToken<Propagator, TrackingComponentsRecord> thePropagatorToken;
+  // edm::ESGetToken<MagneticField, IdealMagneticFieldRecord> theFieldToken;
+  //edm::ESGetToken<Propagator, TrackingComponentsRecord> thePropagatorToken; #noPPG
 
   bool debug;
   unsigned int theEventCnt;
   unsigned int theAllDtPDigisCnt, theAllDtTDigisCnt;
+  /*
   TH2D *hLicExample; //Example
   TH1D *hPt; //zad 1
   TH1D *hVz; //zad 2
@@ -177,13 +184,14 @@ private:
   TH1D *h1Dtest; //zad 17.5
   TH1D *h2Dtest; //zad 18.0
   TH1D *hLandau; //zad 18
-  TH2D *hPhiComp; //zad 19
+  */
+  //TH2D *hPhiComp; //zad 19
   TH2D *hPhiB_st1; //zad 27
   TH2D *hPhiB_st2; //zad 20
   TH2D *hPhiBCompSt1; //zad 21
   TH2D *hPhiBCompSt2; //zad 26
-  TH1D *hHowMany1; //zad 22
-  TH2D *hCheck0; //zad 22.5
+  // TH1D *hHowMany1; //zad 22
+  // TH2D *hCheck0; //zad 22.5
   TH2D *hPhiCompSt1; //zad 25.1
   TH2D *hPhiCompSt2; //zad 25.2
   TH1D *hDeltaPhiB1; //zad 28.1
@@ -209,6 +217,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
 {
   inputDTPh_leg = consumes<L1MuDTChambPhContainer>(cfg.getParameter<edm::InputTag>("srcDTPh_leg"));
   inputDTTh_leg = consumes<L1MuDTChambThContainer>(cfg.getParameter<edm::InputTag>("srcDTTh_leg"));
+  inputDTPh_upg = consumes<L1Phase2MuDTPhContainer>(cfg.getParameter<edm::InputTag>("srcDTPh_upg")); //Ph2
+  inputDTTh_upg = consumes<L1Phase2MuDTThContainer>(cfg.getParameter<edm::InputTag>("srcDTPh_upg")); //Ph2
   inputTP  =   consumes<TrackingParticleCollection>(edm::InputTag("mix","MergedTrackTruth"));
 //  inputTV  =   consumes<TrackingVertexCollection>(edm::InputTag("mix","MergedTrackTruth"));
 //  inputTV0 =   consumes<TrackingVertexCollection>(edm::InputTag("mix","InitialVertices"));
@@ -216,10 +226,10 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
 
   //#PPG
   theGeomteryToken=esConsumes<GlobalTrackingGeometry, GlobalTrackingGeometryRecord>();
-  theFieldToken=esConsumes<MagneticField, IdealMagneticFieldRecord>();   
-  thePropagatorToken=esConsumes<Propagator, TrackingComponentsRecord>(edm::ESInputTag("","SteppingHelixPropagatorAny")); 
+  // theFieldToken=esConsumes<MagneticField, IdealMagneticFieldRecord>();   
+  //thePropagatorToken=esConsumes<Propagator, TrackingComponentsRecord>(edm::ESInputTag("","SteppingHelixPropagatorAny"));  #noPPG
  
-
+  /*
   hLicExample = new TH2D("hLicExample","hLicExample", 12,0.5,12.5, 8,-0.5,7.5); //Example
   hPt = new TH1D("hPt", "Muon Transverse Momentum", 105, 0, 105); //zad 1
   hVz = new TH1D("hVz", "Muon Vertex Z", 30, -15, 15); //zad 2
@@ -240,12 +250,13 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
   h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
   hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 60, 0, 3); //zad 18
-  hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
+  */
+  //hPhiComp = new TH2D("hPhiComp", "Comparison of Phi and PhiB", 100, -3.15, 3.15, 50, -1, 1); //zad 19
   hPhiB_st1 = new TH2D("hPhiB_st1", "PhiB in a function of pt st 1", 4096, 0, 100, 2000, -0.5, 0.5); //zad 27
   hPhiB_st2 = new TH2D("hPhiB_st2", "PhiB in a function of pt st 2", 4096, 0, 100, 2000, -0.5, 0.5); //zad 20
   hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 1000, -1, 1, 1000, -1, 1); //zad 21
-  hHowMany1 = new TH1D("hHowMany1", "Checking", 4096, -2500, 1596); //zad 22
-  hCheck0 = new TH2D("hCheck0", "Checking", 10, 0, 10, 10, 0, 10); //zad 22.5
+  //hHowMany1 = new TH1D("hHowMany1", "Checking", 4096, -2500, 1596); //zad 22
+  //hCheck0 = new TH2D("hCheck0", "Checking", 10, 0, 10, 10, 0, 10); //zad 22.5
   hPhiCompSt1 = new TH2D("hPhiCompSt1", "Comparing phi at station 1", 4096, -4, 4, 4096, -4, 4); //zad 25.1
   hPhiCompSt2 = new TH2D("hPhiCompSt2", "Comparing phi at station 2", 4096, -4, 4, 4096, -4, 4); //zad 25.2
   hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 1000, -1, 1, 1000, -1, 1); //zad 26
@@ -258,16 +269,13 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
 
  
 }
-int FailedPPG = 0; //Debuging variable
+// int FailedPPG = 0; //Debuging variable
 void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es) {
   if (debug) std::cout << "-------- Tracking Particles -----------" << std::endl;
-  //#PPG
-  GlobalTrajectoryParameters gtp;
-  const MagneticField * field = &es.getData(theFieldToken);
-  const GlobalTrackingGeometry & globalGeometry = es.getData(theGeomteryToken);
-
-
   edm::Handle<TrackingParticleCollection> tpColl;
+  // GlobalTrajectoryParameters gtp;
+  // const MagneticField * field = &es.getData(theFieldToken);
+  const GlobalTrackingGeometry & globalGeometry = es.getData(theGeomteryToken);
   ev.getByToken(inputTP, tpColl);
   const TrackingParticleCollection & myTP = *(tpColl.product());
   const std::vector<PSimHit> & myPSimHits = ev.get(inputPSimHit); 
@@ -276,7 +284,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     std::cout<<" TRACKING PARTICLES: " << myTP.size() << std::endl;
     std::cout << "myPSimHits Size: " << myPSimHits.size() << std::endl;
     for (const auto & ah: myPSimHits) {
-      hPSimHitXYZ->Fill(ah.localPosition().x(), ah.localPosition().y(), ah.localPosition().z()); //zad 8
+      //hPSimHitXYZ->Fill(ah.localPosition().x(), ah.localPosition().y(), ah.localPosition().z()); //zad 8
       std::cout << ah.trackId() << std::endl;
     }
   }
@@ -289,15 +297,15 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     }
   } 
   const TrackingParticle & tp = *myMuon;
-  const auto & vtx = tp.parentVertex()->position();
-  const auto & mom = tp.momentum();
-  gtp=GlobalTrajectoryParameters(GlobalPoint(vtx.x(), vtx.y(), vtx.z()), GlobalVector(mom.x(), mom.y(), mom.z()), tp.charge(), field);
-  FreeTrajectoryState fts(gtp);
+  // const auto & vtx = tp.parentVertex()->position();
+  // const auto & mom = tp.momentum();
+  // gtp=GlobalTrajectoryParameters(GlobalPoint(vtx.x(), vtx.y(), vtx.z()), GlobalVector(mom.x(), mom.y(), mom.z()), tp.charge(), field);
+  // FreeTrajectoryState fts(gtp);
 
   int i_hits = 0; 
-  int firsttime = 0; //zad 17
-  double firstmom = 0; //zad 18
-  int count = 0; //zad 19
+  //int firsttime = 0; //zad 17
+  //double firstmom = 0; //zad 18
+  //int count = 0; //zad 19
   int ft = 0; //zad 20
   int ftst2 = 0; //zad 27
   int ftt = 0; //zad 21
@@ -309,7 +317,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double PhiB_Sim_St2 = 0; // zad 26
 
 
-  hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
+  //hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
 
   for(const auto & ah: myPSimHits) {
     int station_P = 0; //zad 17
@@ -322,23 +330,23 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     const GeomDet * geomDet = globalGeometry.idToDet(ah.detUnitId()); //geographicalId() -> z DTChamberID.h DTChamberId
     DTChamberId chamber(geomDet->geographicalId()); //zad 17
     if(debug) std::cout << "Station_P: " << chamber.station() << std::endl;
-    const Propagator & propagator = es.getData(thePropagatorToken);
-    TrajectoryStateOnSurface stateAtDet =  propagator.propagate(fts, geomDet->surface());
-    if(stateAtDet.isValid() == 0) {
-        ++FailedPPG;
-        if(debug) std::cout<< " Number of failed propagations: " << FailedPPG << std::endl;            
-        continue;
-    } 
-    if(debug) {
-      std::cout <<" Is PROPAGATION VALID: "<<stateAtDet.isValid() <<std::endl;
-      if(stateAtDet.isValid() == 1){
-        std::cout<<" Local position from PSimHit: " << ah.localPosition() << std::endl;
-        std::cout<<" Local position after propagation: "<< stateAtDet.localPosition() <<std::endl; 
-        std::cout<<" The difference: "<< ah.localPosition() - stateAtDet.localPosition() <<std::endl;
-      }
-    }
+    //const Propagator & propagator = es.getData(thePropagatorToken); #noPPG
+    //TrajectoryStateOnSurface stateAtDet =  propagator.propagate(fts, geomDet->surface()); #noPPG
+    // if(stateAtDet.isValid() == 0) {
+    //     ++FailedPPG;
+    //     if(debug) std::cout<< " Number of failed propagations: " << FailedPPG << std::endl;            
+    //     continue;
+    // } 
+    // if(debug) {
+    //   std::cout <<" Is PROPAGATION VALID: "<<stateAtDet.isValid() <<std::endl;
+    //   if(stateAtDet.isValid() == 1){
+    //     std::cout<<" Local position from PSimHit: " << ah.localPosition() << std::endl;
+    //     std::cout<<" Local position after propagation: "<< stateAtDet.localPosition() <<std::endl; 
+    //     std::cout<<" The difference: "<< ah.localPosition() - stateAtDet.localPosition() <<std::endl;
+    //   }
+    // }
     
-    hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
+    //hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
     
     DTChamberId dtChamberId(ah.detUnitId()); //zad 17
     
@@ -353,41 +361,41 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     }
 
     //zad 17.1 tp.numberOfTrackerHits() == 1
-    if(i_hits==1 && station_P == 1) {
-    hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)  ));
+    //if(i_hits==1 && station_P == 1) {
+    //hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)  ));
     
     //+ pow(stateAtDet.localMomentum().z(), 2))); 
-    }
+    //}
 
     //zad 17.2
-    if(i_hits==1 && station_P == 2) {
-    hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2))); 
-    }
+    //if(i_hits==1 && station_P == 2) {
+    //hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2))); 
+    //}
     //zad 17.3 
     GlobalVector globalMomentumPSimHit = geomDet->toGlobal(ah.momentumAtEntry());
-    if(i_hits==1 && station_S == 1) {
+    //if(i_hits==1 && station_S == 1) {
     //hVSPT1->Fill(tp.pt(), ah.pabs()); 
-    hVSPT1->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
-    }
+    //hVSPT1->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
+    //}
     //zad 17.4 
-    if(i_hits==1 && station_S == 2) {
+    //if(i_hits==1 && station_S == 2) {
     //hVSPT2->Fill(tp.pt(), ah.pabs()); 
-    hVSPT2->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
-    }
+    //hVSPT2->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
+    //}
     //zad 17.5
-    if(firsttime==0 && station_S == 1 && 25 <  tp.pt() && tp.pt() < 45 ) {
-      h1Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) / tp.pt() );
-      firstmom = sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) );
-      firsttime++;
-    }
+    //if(firsttime==0 && station_S == 1 && 25 <  tp.pt() && tp.pt() < 45 ) {
+      //h1Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) / tp.pt() );
+     //firstmom = sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) );
+    //  firsttime++;
+    //}
    
    
     //zad 18
-    if(firsttime==1 && station_S == 2) {
-      h2Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) /tp.pt() );
-      hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
-      firsttime++;
-    }
+    //if(firsttime==1 && station_S == 2) {
+      //h2Dtest->Fill(sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) /tp.pt() );
+      //hLandau->Fill( firstmom - sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
+    //  firsttime++;
+    //}
     
     GlobalPoint entry = geomDet->toGlobal(ah.entryPoint());
     GlobalPoint position = geomDet->toGlobal(ah.localPosition());
@@ -395,14 +403,14 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //GlobalPoint exit = geomDet->toGlobal(ah.exitPoint());
     //GlobalPoint globalHit = geomDet->toGlobal(ah.localPosition());
     //zad 19 
-    if(tp.pt() < 50 && station_S == 1 && count == 0) {
-      count++;
-      //hPhiComp -> Fill(ah.phiAtEntry(), globalMomentumPSimHit.phi());
-      //hPhiComp -> Fill(globalHit.phi(), abs(exit.phi() - entry.phi()));
-      //std::cout << "zad 19: phi= " << entry.phi() << "phiB= " << globalMomentumPSimHit.phi() - entry.phi() << std::endl;
-      hPhiComp -> Fill(entry.phi(), globalMomentumPSimHit.phi() - entry.phi());
+    // if(tp.pt() < 50 && station_S == 1 && count == 0) {
+    //   count++;
+    //   //hPhiComp -> Fill(ah.phiAtEntry(), globalMomentumPSimHit.phi());
+    //   //hPhiComp -> Fill(globalHit.phi(), abs(exit.phi() - entry.phi()));
+    //   //std::cout << "zad 19: phi= " << entry.phi() << "phiB= " << globalMomentumPSimHit.phi() - entry.phi() << std::endl;
+    //   hPhiComp -> Fill(entry.phi(), globalMomentumPSimHit.phi() - entry.phi());
 
-    }
+    // }
 
        //zad 27
     if(station_S==1 && ftst2 == 0){
@@ -436,13 +444,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     
 
     if(debug) std::cout << "Station: " << dtChamberId.station() << std::endl;
-    if(debug) {
-      std::cout<<" Simulated momentum at entry: " << ah.pabs() <<  std::endl; //zad 12
-      std::cout<<" Propagated momentum at entry: " << sqrt( pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)) << std::endl; 
-    }
-    GlobalPoint globalEntryHisto = geomDet->toGlobal(ah.localPosition());
-    hPSimHitRZ->Fill(sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2)), globalEntryHisto.z()); //zad 13 
-    hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
+    // if(debug) {
+    //   std::cout<<" Simulated momentum at entry: " << ah.pabs() <<  std::endl; //zad 12
+    //   std::cout<<" Propagated momentum at entry: " << sqrt( pow(stateAtDet.localMomentum().x(), 2) + pow(stateAtDet.localMomentum().y(), 2) + pow(stateAtDet.localMomentum().z(), 2)) << std::endl; 
+    // }
+    //GlobalPoint globalEntryHisto = geomDet->toGlobal(ah.localPosition());
+    //hPSimHitRZ->Fill(sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2)), globalEntryHisto.z()); //zad 13 
+    //hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
         
   }
 
@@ -463,9 +471,9 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
     //zad 22
-    if(chDigi.stNum()==1 && chDigi.scNum()==2) {
-      hHowMany1->Fill(chDigi.phi());
-    }
+    // if(chDigi.stNum()==1 && chDigi.scNum()==2) {
+    //   hHowMany1->Fill(chDigi.phi());
+    // }
 
 
     if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
@@ -511,9 +519,25 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         <<" phiB:   "<<chDigi.phiB() // kierunek
         <<" code(q): "<< chDigi.code()
         << std::endl;
-    hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
+    //hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
 
 
+  }
+  edm::Handle<L1Phase2MuDTPhContainer> digiCollectionDTPh_upg;
+  ev.getByToken(inputDTPh_upg, digiCollectionDTPh_upg);
+  const L1Phase2MuDTPhContainer& dtphDigisUpg= *digiCollectionDTPh_upg.product();
+  if (debug) std::cout <<" Upgrade DTPh digis from BMTF " << dtphDigisUpg.getContainer()->size()<< std::endl;
+  for (const auto &  chDigi : *dtphDigisUpg.getContainer() ) {
+//    if (abs(chDigi.whNum()) != 2) continue;
+//    if (chDigi.stNum() ==4) continue;
+//    if (chDigi.bxNum() != 0) continue;
+    if (debug) std::cout <<"DtDataWord64 BMTF    " 
+        <<" bxNum: "<<chDigi.bxNum()
+        <<" whNum: "<<chDigi.whNum()
+        <<" station: "<< chDigi.stNum()
+        <<" sector: "<< chDigi.scNum()
+        <<" phi:   "<<chDigi.phi()
+        << std::endl;
   }
   //zad 22.5
   //hCheck0->Fill(PhiB_Rec.size(), PhiB_Sim.size());
