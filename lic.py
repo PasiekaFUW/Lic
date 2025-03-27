@@ -33,7 +33,9 @@ process.source = cms.Source("PoolSource",
 fileNames = cms.untracked.vstring(files),
 #skipEvents =  cms.untracked.uint32(220)
 )
+
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44000) )
+# process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(44) ) #debug
 
 #
 # import of standard configurations
