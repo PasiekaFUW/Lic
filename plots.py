@@ -109,7 +109,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-
+'''
 
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
@@ -149,7 +149,6 @@ line.Draw("same")
 c33.Print("./plots/"+c33.GetName()+".png")
 c33.Update()
 input('press enter to exit')
-
 '''
 #zad 28.1
 c36 = TCanvas('cDeltaPhiB1', 'Delta PhiB at Station 1 entry', 600, 600)
@@ -176,7 +175,7 @@ histo37.DrawCopy('COL')
 c37.Print("./plots/"+c37.GetName()+".png")
 c37.Update()
 input('press enter to exit')
-
+'''
 #zad 29.1
 c38 = TCanvas('cDeltaPhi1', 'Delta Phi at station 1 entry', 600, 600)
 histo38 = gROOT.FindObject('hDeltaPhi1')
@@ -203,7 +202,7 @@ c39.Print("./plots/"+c39.GetName()+".png")
 c39.Update()
 input('press enter to exit')
 
-
+'''
 #zad 30.1
 histo40 = gROOT.FindObject('hDeltaBCodeSt1')
 for (code_value) in range(2, 7):
@@ -239,3 +238,4 @@ for (code_value) in range(2, 7):
     c41.Update()
 
 print("Finished generating projections and saving plots")
+'''

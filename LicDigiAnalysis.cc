@@ -40,11 +40,13 @@
 #include "FWCore/PluginManager/interface/ModuleDef.h"
 #include "FWCore/Framework/interface/MakerMacros.h"
 
+#include "L1Trigger/L1TMuonOverlapPhase1/interface/Omtf/OMTFConfiguration.h" //GJ Ph 2 
 #include "TH2D.h"
 #include "TH1D.h" //zad 1
 #include "TFile.h"
 #include <cmath> //zad 5
 #include "TH3D.h" //zad 8
+
 
 
 
@@ -117,7 +119,8 @@ private:
   edm::EDGetTokenT<TrackingParticleCollection> inputTP;
 //  edm::EDGetTokenT<TrackingVertexCollection> inputTV, inputTV0;
   edm::EDGetTokenT<std::vector<PSimHit> > inputPSimHit; //zad 7
-  
+  //edm::EDGetTokenT<OMTFConfiguration> config; //GJ Ph 2
+
   edm::ESGetToken<GlobalTrackingGeometry, GlobalTrackingGeometryRecord> theGeomteryToken;
 
   bool debug;
@@ -160,6 +163,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
 //  inputTV  =   consumes<TrackingVertexCollection>(edm::InputTag("mix","MergedTrackTruth"));
 //  inputTV0 =   consumes<TrackingVertexCollection>(edm::InputTag("mix","InitialVertices"));
   inputPSimHit = consumes<std::vector<PSimHit> >(edm::InputTag("g4SimHits", "MuonDTHits")); //zad 7 
+  //config = consumes<OMTFConfiguration>(cfg.getParameter<edm::InputTag>("PdfValueType")); //GJ Ph 2
+
 
   theGeomteryToken=esConsumes<GlobalTrackingGeometry, GlobalTrackingGeometryRecord>();
 
@@ -168,16 +173,16 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   //hLicExample = new TH2D("hLicExample","hLicExample", 12,0.5,12.5, 8,-0.5,7.5); //Example
   hPhiB_st1 = new TH2D("hPhiB_st1", "PhiB in a function of pt st 1", 4096, 0, 100, 2000, -0.5, 0.5); //zad 27
   hPhiB_st2 = new TH2D("hPhiB_st2", "PhiB in a function of pt st 2", 4096, 0, 100, 2000, -0.5, 0.5); //zad 20
-  hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 1000, -5, 5, 1000, -5, 5); //zad 21
+  hPhiBCompSt1 = new TH2D("hPhiBCompSt1", "PhiB Comparison at station 1", 1000, -1, 1, 1000, -1, 1); //zad 21
   hPhiCompSt1 = new TH2D("hPhiCompSt1", "Comparing phi at station 1", 4096, -4, 4, 4096, -4, 4); //zad 25.1
   hPhiCompSt2 = new TH2D("hPhiCompSt2", "Comparing phi at station 2", 4096, -4, 4, 4096, -4, 4); //zad 25.2
-  hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 1000, -5, 5, 1000, -5, 5); //zad 26
+  hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 1000, -1, 1, 1000, -1, 1); //zad 26
   hDeltaPhiB1 = new TH1D("hDeltaPhiB1", "Delta PhiB at station 1 entry", 2000, -0.1, 0.1); //zad 28.1
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
   hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.1, 0.1); //zad 29.1
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 8, 0, 8, 2000, -1.0, 1.0); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 8, 0, 8, 2000, -1.0, 1.0); //zad 30.2
 
  
 }
@@ -330,10 +335,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
 
   }
+  int HardwareQuality = 0; 
+  edm::Handle<L1Phase2MuDTPhContainer> digiCollectionDTPh_upg; //Ph2
+  ev.getByToken(inputDTPh_upg, digiCollectionDTPh_upg); //Ph2
+  const L1Phase2MuDTPhContainer& dtphDigisUpg= *digiCollectionDTPh_upg.product(); //Ph2
 
-  edm::Handle<L1Phase2MuDTPhContainer> digiCollectionDTPh_upg;
-  ev.getByToken(inputDTPh_upg, digiCollectionDTPh_upg);
-  const L1Phase2MuDTPhContainer& dtphDigisUpg= *digiCollectionDTPh_upg.product();
+
+  
   if (debug) std::cout <<" Upgrade DTPh digis from BMTF " << dtphDigisUpg.getContainer()->size()<< std::endl;
   for (const auto &  chDigi : *dtphDigisUpg.getContainer() ) {
 //    if (abs(chDigi.whNum()) != 2) continue;
@@ -347,34 +355,75 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         <<" phi:   "<<chDigi.phi()
         << std::endl;
 
+    //Implementacja kbunkow InputMakerPhase2.cc
+    if (chDigi.quality() >= 6)
+        HardwareQuality = chDigi.quality() - 2;
+      else if (chDigi.quality() >= 3) {
+        if (chDigi.slNum() == 3)
+          HardwareQuality = 3;
+        else if (chDigi.slNum() == 1)
+          HardwareQuality = 2;
+      } else {
+        if (chDigi.slNum() == 3)
+          HardwareQuality= 1;
+        else if (chDigi.slNum() == 1)
+          HardwareQuality= 0;
+      }
+
+    //   std::cout << "Quality:" << HardwareQuality << std::endl;
+    //   if(chDigi.quality() == 5) {
+    //     std::cout << "Eureka" << std::endl;
+    // }
 
     if(chDigi.stNum() == 1 && ftt_rec_1 == 0) {
       ftt_rec_1++;
 
       PhiB_Rec_St1 = chDigi.phiBend(); //zad 21
-      PhiB_Rec_St1 /= 512.;
+      // PhiB_Rec_St1 /= 512.; //Ph1
+      PhiB_Rec_St1 /= 2048.; //Ph2
+
+
+      //Transformowanie Phi wd. AngleConverterBase.cc 
+   
+      // int dtPhiBins = 4096;
+      // int nPhiBins = 5400;
+      // int phiZero = nPhiBins / config->nProcessors() * (iProcessor) + nPhiBins / 24;  //this 24 gives 15deg (360deg/24 = 15deg)
+      // // "0" is 15degree moved cyclically to each processor, note [0,2pi]
+      // double hsPhiPitch = 2 * M_PI / nPhiBins;  // width of phi Pitch, related to halfStrip at CSC station 2
+      // int sector = chDigi.scNum() + 1;  //NOTE: there is a inconsistency in DT sector numb. Thus +1 needed to get detector numb.
+      // double scale = 1. / dtPhiBins / hsPhiPitch;
+      // int scale_coeff = lround(scale * pow(2, 11));  // 216.2688
+      // int ichamber = sector - 1;
+      // if (ichamber > 6)
+      //   ichamber = ichamber - 12;
+      // int offsetGlobal = (int)nPhiBins * ichamber / 12;
+      // Phi_Rec_St1 = floor(chDigi.phi() * scale_coeff / pow(2, 11)) + offsetGlobal - phiZero;
+      // std::cout << "Phi_Rec_St_1 = " << Phi_Rec_St1 << std::endl;
 
       Phi_Rec_St1 = chDigi.phi();
-      Phi_Rec_St1 /= 4096.;
+      Phi_Rec_St1 /= 131072.;
       Phi_Rec_St1 += M_PI/6. * (chDigi.scNum() + 0) ; //zad 25.1
-      if(Phi_Rec_St1 > M_PI){
+      if(Phi_Rec_St1 >= M_PI){
         Phi_Rec_St1 -= 2.*M_PI;
       }
-      codeSt1 = chDigi.quality(); //zad 30.1
+      codeSt1 = HardwareQuality; 
     }
 
     if(chDigi.stNum() == 2 && ftt_rec_2 == 0) {
       ftt_rec_2++;
       PhiB_Rec_St2 = chDigi.phiBend(); //zad 26
-      PhiB_Rec_St2 /= 512.;
+      // PhiB_Rec_St2 /= 512.; //Ph1
+      PhiB_Rec_St2 /= 2048.; //Ph2
 
       Phi_Rec_St2 = chDigi.phi();
-      Phi_Rec_St2 /= 4096.;
+      Phi_Rec_St2 /= 131072.;
       Phi_Rec_St2 += M_PI/6. * (chDigi.scNum() + 0) ;//zad 25.2
       if(Phi_Rec_St2 > M_PI){
         Phi_Rec_St2 -= 2.*M_PI;
       }
-      codeSt2 = chDigi.quality(); //zad 30.1
+      //codeSt2 = chDigi.quality(); //zad 30.1
+      codeSt2 = HardwareQuality; 
+
     }
 
 
