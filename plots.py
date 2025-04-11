@@ -140,7 +140,7 @@ c10.Print("./plots/"+c10.GetName()+".png")
 c10.Update()
 input('press enter to exit')
 
-
+'''
 #zad 13
 c11 = TCanvas('cPSimHitRZ', 'PSimHit Map', 600, 600)
 histo11 = gROOT.FindObject('hPSimHitRZ')
@@ -170,7 +170,7 @@ c12.Print("./plots/"+c12.GetName()+".png")
 c12.Update()
 input('press enter to exit')
 
-
+'''
 
 #zad 17
 c13 = TCanvas('cPHPT', 'Comparison of Tranverse Momentum from Propagation and Simulation at Chambers', 600, 600)
@@ -529,13 +529,14 @@ c28.Print("./plots/"+c28.GetName()+".png")
 c28.Update()
 input('press enter to exit')
 
+'''
 #zad 28.1
 c36 = TCanvas('cDeltaPhiB1', 'Delta PhiB at Station 1 entry', 600, 600)
 histo36 = gROOT.FindObject('hDeltaPhiB1')
 histo36.SetTitle("Delta PhiB at Station 1 entry")
 histo36.GetXaxis().SetTitle("Delta PhiB [rad]")
 histo36.GetYaxis().SetTitle("Entries")
-histo36.SetStats(0)
+#histo36.SetStats(0)
 c36.SetLeftMargin(0.15)  #Space for printing Y label
 histo36.DrawCopy('COL')
 c36.Print("./plots/"+c36.GetName()+".png")
@@ -548,7 +549,7 @@ histo37 = gROOT.FindObject('hDeltaPhiB2')
 histo37.SetTitle("Delta PhiB at Station 2 entry")
 histo37.GetXaxis().SetTitle("Delta PhiB [rad]")
 histo37.GetYaxis().SetTitle("Entries")
-histo37.SetStats(0)
+#histo37.SetStats(0)
 c37.SetLeftMargin(0.15)  #Space for printing Y label
 histo37.DrawCopy('COL')
 c37.Print("./plots/"+c37.GetName()+".png")
@@ -561,7 +562,7 @@ histo38 = gROOT.FindObject('hDeltaPhi1')
 histo38.SetTitle("Delta Phi at Station 1 entry")
 histo38.GetXaxis().SetTitle("Delta Phi [rad]")
 histo38.GetYaxis().SetTitle("Entries")
-histo38.SetStats(0)
+#histo38.SetStats(0)
 c38.SetLeftMargin(0.15)  #Space for printing Y label
 histo38.DrawCopy('COL')
 c38.Print("./plots/"+c38.GetName()+".png")
@@ -574,14 +575,14 @@ histo39 = gROOT.FindObject('hDeltaPhi2')
 histo39.SetTitle("Delta Phi at Station 2 entry")
 histo39.GetXaxis().SetTitle("Delta Phi [rad]")
 histo39.GetYaxis().SetTitle("Entries")
-histo39.SetStats(0)
+#histo39.SetStats(0)
 c39.SetLeftMargin(0.15)  #Space for printing Y label
 histo39.DrawCopy('COL')
 c39.Print("./plots/"+c39.GetName()+".png")
 c39.Update()
 input('press enter to exit')
 
-
+'''
 
 #zad 30.1 To jest szkic dla konkretnego code 
 c40 = TCanvas('cDeltaBCodeSt1', 'DeltaPhiB in the code function', 600, 600)
@@ -596,7 +597,7 @@ histo41.DrawCopy('COL')
 c41.Print("./plots/"+c41.GetName()+".png")
 c41.Update()
 input('press enter to exit')
-
+'''
 
 #zad 30.1
 histo40 = gROOT.FindObject('hDeltaBCodeSt1')
@@ -608,7 +609,7 @@ for (code_value) in range(2, 7):
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value}) [rad]')
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta PhiB at Station 1')
-    histo_projection.SetStats(0)
+    #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
 
     c40.Print(f"./plots/{c40.GetName()}.png")
@@ -626,14 +627,14 @@ for (code_value) in range(2, 7):
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value}) [rad]')
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta PhiB at Station 2')
-    histo_projection.SetStats(0)
+    #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
 
     c41.Print(f"./plots/{c41.GetName()}.png")
     c41.Update()
 
 print("Finished generating projections and saving plots")
-
+'''
 #zad 31
 c42 = TCanvas('cELossSV', 'Energy loss at station 1 entry compared to energy at vertex', 600, 600)
 histo42 = gROOT.FindObject('hELossSV')

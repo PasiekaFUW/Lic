@@ -241,8 +241,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPSimHitVector = new TH1D("hPSimHitVector", "Size of PSimHit DT-Collection from Vector", 200, 0, 200); //zad 7
   hPSimHitXYZ = new TH3D("hPSimHitXYZ", "Position of PSimHit", 240, -120, 120, 200, -100, 100, 200, -1, 1); //zad 8
   hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 1000, -200, 200); //zad 11
-  hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, -1000); //zad 13
-  hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 400, -1000, 1000, 400, -1000, 1000); //zad 16
+  hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 800, -1000, 1000, 800, -1000, -1000); //zad 13
+  hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 800, -1000, 1000, 800, -1000, 1000); //zad 16
   hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.1
   hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.2
   hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.3
@@ -267,8 +267,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
   hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.1, 0.1); //zad 29.1
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 2000, -0.1, 0.1); //zad 30.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 1000, -0.5, 0.5); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 1000, -0.5, 0.5); //zad 30.2
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
 
  
@@ -563,7 +563,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         <<" code(q): "<< chDigi.code()
         << std::endl;
     hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
-
+   //std::cout<< "Quality Code: " << chDigi.code() << std::endl; //No code 0 and 1
 
   }
   //zad 22.5
@@ -572,6 +572,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   //for(size_t k = 0; k < std::min(PhiB_Sim.size(), PhiB_Rec.size()); ++k){
     //hPhiBComp -> Fill(PhiB_Rec[k], PhiB_Sim[k]); //zad 21
   //}
+ 
   if(Phi_Rec_St1 != 0 && Phi_Sim_St1 != 0) {
     hPhiCompSt1 -> Fill(Phi_Sim_St1, Phi_Rec_St1); //zad 25.1
     //hDeltaPhi1 -> Fill(Phi_Sim_St1 - Phi_Rec_St1); //zad 29.1
