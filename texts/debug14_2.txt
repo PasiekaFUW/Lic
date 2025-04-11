@@ -1,0 +1,314 @@
+command:  ls -1 /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/|grep root | grep m_99
+Number of files in direcotry: /scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/  --->  11
+09-Apr-2025 14:22:19 CEST  Initiating request to open file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+09-Apr-2025 14:22:20 CEST  Successfully opened file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+Begin processing the 1st record. Run 1, Event 392001, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:31.775 CEST
+ Triger Primitives 
+Station: 1 Sector: 1 Wheel: -2 Phi global TP: 0.663324 PhiB Global TP: 0.10498 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 1 Wheel: -2 Phi global TP: 0.677919 PhiB Global TP: 0.0493164 Quality HW Base: 3
+Counter 1
+Station: 3 Sector: 1 Wheel: -2 Phi global TP: 0.686036 PhiB Global TP: 0.0307617 Quality HW Base: 6
+=========> Analyzed #1 DtPh: 3  DtTh: 0
+Begin processing the 2nd record. Run 1, Event 392002, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.767 CEST
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.265889 PhiB_Sim global: 0.252098 Global R: 684.402 Global Z: -531.015 Local X, Y, Z:  (72.4877,-2.33606,0.0168635)  PABS: 4.38038
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.265026 PhiB_Sim global: 0.24973 Global R: 686.765 Global Z: -532.872 Local X, Y, Z:  (73.2232,-0.478363,0)  PABS: 4.37921
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.264142 PhiB_Sim global: 0.247665 Global R: 689.215 Global Z: -534.797 Local X, Y, Z:  (73.9833,1.4477,-0.065)  PABS: 4.37723
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.263392 PhiB_Sim global: 0.246327 Global R: 691.316 Global Z: -536.448 Local X, Y, Z:  (74.6335,3.09939,0.065)  PABS: 4.37298
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.255003 PhiB_Sim global: 0.221555 Global R: 716.438 Global Z: -556.21 Local X, Y, Z:  (-22.8685,80.194,0.326851)  PABS: 4.36291
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.254697 PhiB_Sim global: 0.221381 Global R: 717.435 Global Z: -556.994 Local X, Y, Z:  (-23.6528,80.4914,-0.229282)  PABS: 4.36219
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.254274 PhiB_Sim global: 0.220211 Global R: 718.821 Global Z: -558.084 Local X, Y, Z:  (-24.7436,80.9042,0.297947)  PABS: 4.36118
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.253936 PhiB_Sim global: 0.218902 Global R: 719.935 Global Z: -558.961 Local X, Y, Z:  (-25.6209,81.2352,-0.323071)  PABS: 4.36016
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.253519 PhiB_Sim global: 0.218947 Global R: 721.319 Global Z: -560.051 Local X, Y, Z:  (-26.7118,81.6461,0.205449)  PABS: 4.35852
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.253219 PhiB_Sim global: 0.217962 Global R: 722.318 Global Z: -560.838 Local X, Y, Z:  (-27.4988,81.9423,-0.350468)  PABS: 4.35795
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.252771 PhiB_Sim global: 0.217533 Global R: 723.819 Global Z: -562.021 Local X, Y, Z:  (-28.6822,82.3869,0.114559)  PABS: 4.35618
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.25194 PhiB_Sim global: 0.215064 Global R: 726.631 Global Z: -564.237 Local X, Y, Z:  (83.2178,30.8993,0)  PABS: 4.35012
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.251362 PhiB_Sim global: 0.213148 Global R: 728.617 Global Z: -565.803 Local X, Y, Z:  (83.8027,32.4656,0.194707)  PABS: 4.34818
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.251067 PhiB_Sim global: 0.212374 Global R: 729.638 Global Z: -566.608 Local X, Y, Z:  (84.1029,33.2708,-0.373351)  PABS: 4.34646
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.250589 PhiB_Sim global: 0.211436 Global R: 731.304 Global Z: -567.922 Local X, Y, Z:  (84.5914,34.5854,0)  PABS: 4.34442
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.249926 PhiB_Sim global: 0.209072 Global R: 733.64 Global Z: -569.764 Local X, Y, Z:  (85.275,36.4278,0)  PABS: 4.34307
+Counter 16
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.232119 PhiB_Sim global: 0.114755 Global R: 816.972 Global Z: -636.248 Local X, Y, Z:  (-98.8502,102.927,0)  PABS: 3.64526
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.231829 PhiB_Sim global: 0.113875 Global R: 819.177 Global Z: -638.031 Local X, Y, Z:  (-99.0048,104.71,0)  PABS: 3.64321
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.231543 PhiB_Sim global: 0.11215 Global R: 821.381 Global Z: -639.814 Local X, Y, Z:  (-101.261,106.492,0)  PABS: 3.63893
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.231261 PhiB_Sim global: 0.111106 Global R: 823.586 Global Z: -641.598 Local X, Y, Z:  (-101.418,108.276,0)  PABS: 3.63731
+ Triger Primitives 
+Station: 1 Sector: 11 Wheel: -2 Phi global TP: -0.257524 PhiB Global TP: 0.231445 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 0 Wheel: -2 Phi global TP: -0.229362 PhiB Global TP: 0.102051 Quality HW Base: 2
+Begin processing the 3rd record. Run 1, Event 392003, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.770 CEST
+Begin processing the 4th record. Run 1, Event 392004, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.770 CEST
+ Triger Primitives 
+Station: 1 Sector: 7 Wheel: -2 Phi global TP: -2.31737 PhiB Global TP: 0.043457 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 8 Wheel: -2 Phi global TP: -2.31815 PhiB Global TP: -0.164062 Quality HW Base: 2
+Station: 2 Sector: 8 Wheel: -2 Phi global TP: -2.31216 PhiB Global TP: 0.034668 Quality HW Base: 3
+Begin processing the 5th record. Run 1, Event 392005, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.775 CEST
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.983947 PhiB_Sim global: 0.454688 Global R: 596.238 Global Z: -424.972 Local X, Y, Z:  (-11.0827,-108.268,0.065)  PABS: 2.73703
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.98232 PhiB_Sim global: 0.447105 Global R: 598.335 Global Z: -426.525 Local X, Y, Z:  (-10.312,-106.714,0)  PABS: 2.7352
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.980718 PhiB_Sim global: 0.445062 Global R: 600.431 Global Z: -428.076 Local X, Y, Z:  (-9.54734,-105.164,-0.065)  PABS: 2.73336
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.979356 PhiB_Sim global: 0.442057 Global R: 602.226 Global Z: -429.404 Local X, Y, Z:  (-8.89338,-103.836,0.065)  PABS: 2.7313
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.963588 PhiB_Sim global: 0.415204 Global R: 624.201 Global Z: -445.604 Local X, Y, Z:  (87.6402,-3.11299,0)  PABS: 2.72471
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.962235 PhiB_Sim global: 0.411613 Global R: 626.2 Global Z: -447.076 Local X, Y, Z:  (86.1688,-2.40841,0)  PABS: 2.72375
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.960892 PhiB_Sim global: 0.411297 Global R: 628.199 Global Z: -448.547 Local X, Y, Z:  (84.6981,-1.70512,0)  PABS: 2.72287
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.959486 PhiB_Sim global: 0.411502 Global R: 630.302 Global Z: -450.096 Local X, Y, Z:  (83.1494,-0.964369,-0.065)  PABS: 2.71999
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.958067 PhiB_Sim global: 0.408926 Global R: 632.439 Global Z: -451.671 Local X, Y, Z:  (-0.21214,-81.5746,0)  PABS: 2.71823
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.956681 PhiB_Sim global: 0.406886 Global R: 634.546 Global Z: -453.224 Local X, Y, Z:  (0.52784,-80.0218,-0.065)  PABS: 2.71103
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.955524 PhiB_Sim global: 0.403952 Global R: 636.322 Global Z: -454.533 Local X, Y, Z:  (1.14977,-78.7131,0.0847221)  PABS: 2.71017
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -0.954139 PhiB_Sim global: 0.40455 Global R: 638.46 Global Z: -456.109 Local X, Y, Z:  (1.89831,-77.1378,0)  PABS: 2.70874
+Counter 12
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.914311 PhiB_Sim global: 0.217012 Global R: 720.883 Global Z: -516.221 Local X, Y, Z:  (85.7119,-17.061,0)  PABS: 1.84851
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.913727 PhiB_Sim global: 0.213529 Global R: 722.83 Global Z: -517.622 Local X, Y, Z:  (86.184,-15.6598,0)  PABS: 1.84718
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.913125 PhiB_Sim global: 0.209292 Global R: 724.874 Global Z: -519.094 Local X, Y, Z:  (84.5752,-14.1875,-0.065)  PABS: 1.84571
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.91259 PhiB_Sim global: 0.207854 Global R: 726.723 Global Z: -520.425 Local X, Y, Z:  (85.0161,-12.8558,0)  PABS: 1.84476
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.906717 PhiB_Sim global: 0.192342 Global R: 748.254 Global Z: -535.973 Local X, Y, Z:  (-2.69821,96.2595,-0.0807698)  PABS: 1.8395
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.906336 PhiB_Sim global: 0.190371 Global R: 749.733 Global Z: -537.039 Local X, Y, Z:  (-3.76416,96.6008,0.231447)  PABS: 1.8387
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.906117 PhiB_Sim global: 0.193062 Global R: 750.587 Global Z: -537.654 Local X, Y, Z:  (-4.37928,96.7982,-0.338822)  PABS: 1.83767
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.905774 PhiB_Sim global: 0.18946 Global R: 751.928 Global Z: -538.617 Local X, Y, Z:  (-5.34322,97.1074,0.065)  PABS: 1.83605
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.905257 PhiB_Sim global: 0.190027 Global R: 753.967 Global Z: -540.083 Local X, Y, Z:  (-6.80891,97.5771,0)  PABS: 1.83426
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.904732 PhiB_Sim global: 0.189656 Global R: 756.036 Global Z: -541.569 Local X, Y, Z:  (98.1558,8.29562,0.065)  PABS: 1.83246
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.904217 PhiB_Sim global: 0.188586 Global R: 758.075 Global Z: -543.033 Local X, Y, Z:  (98.6276,9.76029,0)  PABS: 1.8304
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.903733 PhiB_Sim global: 0.187214 Global R: 760.015 Global Z: -544.425 Local X, Y, Z:  (96.9748,11.1528,0)  PABS: 1.82887
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -0.903252 PhiB_Sim global: 0.187079 Global R: 761.955 Global Z: -545.818 Local X, Y, Z:  (97.4216,12.5466,0)  PABS: 1.82612
+Counter 13
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.896397 PhiB_Sim global: -0.118842 Global R: 873.65 Global Z: -622.613 Local X, Y, Z:  (72.4986,89.2883,0)  PABS: 0.728232
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.896648 PhiB_Sim global: -0.117756 Global R: 875.208 Global Z: -623.528 Local X, Y, Z:  (72.5408,90.2035,0)  PABS: 0.727707
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.8969 PhiB_Sim global: -0.121581 Global R: 876.763 Global Z: -624.439 Local X, Y, Z:  (70.4812,91.1144,0)  PABS: 0.72707
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.897157 PhiB_Sim global: -0.121976 Global R: 878.32 Global Z: -625.353 Local X, Y, Z:  (70.5181,92.0285,0)  PABS: 0.72648
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.899911 PhiB_Sim global: -0.115222 Global R: 895.41 Global Z: -635.457 Local X, Y, Z:  (-102.132,70.1573,0.065)  PABS: 0.72019
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.900161 PhiB_Sim global: -0.115933 Global R: 897.057 Global Z: -636.432 Local X, Y, Z:  (-103.106,70.2005,0)  PABS: 0.718731
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.900397 PhiB_Sim global: -0.113643 Global R: 898.627 Global Z: -637.36 Local X, Y, Z:  (-104.035,70.2422,0)  PABS: 0.718045
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.900588 PhiB_Sim global: -0.117552 Global R: 899.904 Global Z: -638.116 Local X, Y, Z:  (-104.791,70.276,0.242684)  PABS: 0.716893
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.900685 PhiB_Sim global: -0.111244 Global R: 900.551 Global Z: -638.498 Local X, Y, Z:  (-105.173,70.2931,-0.293476)  PABS: 0.715789
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.90089 PhiB_Sim global: -0.11439 Global R: 901.947 Global Z: -639.324 Local X, Y, Z:  (73.1822,105.999,0)  PABS: 0.713487
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.901118 PhiB_Sim global: -0.109668 Global R: 903.516 Global Z: -640.251 Local X, Y, Z:  (73.227,106.926,0)  PABS: 0.712386
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.901345 PhiB_Sim global: -0.114243 Global R: 905.083 Global Z: -641.176 Local X, Y, Z:  (71.1716,107.851,0)  PABS: 0.711208
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -0.901576 PhiB_Sim global: -0.113056 Global R: 906.651 Global Z: -642.102 Local X, Y, Z:  (71.2134,108.777,0)  PABS: 0.709099
+ Triger Primitives 
+Station: 1 Sector: 10 Wheel: -2 Phi global TP: -0.967661 PhiB Global TP: 0.443359 Quality HW Base: 2
+Station: 1 Sector: 10 Wheel: -2 Phi global TP: -0.968531 PhiB Global TP: 0.436523 Quality HW Base: 1
+Counter 2
+Station: 2 Sector: 10 Wheel: -2 Phi global TP: -0.908579 PhiB Global TP: 0.198242 Quality HW Base: 6
+Counter 1
+Station: 3 Sector: 10 Wheel: -2 Phi global TP: -0.899042 PhiB Global TP: -0.120605 Quality HW Base: 6
+Begin processing the 6th record. Run 1, Event 392006, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.782 CEST
+Begin processing the 7th record. Run 1, Event 392007, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.782 CEST
+ Triger Primitives 
+Station: 1 Sector: 3 Wheel: -2 Phi global TP: 1.81356 PhiB Global TP: 0.0605469 Quality HW Base: 3
+Counter 1
+Station: 2 Sector: 4 Wheel: -2 Phi global TP: 1.82146 PhiB Global TP: 0.03125 Quality HW Base: 4
+Counter 1
+Station: 3 Sector: 3 Wheel: -2 Phi global TP: 1.8261 PhiB Global TP: 0.0214844 Quality HW Base: 6
+Begin processing the 8th record. Run 1, Event 392008, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.786 CEST
+Begin processing the 9th record. Run 1, Event 392009, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.786 CEST
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.242282 PhiB_Sim global: 0.373718 Global R: 693.381 Global Z: -540.254 Local X, Y, Z:  (83.107,6.90105,0)  PABS: 3.19204
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.241264 PhiB_Sim global: 0.370637 Global R: 695.286 Global Z: -541.784 Local X, Y, Z:  (83.8492,8.43194,0.333039)  PABS: 3.19008
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.240711 PhiB_Sim global: 0.370166 Global R: 696.33 Global Z: -542.623 Local X, Y, Z:  (84.2551,9.27123,-0.196808)  PABS: 3.18893
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.239634 PhiB_Sim global: 0.367842 Global R: 698.375 Global Z: -544.266 Local X, Y, Z:  (85.0488,10.9146,0.065)  PABS: 3.18692
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.238236 PhiB_Sim global: 0.365264 Global R: 701.061 Global Z: -546.424 Local X, Y, Z:  (86.089,13.0734,0)  PABS: 3.18434
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.224955 PhiB_Sim global: 0.326578 Global R: 728.529 Global Z: -568.453 Local X, Y, Z:  (-35.1096,94.4226,0.241662)  PABS: 3.14418
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.224478 PhiB_Sim global: 0.324879 Global R: 729.61 Global Z: -569.322 Local X, Y, Z:  (-35.9785,94.8208,-0.309585)  PABS: 3.14348
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.223822 PhiB_Sim global: 0.32383 Global R: 731.109 Global Z: -570.528 Local X, Y, Z:  (-37.1844,95.3718,0.225887)  PABS: 3.14123
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.223351 PhiB_Sim global: 0.32171 Global R: 732.19 Global Z: -571.396 Local X, Y, Z:  (-38.0536,95.7685,-0.325331)  PABS: 3.14057
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.222703 PhiB_Sim global: 0.321811 Global R: 733.689 Global Z: -572.602 Local X, Y, Z:  (-39.2595,96.317,0.211044)  PABS: 3.13822
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.222237 PhiB_Sim global: 0.320728 Global R: 734.772 Global Z: -573.473 Local X, Y, Z:  (-40.1305,96.713,-0.340069)  PABS: 3.13755
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.221592 PhiB_Sim global: 0.320335 Global R: 736.272 Global Z: -574.678 Local X, Y, Z:  (-41.3364,97.2624,0.194787)  PABS: 3.13535
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.22113 PhiB_Sim global: 0.317736 Global R: 737.352 Global Z: -575.546 Local X, Y, Z:  (-42.2043,97.6581,-0.356502)  PABS: 3.13481
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.220291 PhiB_Sim global: 0.319441 Global R: 739.319 Global Z: -577.125 Local X, Y, Z:  (98.3791,43.7836,0.0890369)  PABS: 3.13044
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.21914 PhiB_Sim global: 0.316535 Global R: 742.035 Global Z: -579.303 Local X, Y, Z:  (99.3748,45.9628,0)  PABS: 3.12574
+Station: 1 Sector: 12 Wheel: -2 Phi_Sim global: -0.218076 PhiB_Sim global: 0.314183 Global R: 744.576 Global Z: -581.341 Local X, Y, Z:  (100.304,48.0014,0)  PABS: 3.12451
+Counter 16
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.197008 PhiB_Sim global: 0.188172 Global R: 817.888 Global Z: -640.547 Local X, Y, Z:  (-80.5054,107.229,0)  PABS: 2.5483
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.196532 PhiB_Sim global: 0.188093 Global R: 820.067 Global Z: -642.316 Local X, Y, Z:  (-80.5178,108.997,0)  PABS: 2.54737
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.196059 PhiB_Sim global: 0.186461 Global R: 822.244 Global Z: -644.082 Local X, Y, Z:  (-82.6307,110.763,0)  PABS: 2.54633
+Station: 2 Sector: 1 Wheel: -2 Phi_Sim global: -0.195592 PhiB_Sim global: 0.185102 Global R: 824.422 Global Z: -645.849 Local X, Y, Z:  (-82.6449,112.53,0)  PABS: 2.54551
+ Triger Primitives 
+Station: 1 Sector: 11 Wheel: -2 Phi global TP: -0.229028 PhiB Global TP: 0.341797 Quality HW Base: 5
+Counter 1
+Station: 2 Sector: 0 Wheel: -2 Phi global TP: -0.191986 PhiB Global TP: 0.189453 Quality HW Base: 2
+Begin processing the 10th record. Run 1, Event 392010, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.789 CEST
+ Triger Primitives 
+Station: 2 Sector: 4 Wheel: -2 Phi global TP: 1.91374 PhiB Global TP: 0.0883789 Quality HW Base: 5
+Begin processing the 11th record. Run 1, Event 392011, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.793 CEST
+Begin processing the 12th record. Run 1, Event 392012, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.793 CEST
+ Triger Primitives 
+Station: 1 Sector: 2 Wheel: -2 Phi global TP: 0.921892 PhiB Global TP: 0.0405273 Quality HW Base: 2
+Begin processing the 13th record. Run 1, Event 392013, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.794 CEST
+Begin processing the 14th record. Run 1, Event 392014, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.794 CEST
+ Triger Primitives 
+Station: 1 Sector: 7 Wheel: -2 Phi global TP: -2.70181 PhiB Global TP: 0.182617 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 7 Wheel: -2 Phi global TP: -2.6773 PhiB Global TP: 0.105957 Quality HW Base: 2
+Begin processing the 15th record. Run 1, Event 392015, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.797 CEST
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 0.983665 PhiB_Sim global: 0.374964 Global R: 627.268 Global Z: -467.267 Local X, Y, Z:  (-64.0755,-66.2,0)  PABS: 2.94267
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 0.984792 PhiB_Sim global: 0.372911 Global R: 629.072 Global Z: -468.609 Local X, Y, Z:  (-63.6812,-64.8592,0.065)  PABS: 2.94187
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 0.986023 PhiB_Sim global: 0.368365 Global R: 631.068 Global Z: -470.092 Local X, Y, Z:  (-63.2484,-63.376,0)  PABS: 2.94037
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 0.987244 PhiB_Sim global: 0.366563 Global R: 633.067 Global Z: -471.576 Local X, Y, Z:  (-62.8169,-61.8928,-0.0699238)  PABS: 2.93721
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 0.999221 PhiB_Sim global: 0.343438 Global R: 653.71 Global Z: -486.826 Local X, Y, Z:  (46.6478,-60.5454,0)  PABS: 2.93152
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00031 PhiB_Sim global: 0.339975 Global R: 655.7 Global Z: -488.295 Local X, Y, Z:  (45.1794,-60.1341,-0.065)  PABS: 2.92767
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.001 PhiB_Sim global: 0.339265 Global R: 656.963 Global Z: -489.227 Local X, Y, Z:  (44.2474,-59.8742,0.368448)  PABS: 2.92553
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00145 PhiB_Sim global: 0.339308 Global R: 657.797 Global Z: -489.843 Local X, Y, Z:  (43.6318,-59.7028,-0.201922)  PABS: 2.9249
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00223 PhiB_Sim global: 0.338201 Global R: 659.239 Global Z: -490.909 Local X, Y, Z:  (42.5657,-59.4067,0.111909)  PABS: 2.92421
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00345 PhiB_Sim global: 0.33498 Global R: 661.524 Global Z: -492.599 Local X, Y, Z:  (-58.9398,-40.8765,0)  PABS: 2.91797
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00445 PhiB_Sim global: 0.334318 Global R: 663.427 Global Z: -494.006 Local X, Y, Z:  (-58.5527,-39.4695,0)  PABS: 2.91642
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00545 PhiB_Sim global: 0.330947 Global R: 665.332 Global Z: -495.416 Local X, Y, Z:  (-58.1668,-38.0608,0)  PABS: 2.91442
+Station: 1 Sector: 3 Wheel: -2 Phi_Sim global: 1.00643 PhiB_Sim global: 0.328394 Global R: 667.239 Global Z: -496.827 Local X, Y, Z:  (-57.7837,-36.6501,0)  PABS: 2.91361
+Counter 13
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.03769 PhiB_Sim global: 0.218921 Global R: 746.68 Global Z: -555.619 Local X, Y, Z:  (14.3469,22.2475,0)  PABS: 2.34224
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.03826 PhiB_Sim global: 0.214397 Global R: 748.63 Global Z: -557.074 Local X, Y, Z:  (14.6197,23.7027,0)  PABS: 2.34071
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.03882 PhiB_Sim global: 0.214296 Global R: 750.578 Global Z: -558.529 Local X, Y, Z:  (12.79,25.1567,0)  PABS: 2.33894
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.03938 PhiB_Sim global: 0.21262 Global R: 752.526 Global Z: -559.981 Local X, Y, Z:  (13.0599,26.6092,0)  PABS: 2.33735
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04524 PhiB_Sim global: 0.203306 Global R: 773.887 Global Z: -575.909 Local X, Y, Z:  (-42.5351,22.1767,0)  PABS: 2.33212
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04576 PhiB_Sim global: 0.202941 Global R: 775.832 Global Z: -577.357 Local X, Y, Z:  (-43.9831,22.4413,0)  PABS: 2.33131
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04627 PhiB_Sim global: 0.199311 Global R: 777.786 Global Z: -578.812 Local X, Y, Z:  (-45.438,22.7046,-0.00394559)  PABS: 2.33013
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.0468 PhiB_Sim global: 0.199285 Global R: 779.827 Global Z: -580.334 Local X, Y, Z:  (-46.96,22.9777,-0.065)  PABS: 2.32856
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04733 PhiB_Sim global: 0.200143 Global R: 781.906 Global Z: -581.884 Local X, Y, Z:  (23.3571,48.5102,0)  PABS: 2.32592
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04783 PhiB_Sim global: 0.196296 Global R: 783.858 Global Z: -583.341 Local X, Y, Z:  (23.6178,49.9666,0)  PABS: 2.3244
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.04834 PhiB_Sim global: 0.194242 Global R: 785.911 Global Z: -584.873 Local X, Y, Z:  (21.7884,51.499,-0.065)  PABS: 2.32262
+Station: 2 Sector: 3 Wheel: -2 Phi_Sim global: 1.0488 PhiB_Sim global: 0.192941 Global R: 787.77 Global Z: -586.263 Local X, Y, Z:  (22.0314,52.8883,0)  PABS: 2.32159
+ Triger Primitives 
+Station: 1 Sector: 2 Wheel: -2 Phi global TP: 0.99547 PhiB Global TP: 0.349609 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 2 Wheel: -2 Phi global TP: 1.04341 PhiB Global TP: 0.205566 Quality HW Base: 6
+Begin processing the 16th record. Run 1, Event 392016, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.803 CEST
+Begin processing the 17th record. Run 1, Event 392017, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.804 CEST
+ Triger Primitives 
+Station: 1 Sector: 3 Wheel: -2 Phi global TP: 1.88808 PhiB Global TP: 0.0595703 Quality HW Base: 2
+Counter 1
+Station: 2 Sector: 4 Wheel: -2 Phi global TP: 1.89431 PhiB Global TP: 0.0361328 Quality HW Base: 6
+Begin processing the 18th record. Run 1, Event 392018, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.807 CEST
+Begin processing the 19th record. Run 1, Event 392019, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.807 CEST
+Begin processing the 20th record. Run 1, Event 392020, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.807 CEST
+Begin processing the 21st record. Run 1, Event 392021, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.808 CEST
+Begin processing the 22nd record. Run 1, Event 392022, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.808 CEST
+Begin processing the 23rd record. Run 1, Event 392023, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.809 CEST
+Begin processing the 24th record. Run 1, Event 392024, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.810 CEST
+Begin processing the 25th record. Run 1, Event 392025, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.810 CEST
+Begin processing the 26th record. Run 1, Event 392026, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.810 CEST
+Begin processing the 27th record. Run 1, Event 392027, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.810 CEST
+ Triger Primitives 
+Station: 1 Sector: 5 Wheel: -2 Phi global TP: 2.54955 PhiB Global TP: 0.0307617 Quality HW Base: 2
+Begin processing the 28th record. Run 1, Event 392028, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.811 CEST
+Begin processing the 29th record. Run 1, Event 392029, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.812 CEST
+Begin processing the 30th record. Run 1, Event 392030, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.812 CEST
+ Triger Primitives 
+Station: 1 Sector: 9 Wheel: -1 Phi global TP: -1.50108 PhiB Global TP: 0.0473633 Quality HW Base: 2
+Counter 1
+Station: 2 Sector: 9 Wheel: -2 Phi global TP: -1.49581 PhiB Global TP: 0.0644531 Quality HW Base: 2
+Station: 2 Sector: 9 Wheel: -2 Phi global TP: -1.4685 PhiB Global TP: -0.353027 Quality HW Base: 1
+Station: 2 Sector: 9 Wheel: -2 Phi global TP: -1.50213 PhiB Global TP: -0.506836 Quality HW Base: 3
+Station: 2 Sector: 9 Wheel: -2 Phi global TP: -1.49581 PhiB Global TP: 0.0151367 Quality HW Base: 3
+Station: 2 Sector: 9 Wheel: -2 Phi global TP: -1.49717 PhiB Global TP: 0.342773 Quality HW Base: 1
+Counter 5
+Station: 3 Sector: 9 Wheel: -2 Phi global TP: -1.49202 PhiB Global TP: 0.0180664 Quality HW Base: 6
+Begin processing the 31st record. Run 1, Event 392031, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.822 CEST
+ Triger Primitives 
+Station: 1 Sector: 5 Wheel: -2 Phi global TP: 2.63018 PhiB Global TP: 0.0175781 Quality HW Base: 6
+Begin processing the 32nd record. Run 1, Event 392032, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.825 CEST
+ Triger Primitives 
+Station: 1 Sector: 8 Wheel: -2 Phi global TP: -2.08323 PhiB Global TP: 0.0263672 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 8 Wheel: -2 Phi global TP: -2.07972 PhiB Global TP: 0.0131836 Quality HW Base: 6
+Begin processing the 33rd record. Run 1, Event 392033, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.829 CEST
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -1.1893 PhiB_Sim global: 0.371484 Global R: 628.958 Global Z: -444.06 Local X, Y, Z:  (-102.699,-89.1867,0)  PABS: 2.89527
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -1.18822 PhiB_Sim global: 0.368685 Global R: 630.735 Global Z: -445.328 Local X, Y, Z:  (-102.397,-87.9189,0)  PABS: 2.89387
+Station: 1 Sector: 11 Wheel: -2 Phi_Sim global: -1.1871 PhiB_Sim global: 0.366499 Global R: 632.599 Global Z: -446.659 Local X, Y, Z:  (-102.083,-86.5888,-0.0648587)  PABS: 2.89216
+Counter 3
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.15002 PhiB_Sim global: 0.259185 Global R: 709.797 Global Z: -502.463 Local X, Y, Z:  (-32.4143,-30.8075,0)  PABS: 2.31651
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14935 PhiB_Sim global: 0.257689 Global R: 711.689 Global Z: -503.866 Local X, Y, Z:  (-32.2099,-29.4045,0)  PABS: 2.31574
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14869 PhiB_Sim global: 0.253949 Global R: 713.581 Global Z: -505.267 Local X, Y, Z:  (-34.108,-28.0023,0)  PABS: 2.31412
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14803 PhiB_Sim global: 0.253038 Global R: 715.472 Global Z: -506.668 Local X, Y, Z:  (-33.9084,-26.6017,0)  PABS: 2.31264
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14123 PhiB_Sim global: 0.238442 Global R: 736.139 Global Z: -521.973 Local X, Y, Z:  (11.2902,-25.5907,0.065)  PABS: 2.30723
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14061 PhiB_Sim global: 0.238425 Global R: 738.128 Global Z: -523.445 Local X, Y, Z:  (9.81817,-25.3917,0)  PABS: 2.30568
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.14001 PhiB_Sim global: 0.238316 Global R: 740.023 Global Z: -524.847 Local X, Y, Z:  (8.41533,-25.2015,0)  PABS: 2.30486
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.13942 PhiB_Sim global: 0.237434 Global R: 741.917 Global Z: -526.247 Local X, Y, Z:  (7.01505,-25.0112,0)  PABS: 2.30403
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.13877 PhiB_Sim global: 0.236913 Global R: 744.029 Global Z: -527.808 Local X, Y, Z:  (-24.699,-5.45316,0)  PABS: 2.30156
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.13815 PhiB_Sim global: 0.23749 Global R: 746.02 Global Z: -529.283 Local X, Y, Z:  (-24.4984,-3.97805,-0.065)  PABS: 2.30008
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.1376 PhiB_Sim global: 0.235016 Global R: 747.825 Global Z: -530.619 Local X, Y, Z:  (-26.4173,-2.64088,0)  PABS: 2.29939
+Station: 2 Sector: 11 Wheel: -2 Phi_Sim global: -1.13702 PhiB_Sim global: 0.233575 Global R: 749.725 Global Z: -532.028 Local X, Y, Z:  (-26.2286,-1.23139,0)  PABS: 2.29828
+Counter 12
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11657 PhiB_Sim global: 0.0616671 Global R: 863.292 Global Z: -613.508 Local X, Y, Z:  (-61.6713,80.1766,0)  PABS: 1.27983
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11643 PhiB_Sim global: 0.0629302 Global R: 865.156 Global Z: -614.847 Local X, Y, Z:  (-61.6806,81.5157,0)  PABS: 1.27895
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.1163 PhiB_Sim global: 0.0630314 Global R: 867.021 Global Z: -616.188 Local X, Y, Z:  (-63.7883,82.856,0)  PABS: 1.27831
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11617 PhiB_Sim global: 0.0605167 Global R: 868.89 Global Z: -617.533 Local X, Y, Z:  (-63.7977,84.201,0)  PABS: 1.2776
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11494 PhiB_Sim global: 0.0537939 Global R: 888.844 Global Z: -631.899 Local X, Y, Z:  (-98.567,-64.7357,0.379753)  PABS: 1.27213
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.1149 PhiB_Sim global: 0.0525256 Global R: 889.67 Global Z: -632.495 Local X, Y, Z:  (-99.1627,-64.7442,-0.192669)  PABS: 1.27147
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11481 PhiB_Sim global: 0.0553528 Global R: 891.142 Global Z: -633.558 Local X, Y, Z:  (-100.226,-64.7581,0.0868755)  PABS: 1.27072
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11469 PhiB_Sim global: 0.0560933 Global R: 893.094 Global Z: -634.968 Local X, Y, Z:  (-101.636,-64.7745,0.0345708)  PABS: 1.26857
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11457 PhiB_Sim global: 0.0562557 Global R: 895.02 Global Z: -636.359 Local X, Y, Z:  (-103.027,-64.7895,0)  PABS: 1.26737
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11444 PhiB_Sim global: 0.060595 Global R: 897.112 Global Z: -637.87 Local X, Y, Z:  (-61.9524,104.538,0)  PABS: 1.26557
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11431 PhiB_Sim global: 0.0587736 Global R: 898.988 Global Z: -639.224 Local X, Y, Z:  (-61.9622,105.892,0)  PABS: 1.26481
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11419 PhiB_Sim global: 0.0565952 Global R: 900.86 Global Z: -640.574 Local X, Y, Z:  (-64.0745,107.242,0)  PABS: 1.26355
+Station: 3 Sector: 11 Wheel: -2 Phi_Sim global: -1.11408 PhiB_Sim global: 0.0551345 Global R: 902.732 Global Z: -641.923 Local X, Y, Z:  (-64.089,108.591,0)  PABS: 1.26282
+ Triger Primitives 
+Station: 1 Sector: 10 Wheel: -2 Phi global TP: -1.19737 PhiB Global TP: 0.365723 Quality HW Base: 1
+Counter 1
+Station: 2 Sector: 10 Wheel: -2 Phi global TP: -1.1433 PhiB Global TP: 0.243652 Quality HW Base: 6
+Counter 1
+Station: 3 Sector: 10 Wheel: -2 Phi global TP: -1.11531 PhiB Global TP: 0.0571289 Quality HW Base: 6
+Begin processing the 34th record. Run 1, Event 392034, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.833 CEST
+Begin processing the 35th record. Run 1, Event 392035, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.834 CEST
+Begin processing the 36th record. Run 1, Event 392036, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.834 CEST
+Begin processing the 37th record. Run 1, Event 392037, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.835 CEST
+ Triger Primitives 
+Station: 1 Sector: 10 Wheel: -2 Phi global TP: -1.06976 PhiB Global TP: 0.0541992 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 10 Wheel: -2 Phi global TP: -1.06227 PhiB Global TP: 0.0297852 Quality HW Base: 2
+Begin processing the 38th record. Run 1, Event 392038, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.837 CEST
+ Triger Primitives 
+Station: 1 Sector: 11 Wheel: -1 Phi global TP: -0.623109 PhiB Global TP: 0.0849609 Quality HW Base: 2
+Counter 1
+Station: 2 Sector: 11 Wheel: -2 Phi global TP: -0.611962 PhiB Global TP: 0.0537109 Quality HW Base: 6
+Counter 1
+Station: 3 Sector: 11 Wheel: -2 Phi global TP: -0.604089 PhiB Global TP: 0.0258789 Quality HW Base: 4
+Counter 1
+Station: 4 Sector: 11 Wheel: -2 Phi global TP: -0.600549 PhiB Global TP: 0.0200195 Quality HW Base: 2
+Begin processing the 39th record. Run 1, Event 392039, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.842 CEST
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.434371 PhiB_Sim global: 0.414793 Global R: 624.351 Global Z: -462.757 Local X, Y, Z:  (-74.8597,-70.5123,0)  PABS: 1.95003
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.435678 PhiB_Sim global: 0.411293 Global R: 626.3 Global Z: -464.249 Local X, Y, Z:  (-74.4248,-69.0207,0)  PABS: 1.94907
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.43697 PhiB_Sim global: 0.408025 Global R: 628.251 Global Z: -465.743 Local X, Y, Z:  (-73.993,-67.5269,0)  PABS: 1.94732
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.438264 PhiB_Sim global: 0.413247 Global R: 630.204 Global Z: -467.239 Local X, Y, Z:  (-73.5573,-66.0315,0)  PABS: 1.94575
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.451691 PhiB_Sim global: 0.384263 Global R: 651.632 Global Z: -483.657 Local X, Y, Z:  (49.616,-70.9927,0.0418108)  PABS: 1.93965
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.45289 PhiB_Sim global: 0.380507 Global R: 653.658 Global Z: -485.205 Local X, Y, Z:  (48.0676,-70.5638,0)  PABS: 1.93821
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.454036 PhiB_Sim global: 0.37715 Global R: 655.618 Global Z: -486.701 Local X, Y, Z:  (46.5718,-70.1515,0)  PABS: 1.93737
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.455224 PhiB_Sim global: 0.372632 Global R: 657.674 Global Z: -488.27 Local X, Y, Z:  (45.0039,-69.7226,-0.065)  PABS: 1.93527
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.456121 PhiB_Sim global: 0.374923 Global R: 659.244 Global Z: -489.467 Local X, Y, Z:  (-69.3969,-43.8066,0.344442)  PABS: 1.93234
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.456685 PhiB_Sim global: 0.374327 Global R: 660.226 Global Z: -490.218 Local X, Y, Z:  (-69.191,-43.0558,-0.305994)  PABS: 1.93011
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.457543 PhiB_Sim global: 0.373174 Global R: 661.73 Global Z: -491.367 Local X, Y, Z:  (-68.8769,-41.9068,0)  PABS: 1.92831
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.458711 PhiB_Sim global: 0.37075 Global R: 663.795 Global Z: -492.945 Local X, Y, Z:  (-68.4472,-40.3292,-0.065)  PABS: 1.92577
+Station: 1 Sector: 2 Wheel: -2 Phi_Sim global: 0.459733 PhiB_Sim global: 0.366314 Global R: 665.62 Global Z: -494.338 Local X, Y, Z:  (-68.07,-38.9365,0.0271112)  PABS: 1.92485
+Counter 13
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.493132 PhiB_Sim global: 0.180365 Global R: 744.822 Global Z: -552.893 Local X, Y, Z:  (3.87139,19.4952,0)  PABS: 1.29058
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.493593 PhiB_Sim global: 0.17172 Global R: 746.631 Global Z: -554.163 Local X, Y, Z:  (4.06237,20.7647,0)  PABS: 1.28873
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.494037 PhiB_Sim global: 0.170426 Global R: 748.445 Global Z: -555.439 Local X, Y, Z:  (2.14654,22.04,0)  PABS: 1.28737
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.494475 PhiB_Sim global: 0.166965 Global R: 750.261 Global Z: -556.718 Local X, Y, Z:  (2.32839,23.3187,0)  PABS: 1.28535
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.498935 PhiB_Sim global: 0.150934 Global R: 770.15 Global Z: -570.705 Local X, Y, Z:  (-37.297,10.4214,0)  PABS: 1.27968
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.499327 PhiB_Sim global: 0.147562 Global R: 772.036 Global Z: -572.018 Local X, Y, Z:  (-38.6093,10.5914,-0.065)  PABS: 1.27822
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.499621 PhiB_Sim global: 0.144516 Global R: 773.465 Global Z: -573.007 Local X, Y, Z:  (-39.5974,10.7191,0.19504)  PABS: 1.27689
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.499764 PhiB_Sim global: 0.144928 Global R: 774.17 Global Z: -573.494 Local X, Y, Z:  (-40.085,10.7812,-0.318396)  PABS: 1.27503
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.500021 PhiB_Sim global: 0.145009 Global R: 775.427 Global Z: -574.363 Local X, Y, Z:  (-40.9536,10.8929,0.065)  PABS: 1.27344
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.500461 PhiB_Sim global: 0.145904 Global R: 777.594 Global Z: -575.861 Local X, Y, Z:  (11.1861,42.45,-0.065)  PABS: 1.27067
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.500806 PhiB_Sim global: 0.146603 Global R: 779.288 Global Z: -577.032 Local X, Y, Z:  (11.3384,43.6201,0)  PABS: 1.27002
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.501167 PhiB_Sim global: 0.144231 Global R: 781.073 Global Z: -578.267 Local X, Y, Z:  (9.39806,44.855,0)  PABS: 1.26906
+Station: 2 Sector: 2 Wheel: -2 Phi_Sim global: 0.501521 PhiB_Sim global: 0.142109 Global R: 782.86 Global Z: -579.504 Local X, Y, Z:  (9.55522,46.0913,0)  PABS: 1.26754
+ Triger Primitives 
+Station: 1 Sector: 1 Wheel: -2 Phi global TP: 0.447503 PhiB Global TP: 0.389648 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 1 Wheel: -2 Phi global TP: 0.497499 PhiB Global TP: 0.154297 Quality HW Base: 6
+Begin processing the 40th record. Run 1, Event 392040, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.846 CEST
+ Triger Primitives 
+Station: 1 Sector: 3 Wheel: -2 Phi global TP: 1.6097 PhiB Global TP: 0.0185547 Quality HW Base: 6
+Begin processing the 41st record. Run 1, Event 392041, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.849 CEST
+Begin processing the 42nd record. Run 1, Event 392042, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.849 CEST
+ Triger Primitives 
+Station: 1 Sector: 0 Wheel: -2 Phi global TP: 0.2547 PhiB Global TP: 0.0307617 Quality HW Base: 6
+Counter 1
+Station: 2 Sector: 1 Wheel: -2 Phi global TP: 0.259668 PhiB Global TP: 0.0146484 Quality HW Base: 1
+Station: 2 Sector: 1 Wheel: -2 Phi global TP: 0.259164 PhiB Global TP: 0.0205078 Quality HW Base: 5
+Station: 2 Sector: 1 Wheel: -2 Phi global TP: 0.266091 PhiB Global TP: -0.0541992 Quality HW Base: 3
+Begin processing the 43rd record. Run 1, Event 392043, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.856 CEST
+Begin processing the 44th record. Run 1, Event 392044, LumiSection 3921 on stream 0 at 09-Apr-2025 14:22:40.857 CEST
+Station: 1 Sector: 4 Wheel: -2 Phi_Sim global: 1.71805 PhiB_Sim global: 0.280844 Global R: 774.352 Global Z: -649.152 Local X, Y, Z:  (24.404,115.625,0)  PABS: 2.67138
+Station: 1 Sector: 4 Wheel: -2 Phi_Sim global: 1.71872 PhiB_Sim global: 0.277117 Global R: 776.263 Global Z: -650.794 Local X, Y, Z:  (24.8251,117.266,0.369249)  PABS: 2.66914
+09-Apr-2025 14:22:40 CEST  Closed file file:/scratch_cmsse/akalinow/CMS/Data/SingleMu/13_1_0_11_03_2024/SingleMu_ch0_OneOverPt_Run2023_13_1_0_11_03_2024/13_1_0_11_03_2024/240311_101428/0000/SingleMu_OneOverPt_1_100_m_99.root
+AT THE END: =========> Analyzed #44 DtPh: 44  DtTh: 0

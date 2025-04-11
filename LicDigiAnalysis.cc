@@ -94,6 +94,7 @@ public:
     hDeltaPhi2->Write(); //zad 29.2
     hDeltaBCodeSt1->Write(); //zad 30.1
     hDeltaBCodeSt2->Write(); //zad 30.2
+    hQuality_Compare->Write(); //zad 31
 
     f.Write();
 
@@ -140,6 +141,7 @@ private:
   TH1D *hDeltaPhi2; //zad 29.2
   TH2D *hDeltaBCodeSt1; //zad 30.1
   TH2D *hDeltaBCodeSt2; //zad 30.2
+  TH2D *hQuality_Compare; //zad 31
 
 
 };
@@ -181,8 +183,9 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
   hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.1, 0.1); //zad 29.1
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 8, 0, 8, 2000, -1.0, 1.0); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 8, 0, 8, 2000, -1.0, 1.0); //zad 30.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 8, 0, 8, 1000, -0.5, 0.5); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 8, 0, 8, 1000, -0.5, 0.5); //zad 30.2
+  hQuality_Compare = new TH2D("hQuality_Compare", "Old (X) vs new (Y) (Transformed to the HW Base) Quality", 8, 0, 8, 8, 0, 8); //zad 31
 
  
 }
@@ -219,12 +222,16 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double Phi_Sim_St2 = 0; //zad 25.2
   int ftt2 = 0; //zad 25.2
   double PhiB_Sim_St2 = 0; // zad 26
-
+  int Debuging_iterator0 = 0;
+  int Debuging_station0 = 0;
+  // bool first = true;
   for(const auto & ah: myPSimHits) {
     int station_P = 0; //zad 17
     int station_S = 0; //zad 17
     i_hits++;
     if (ah.trackId() != 1) continue;
+    //Debugowanie
+    //if (ah.pabs() > 5.) continue;
     const GeomDet * geomDet = globalGeometry.idToDet(ah.detUnitId()); //geographicalId() -> z DTChamberID.h DTChamberId
     DTChamberId chamber(geomDet->geographicalId()); //zad 17
     if(debug) std::cout << "Station_P: " << chamber.station() << std::endl;
@@ -239,6 +246,26 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     GlobalVector globalMomentumPSimHit = geomDet->toGlobal(ah.momentumAtEntry());   
     GlobalPoint entry = geomDet->toGlobal(ah.entryPoint());
     GlobalPoint position = geomDet->toGlobal(ah.localPosition());
+        //Debugowanie
+    if (Debuging_station0 != 0 && Debuging_station0 < station_S) {
+      std::cout << "Counter " << Debuging_iterator0 << std::endl;
+      Debuging_iterator0 = 0;
+    }
+
+
+
+    
+    Debuging_iterator0++;
+    Debuging_station0 = station_S;
+    std::cout << "Station: " << dtChamberId.station() << " Sector: " << dtChamberId.sector() << " Wheel: " << dtChamberId.wheel() << " Phi_Sim global: " << position.phi() << " PhiB_Sim global: " << globalMomentumPSimHit.phi() - entry.phi() << " Global R: "<< position.mag() << " Global Z: " << position.z() << " Local X, Y, Z: " << ah.localPosition() << " PABS: " << ah.pabs() << std::endl;
+    // std::cout << "ah.detUnitId() " << ah.detUnitId() << std::endl;
+    // std::cout << "ah.thetaAtEntry(): " << ah.thetaAtEntry() << std::endl;
+    // std::cout << "ah.momentumAtEntry().r(): " <<  sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) << std::endl;
+    // std::cout << "particleType(): " << ah.particleType() << std::endl;
+    // std::cout << "trackId(): " << ah.trackId() << std::endl;
+    // std::cout << "originalTrackId(): " << ah.originalTrackId() << std::endl;
+    // std::cout << "offsetTrackId(): " << ah.offsetTrackId() << std::endl;
+    //std::cout << "PhiB global Position " << globalMomentumPSimHit.phi() - entry.phi() << " Stacja " << dtChamberId.station() << std::endl;
 
        //zad 27
     if(station_S==1 && ftst2 == 0){
@@ -280,6 +307,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int ftt_rec_2 = 0; //zad 25.2
   int codeSt1 = 0; //zad 30.1
   int codeSt2 = 0; //zad 30.2
+  int Code_Old = 0; //zad 31
 
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
 
@@ -317,10 +345,11 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //   codeSt2 = chDigi.code(); //zad 30.2
     // }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
-    if (abs(chDigi.whNum()) != 2) continue;
-    if (chDigi.stNum() ==4) continue;
-    if (chDigi.bxNum() != 0) continue;
-    if (chDigi.code()==7) continue;
+    // GJ Commment for comparison
+    // if (abs(chDigi.whNum()) != 2) continue;
+    // if (chDigi.stNum() ==4) continue;
+    // if (chDigi.bxNum() != 0) continue;
+    // if (chDigi.code()==7) continue;
     // DTChamberId chId(chDigi.whNum(),chDigi.stNum(),chDigi.scNum()+1);
     theAllDtPDigisCnt++;
     if (debug) std::cout <<"DtDataWord64 BMTF    " 
@@ -333,9 +362,14 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         <<" code(q): "<< chDigi.code()
         << std::endl;
     //hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
+    Code_Old = chDigi.code(); //zad 31
 
   }
   int HardwareQuality = 0; 
+  //Debugowanie
+  int Debuging_station = 0;
+  int Debuging_iterator = 0;
+  int Code_New = 0; //zad 31
   edm::Handle<L1Phase2MuDTPhContainer> digiCollectionDTPh_upg; //Ph2
   ev.getByToken(inputDTPh_upg, digiCollectionDTPh_upg); //Ph2
   const L1Phase2MuDTPhContainer& dtphDigisUpg= *digiCollectionDTPh_upg.product(); //Ph2
@@ -369,7 +403,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         else if (chDigi.slNum() == 1)
           HardwareQuality= 0;
       }
-
+      Code_New = HardwareQuality; //zad 31
+      if (HardwareQuality == 0) continue; 
     //   std::cout << "Quality:" << HardwareQuality << std::endl;
     //   if(chDigi.quality() == 5) {
     //     std::cout << "Eureka" << std::endl;
@@ -425,7 +460,30 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       codeSt2 = HardwareQuality; 
 
     }
+    //Debugowanie
+    double debugPhi = 0;
+    debugPhi = chDigi.phi();
+    debugPhi /= 131072.;
+    debugPhi += M_PI/6. * (chDigi.scNum() + 0) ;//zad 25.2
+    if(debugPhi > M_PI){
+      debugPhi -= 2.*M_PI;
+    }
 
+    
+    if (Debuging_station != 0 &&  Debuging_station < chDigi.stNum()) {
+      std::cout << "Counter " << Debuging_iterator << std::endl;
+      Debuging_iterator = 0;
+    }
+    if (Debuging_station == 0) {
+      std::cout << " Triger Primitives " << std::endl;
+    }
+    Debuging_iterator++;
+    Debuging_station = chDigi.stNum();
+    //if(HardwareQuality == 0) continue;
+    std::cout << "Station: " << chDigi.stNum() << " Sector: " << chDigi.scNum() << " Wheel: " << chDigi.whNum() << " Phi global TP: " << debugPhi << " PhiB Global TP: " << chDigi.phiBend() / 2048. << " Quality HW Base: " << HardwareQuality << std::endl;
+    // stacja = 0, stacja = stacja teraz and iterator++, if stacja < stacja teraz print iterator
+    // std::cout << "Quality: " << HardwareQuality << std::endl;
+    // std::cout << "PhiB Global TP " << chDigi.phiBend() / 2048. << " Stacja " << chDigi.stNum() << std::endl;
 
   }
 
@@ -451,6 +509,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
    hDeltaPhiB2 -> Fill(reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2)); //zad 28.2
    hDeltaBCodeSt2 -> Fill(codeSt2, reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2) ); //zad 30.2
   }
+
+  hQuality_Compare->Fill(Code_Old, Code_New); //zad 31
  
 }
 
