@@ -21,6 +21,7 @@
 
 //#include "DataFormats/MuonDetId/interface/DtDetId.h"
 #include "DataFormats/MuonDetId/interface/DTChamberId.h" //zad 17
+#include "DataFormats/MuonDetId/interface/DTLayerId.h" //GJ Superlayer
 #include "DataFormats/L1DTTrackFinder/interface/L1MuDTChambPhContainer.h"
 #include "DataFormats/L1DTTrackFinder/interface/L1MuDTChambThContainer.h"
 
@@ -140,6 +141,7 @@ public:
   virtual void analyze(const edm::Event &ev, const edm::EventSetup& es) {
     theEventCnt++;
     debug = 0; //Debug Flag 0 - off, 1 - on
+    debug_manual = 0;
     analyzeDT(ev,es);
 
     if (theEventCnt%100==1) printStat(); 
@@ -160,6 +162,7 @@ private:
   edm::ESGetToken<Propagator, TrackingComponentsRecord> thePropagatorToken;
 
   bool debug;
+  bool debug_manual;
   unsigned int theEventCnt;
   unsigned int theAllDtPDigisCnt, theAllDtTDigisCnt;
   TH2D *hLicExample; //Example
@@ -265,10 +268,10 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPhiBCompSt2 = new TH2D("hPhiBCompSt2", "PhiB Comparison at station 2", 1000, -1, 1, 1000, -1, 1); //zad 26
   hDeltaPhiB1 = new TH1D("hDeltaPhiB1", "Delta PhiB at station 1 entry", 2000, -0.1, 0.1); //zad 28.1
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
-  hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.1, 0.1); //zad 29.1
-  hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.1, 0.1); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 1000, -0.5, 0.5); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 1000, -0.5, 0.5); //zad 30.2
+  hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.01, 0.01); //zad 29.1
+  hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.01, 0.01); //zad 29.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.2
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
 
  
@@ -286,6 +289,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   ev.getByToken(inputTP, tpColl);
   const TrackingParticleCollection & myTP = *(tpColl.product());
   const std::vector<PSimHit> & myPSimHits = ev.get(inputPSimHit); 
+  std::vector<double> Phi_Sim_Vector_St1;
+  std::vector<double> Phi_Sim_Vector_St2;
+  std::vector<double> PhiB_Sim_Vector_St1;
+  std::vector<double> PhiB_Sim_Vector_St2;
 
   if (debug){ 
     std::cout<<" TRACKING PARTICLES: " << myTP.size() << std::endl;
@@ -315,13 +322,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int count = 0; //zad 19
   int ft = 0; //zad 20
   int ftst2 = 0; //zad 27
-  int ftt = 0; //zad 21
+  // int ftt = 0; //zad 21
   //int hits = 0; //zad 22
-  double PhiB_Sim_St1 = 0; //zad 21
-  double Phi_Sim_St1 = 0; //zad 25.1
-  double Phi_Sim_St2 = 0; //zad 25.2
-  int ftt2 = 0; //zad 25.2
-  double PhiB_Sim_St2 = 0; // zad 26
+  // double PhiB_Sim_St1 = 0; //zad 21
+  // double Phi_Sim_St1 = 0; //zad 25.1
+  // double Phi_Sim_St2 = 0; //zad 25.2
+  // int ftt2 = 0; //zad 25.2
+  // double PhiB_Sim_St2 = 0; // zad 26
   int n_elos = 0; //zad 31
   int n_X1 = 0; //zad 18.1
   int n_X2 = 0; //zad 18.2
@@ -440,17 +447,25 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
     }
 
-    if(ftt == 0 && station_S == 1){
-      PhiB_Sim_St1 = globalMomentumPSimHit.phi() - entry.phi(); //zad 21
-      Phi_Sim_St1 = position.phi(); //zad 25.1
-      ftt++;
-    }
+    // Mean value of first and last hit
+    // std::cout << "Sl: " << dtLayerId.superlayerId().superlayer() << std::endl;
+    if(station_S == 1) Phi_Sim_Vector_St1.push_back(position.phi());
+    if(station_S == 1) PhiB_Sim_Vector_St1.push_back(globalMomentumPSimHit.phi() - entry.phi());
+    if(station_S == 2) Phi_Sim_Vector_St2.push_back(position.phi());
+    if(station_S == 2) PhiB_Sim_Vector_St2.push_back(globalMomentumPSimHit.phi() - entry.phi());
 
-    if(ftt2 == 0 && station_S ==2){
-      ftt2++;
-      PhiB_Sim_St2 = globalMomentumPSimHit.phi() - entry.phi(); //zad 26
-      Phi_Sim_St2 = position.phi(); //zad 25.2
-    }
+
+    // if(ftt == 0 && station_S == 1){
+    //   PhiB_Sim_St1 = globalMomentumPSimHit.phi() - entry.phi(); //zad 21
+    //   Phi_Sim_St1 = position.phi(); //zad 25.1
+    //   ftt++;
+    // }
+
+    // if(ftt2 == 0 && station_S ==2){
+    //   ftt2++;
+    //   PhiB_Sim_St2 = globalMomentumPSimHit.phi() - entry.phi(); //zad 26
+    //   Phi_Sim_St2 = position.phi(); //zad 25.2
+    // }
     //zad 31
     if(n_elos == 0 && station_S == 1){
       n_elos++;
@@ -495,6 +510,12 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     hPSimHitRZ->Fill(globalEntryHisto.z(), sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2))); //zad 13 
     hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
         
+
+    DTLayerId layer(geomDet->geographicalId()); // GJ Superlayer
+    DTLayerId dtLayerId(ah.detUnitId()); //GJ Superlayer
+    if(debug_manual){
+      std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - entry.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << std::endl;
+    }
   }
 
 
@@ -564,7 +585,17 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         << std::endl;
     hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
    //std::cout<< "Quality Code: " << chDigi.code() << std::endl; //No code 0 and 1
-
+   //Debugowanie
+    double debugPhi = 0;
+    debugPhi = chDigi.phi();
+    debugPhi /= 4096.;
+    debugPhi += M_PI/6. * (chDigi.scNum() + 0) ;
+    if(debugPhi > M_PI){
+      debugPhi -= 2.*M_PI;
+    }
+    if(debug_manual){
+      std::cout << "Bx:" << chDigi.bxNum() << " Wh:" << chDigi.whNum() << " St:" << chDigi.stNum() << " Se:" << chDigi.scNum() <<  " Phi: " << debugPhi << " PhiB: " << chDigi.phiB() / 512. << " Code_HW:" << chDigi.code() << std::endl;
+    }
   }
   //zad 22.5
   //hCheck0->Fill(PhiB_Rec.size(), PhiB_Sim.size());
@@ -573,28 +604,53 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //hPhiBComp -> Fill(PhiB_Rec[k], PhiB_Sim[k]); //zad 21
   //}
  
-  if(Phi_Rec_St1 != 0 && Phi_Sim_St1 != 0) {
-    hPhiCompSt1 -> Fill(Phi_Sim_St1, Phi_Rec_St1); //zad 25.1
-    //hDeltaPhi1 -> Fill(Phi_Sim_St1 - Phi_Rec_St1); //zad 29.1
-    hDeltaPhi1 -> Fill(reco::deltaPhi(Phi_Sim_St1, Phi_Rec_St1)); //zad 29.1
+  double Phi1 = 0;
+  double Phi2 = 0;
+  double PhiB1 = 0;
+  double PhiB2 = 0;
+  if(Phi_Sim_Vector_St1.empty() == 0 && PhiB_Sim_Vector_St1.empty() == 0) {
+    Phi1 = (Phi_Sim_Vector_St1.front() + Phi_Sim_Vector_St1.back() )/2.;
+    PhiB1 = (PhiB_Sim_Vector_St1.front() + PhiB_Sim_Vector_St1.back() )/2.;
+    if(Phi_Sim_Vector_St2.empty() == 0 && PhiB_Sim_Vector_St2.empty() == 0) {
+      Phi2 = (Phi_Sim_Vector_St2.front() + Phi_Sim_Vector_St2.back() )/2.;
+      PhiB2 =(PhiB_Sim_Vector_St2.front() + PhiB_Sim_Vector_St2.back() )/2.;
+    }
+  }
+
+  if(Phi_Rec_St1 != 0 && Phi1 != 0) {
+    // std::cout<< Phi1 << "; " << Phi_Sim_Vector_St1.front() << "; "<< (Phi_Sim_Vector_St1.front() + Phi_Sim_Vector_St1.back() )/2. << std::endl;
+    // hPhiCompSt1 -> Fill(Phi_Sim_St1, Phi_Rec_St1); //zad 25.1
+    // hDeltaPhi1 -> Fill(reco::deltaPhi(Phi_Sim_St1, Phi_Rec_St1)); //zad 29.1
+    hPhiCompSt1 -> Fill(Phi1, Phi_Rec_St1); //zad 25.1
+    hDeltaPhi1 -> Fill(reco::deltaPhi(Phi1, Phi_Rec_St1)); //zad 29.1
 
   }
-  if(Phi_Rec_St2 != 0 && Phi_Sim_St2 != 0) {
-    hPhiCompSt2 -> Fill(Phi_Sim_St2, Phi_Rec_St2); //zad 25.2
-    hDeltaPhi2 -> Fill(reco::deltaPhi(Phi_Sim_St2, Phi_Rec_St2)); //zad 29.2
-  }
- if(PhiB_Rec_St1 != 0 && PhiB_Sim_St1 != 0) {
-    hPhiBCompSt1 -> Fill(PhiB_Sim_St1, PhiB_Rec_St1); //zad 21
-   // hDeltaPhiB1 -> Fill(PhiB_Sim_St1 - PhiB_Rec_St1); //zad 28.1
-    hDeltaPhiB1 -> Fill(reco::deltaPhi(PhiB_Sim_St1, PhiB_Rec_St1)); //zad 29.1
-    hDeltaBCodeSt1 -> Fill(codeSt1, reco::deltaPhi(PhiB_Sim_St1, PhiB_Rec_St1) ); //zad 30.1
+  if(Phi_Rec_St2 != 0 && Phi2 != 0) {
+    // hPhiCompSt2 -> Fill(Phi_Sim_St2, Phi_Rec_St2); //zad 25.2
+    // hDeltaPhi2 -> Fill(reco::deltaPhi(Phi_Sim_St2, Phi_Rec_St2)); //zad 29.2
+    hPhiCompSt2 -> Fill(Phi2, Phi_Rec_St2); //zad 25.2
+    hDeltaPhi2 -> Fill(reco::deltaPhi(Phi2, Phi_Rec_St2)); //zad 29.2
+    // std::cout<< Phi1 << "; " << Phi2<< "; "<< PhiB1 << "; "<< PhiB2 << std::endl;
 
   }
-  if(PhiB_Rec_St2 != 0 && PhiB_Sim_St2 != 0) {
-   hPhiBCompSt2 -> Fill(PhiB_Sim_St2, PhiB_Rec_St2); //zad 26
-   hDeltaPhiB2 -> Fill(reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2)); //zad 28.2
-   hDeltaBCodeSt2 -> Fill(codeSt2, reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2) ); //zad 30.2
+ if(PhiB_Rec_St1 != 0 && PhiB1 != 0) {
+    // hPhiBCompSt1 -> Fill(PhiB_Sim_St1, PhiB_Rec_St1); //zad 21
+    // hDeltaPhiB1 -> Fill(reco::deltaPhi(PhiB_Sim_St1, PhiB_Rec_St1)); //zad 29.1
+    // hDeltaBCodeSt1 -> Fill(codeSt1, reco::deltaPhi(PhiB_Sim_St1, PhiB_Rec_St1) ); //zad 30.1
+    hPhiBCompSt1 -> Fill(PhiB1, PhiB_Rec_St1); //zad 21
+    hDeltaPhiB1 -> Fill(reco::deltaPhi(PhiB1, PhiB_Rec_St1)); //zad 29.1
+    hDeltaBCodeSt1 -> Fill(codeSt1, reco::deltaPhi(PhiB1, PhiB_Rec_St1) ); //zad 30.1
+
   }
+  if(PhiB_Rec_St2 != 0 && PhiB2 != 0) {
+  //  hPhiBCompSt2 -> Fill(PhiB_Sim_St2, PhiB_Rec_St2); //zad 26
+  //  hDeltaPhiB2 -> Fill(reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2)); //zad 28.2
+  //  hDeltaBCodeSt2 -> Fill(codeSt2, reco::deltaPhi(PhiB_Sim_St2, PhiB_Rec_St2) ); //zad 30.2
+   hPhiBCompSt2 -> Fill(PhiB2, PhiB_Rec_St2); //zad 26
+   hDeltaPhiB2 -> Fill(reco::deltaPhi(PhiB2, PhiB_Rec_St2)); //zad 28.2
+   hDeltaBCodeSt2 -> Fill(codeSt2, reco::deltaPhi(PhiB2, PhiB_Rec_St2) ); //zad 30.2
+  }
+
  
  
 
