@@ -130,6 +130,9 @@ public:
     hDeltaBCodeSt1->Write(); //zad 30.1
     hDeltaBCodeSt2->Write(); //zad 30.2
     hELossSV->Write(); //zad 31
+    hDeltaCodeSt1->Write(); //zad 32.1
+    hDeltaCodeSt2->Write(); //zad 32.2
+
 
 
     f.Write();
@@ -205,6 +208,8 @@ private:
   TH2D *hDeltaBCodeSt1; //zad 30.1
   TH2D *hDeltaBCodeSt2; //zad 30.2
   TH2D *hELossSV; //zad 31
+  TH2D *hDeltaCodeSt1; //zad 32.1
+  TH2D *hDeltaCodeSt2; //zad 32.2
 
 
 };
@@ -273,6 +278,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.1
   hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.2
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
+  hDeltaCodeSt1 = new TH2D("hDeltaCodeSt1", "Delta Phi in the chDigi.code() variable function, st1", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.1
+  hDeltaCodeSt2 = new TH2D("hDeltaCodeSt2", "Delta Phi in the chDigi.code() variable function, st2", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.2
 
  
 }
@@ -623,7 +630,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     // hDeltaPhi1 -> Fill(reco::deltaPhi(Phi_Sim_St1, Phi_Rec_St1)); //zad 29.1
     hPhiCompSt1 -> Fill(Phi1, Phi_Rec_St1); //zad 25.1
     hDeltaPhi1 -> Fill(reco::deltaPhi(Phi1, Phi_Rec_St1)); //zad 29.1
-
+    hDeltaCodeSt1 -> Fill(codeSt1, reco::deltaPhi(Phi1, Phi_Rec_St1) ); //zad 32.1
   }
   if(Phi_Rec_St2 != 0 && Phi2 != 0) {
     // hPhiCompSt2 -> Fill(Phi_Sim_St2, Phi_Rec_St2); //zad 25.2
@@ -631,6 +638,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     hPhiCompSt2 -> Fill(Phi2, Phi_Rec_St2); //zad 25.2
     hDeltaPhi2 -> Fill(reco::deltaPhi(Phi2, Phi_Rec_St2)); //zad 29.2
     // std::cout<< Phi1 << "; " << Phi2<< "; "<< PhiB1 << "; "<< PhiB2 << std::endl;
+    hDeltaCodeSt2 -> Fill(codeSt2, reco::deltaPhi(Phi2, Phi_Rec_St2) ); //zad 32.2
+
 
   }
  if(PhiB_Rec_St1 != 0 && PhiB1 != 0) {
