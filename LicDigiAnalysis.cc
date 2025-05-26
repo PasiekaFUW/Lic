@@ -105,6 +105,8 @@ public:
     hPSimHitXY->Write(); //zad 16
     hVPPGPT1->Write(); //zad 17.1
     hVPPGPT2->Write(); //zad 17.2
+    hNewGvsPPG1->Write(); //GJ modify
+    hNewGvsPPG2->Write(); //GJ modify
     hVSPT1->Write(); //zad 17.3
     hVSPT2->Write(); //zad 17.4
     h1Dtest->Write(); //zad 17.5
@@ -183,6 +185,8 @@ private:
   TH2D *hPSimHitXY; //zad 16
   TH2D *hVPPGPT1; //zad 17.1
   TH2D *hVPPGPT2; //zad 17.2
+  TH1D *hNewGvsPPG1; //GJ modify
+  TH1D *hNewGvsPPG2; //GJ modify
   TH2D *hVSPT1; //zad 17.3
   TH2D *hVSPT2; //zad 17.4
   TH1D *h1Dtest; //zad 17.5
@@ -251,8 +255,10 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hPPGvS = new TH1D("hPPGvS", "The difference between positions obtained from propagation and simulation", 1000, -200, 200); //zad 11
   hPSimHitRZ = new TH2D("hPSimHitRZ", "PSimHit global position at entry", 800, -1000, 1000, 800, -1000, -1000); //zad 13
   hPSimHitXY = new TH2D("hPSimHitXY", "PSimHit global position at entry", 800, -1000, 1000, 800, -1000, 1000); //zad 16
-  hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.1
-  hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.2
+  hVPPGPT1 = new TH2D("hVPPGPT1", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry", 8000, 0, 80, 8000, 0, 80); //zad 17.1
+  hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 8000, 0, 80, 8000, 0, 80); //zad 17.2
+  hNewGvsPPG1 = new TH1D("hNewGvsPPG1", "TP PPG vs Gen, St1", 1000, -1, 9); //GJ modify
+  hNewGvsPPG2 = new TH1D("hNewGvsPPG2", "TP PPG vs Gen, St2", 1000, -1, 9); //GJ modify
   hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.3
   hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.4
   h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
@@ -358,6 +364,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     if(debug) std::cout << "Station_P: " << chamber.station() << std::endl;
     const Propagator & propagator = es.getData(thePropagatorToken);
     TrajectoryStateOnSurface stateAtDet =  propagator.propagate(fts, geomDet->surface());
+
+    DTLayerId layer(geomDet->geographicalId()); // GJ Superlayer
+    DTLayerId dtLayerId(ah.detUnitId()); //GJ Superlayer
+
     if(stateAtDet.isValid() == 0) {
         ++FailedPPG;
         if(debug) std::cout<< " Number of failed propagations: " << FailedPPG << std::endl;            
@@ -371,7 +381,9 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         std::cout<<" The difference: "<< ah.localPosition() - stateAtDet.localPosition() <<std::endl;
       }
     }
-    
+      // std::cout << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << std::endl;
+      // std::cout << "Propagation local:" << stateAtDet.localPosition() << "Global:" << stateAtDet.globalPosition() << std::endl;
+
     //hPPGvS->Fill(sqrt( pow(ah.localPosition().x() - stateAtDet.localPosition().x(), 2) + pow(ah.localPosition().y() - stateAtDet.localPosition().y(), 2)));//, ah.localPosition().z() - stateAtDet.localPosition().z()); //zad 11
     //Another take at zad 11
     hPPGvS->Fill( sqrt(pow(ah.localPosition().x(), 2) + pow(ah.localPosition().y(), 2) ) - sqrt( pow(stateAtDet.localPosition().x(), 2) + pow(stateAtDet.localPosition().y(), 2)) );
@@ -389,15 +401,21 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     }
 
     //zad 17.1 tp.numberOfTrackerHits() == 1
-    if(i_hits==1 && station_P == 1) {
-    hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)  ));
-    
+    // if(i_hits==1 && station_P == 1) {
+    if(station_P == 1) {
+      hVPPGPT1->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)  ));
+      hNewGvsPPG1->Fill(tp.pt() - sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)));  //GJ modify
+
+      // std::cout << "tp.pt():" << tp.pt() << "sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2):" << sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)) << std::endl;
     //+ pow(stateAtDet.localMomentum().z(), 2))); 
     }
 
     //zad 17.2
-    if(i_hits==1 && station_P == 2) {
-    hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2))); 
+    // if(i_hits==1 && station_P == 2) {
+    if(station_P == 2) {
+      hVPPGPT2->Fill(tp.pt(), sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2))); 
+      hNewGvsPPG2->Fill(tp.pt() - sqrt(pow(stateAtDet.globalMomentum().x(), 2) + pow(stateAtDet.globalMomentum().y(), 2)));  //GJ modify
+
     }
     //zad 17.3 
     GlobalVector globalMomentumPSimHit = geomDet->toGlobal(ah.momentumAtEntry());
@@ -425,7 +443,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       firsttime++;
     }
     
-    GlobalPoint entry = geomDet->toGlobal(ah.entryPoint());
+    // GlobalPoint entry = geomDet->toGlobal(ah.entryPoint()); GJ TEST 
+    GlobalPoint entry = geomDet->toGlobal(ah.localPosition());
     GlobalPoint position = geomDet->toGlobal(ah.localPosition());
 
     //GlobalPoint exit = geomDet->toGlobal(ah.exitPoint());
@@ -480,28 +499,32 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     }
 
     //zad 18.1
-    if(stateAtDet.isValid()==1 && n_X1 == 0 && station_S == 1){
+    // if(stateAtDet.isValid()==1 && n_X1 == 0 && station_S == 1){
+    if(stateAtDet.isValid()==1 && station_S == 1 && dtLayerId.superlayerId().superlayer() != 2){
       n_X1++;
       hPvSX1->Fill(ah.localPosition().x() - stateAtDet.localPosition().x());
-    }
-
-    //zad 18.2
-    if(stateAtDet.isValid()==1 && n_X2 == 0 && station_S == 2){
-      n_X2++;
-      hPvSX2->Fill(ah.localPosition().x() - stateAtDet.localPosition().x());
-    }
-
-    //zad 18.3
-    if(stateAtDet.isValid()==1 && n_Y1 == 0 && station_S == 1){
-      n_Y1++;
       hPvSY1->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
     }
 
-    //zad 18.4
-    if(stateAtDet.isValid()==1 && n_Y2 == 0 && station_S == 2){
-      n_Y2++;
+    //zad 18.2
+    // if(stateAtDet.isValid()==1 && n_X2 == 0 && station_S == 2){
+    if(stateAtDet.isValid()==1 && station_S == 2 && dtLayerId.superlayerId().superlayer() != 2){
+      n_X2++;
+      hPvSX2->Fill(ah.localPosition().x() - stateAtDet.localPosition().x());
       hPvSY2->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
     }
+
+    // //zad 18.3
+    // if(stateAtDet.isValid()==1 && n_Y1 == 0 && station_S == 1){
+    //   n_Y1++;
+    //   hPvSY1->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
+    // }
+
+    // //zad 18.4
+    // if(stateAtDet.isValid()==1 && n_Y2 == 0 && station_S == 2){
+    //   n_Y2++;
+    //   hPvSY2->Fill(ah.localPosition().y() - stateAtDet.localPosition().y());
+    // }
 
 
 
@@ -517,9 +540,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     hPSimHitRZ->Fill(globalEntryHisto.z(), sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2))); //zad 13 
     hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
         
-
-    DTLayerId layer(geomDet->geographicalId()); // GJ Superlayer
-    DTLayerId dtLayerId(ah.detUnitId()); //GJ Superlayer
+    //if (dtLayerId.superlayerId().superlayer() == 2) continue;
+ 
     if(debug_manual){
       std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - entry.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << std::endl;
     }

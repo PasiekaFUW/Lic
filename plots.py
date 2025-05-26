@@ -190,10 +190,10 @@ input('press enter to exit')
 #zad 18.1
 c14 = TCanvas('cPvSX1', 'The difference in X plane position obtained from propagation and simulation', 600, 600)
 histo14 = gROOT.FindObject('hPvSX1')
-histo14.SetTitle("Station 1 entry")
-histo14.GetXaxis().SetTitle("Distance between sim and ppg X coordinates [cm]")
+histo14.SetTitle("Station 1")
+histo14.GetXaxis().SetTitle("Difference in X coordinate [cm]")
 histo14.GetYaxis().SetTitle("Entries")
-histo14.SetStats(0)
+histo14.SetStats(1)
 c14.SetLeftMargin(0.15)  #Space for printing Y label
 histo14.DrawCopy('COL')
 c14.Print("./plots/"+c14.GetName()+".png")
@@ -203,10 +203,10 @@ input('press enter to exit')
 #zad 18.2
 c15 = TCanvas('cPvSX2', 'The difference in X plane position obtained from propagation and simulation', 600, 600)
 histo15 = gROOT.FindObject('hPvSX2')
-histo15.SetTitle("Station 2 entry")
-histo15.GetXaxis().SetTitle("Distance between sim and ppg X coordinates [cm]")
+histo15.SetTitle("Station 2")
+histo15.GetXaxis().SetTitle("Difference in X coordinate [cm]")
 histo15.GetYaxis().SetTitle("Entries")
-histo15.SetStats(0)
+histo15.SetStats(1)
 c15.SetLeftMargin(0.15)  #Space for printing Y label
 histo15.DrawCopy('COL')
 c15.Print("./plots/"+c15.GetName()+".png")
@@ -216,10 +216,10 @@ input('press enter to exit')
 #zad 18.3
 c16 = TCanvas('cPvSY1', 'The difference in Y plane position obtained from propagation and simulation', 600, 600)
 histo16 = gROOT.FindObject('hPvSY1')
-histo16.SetTitle("Station 1 entry")
-histo16.GetXaxis().SetTitle("Distance between sim and ppg Y coordinates [cm]")
+histo16.SetTitle("Station 1")
+histo16.GetXaxis().SetTitle("Difference in Y coordinate [cm]")
 histo16.GetYaxis().SetTitle("Entries")
-histo16.SetStats(0)
+histo16.SetStats(1)
 c16.SetLeftMargin(0.15)  #Space for printing Y label
 histo16.DrawCopy('COL')
 c16.Print("./plots/"+c16.GetName()+".png")
@@ -229,10 +229,10 @@ input('press enter to exit')
 #zad 18.4
 c17 = TCanvas('cPvSY2', 'The difference in Y plane position obtained from propagation and simulation', 600, 600)
 histo17 = gROOT.FindObject('hPvSY2')
-histo17.SetTitle("Station 2 entry")
-histo17.GetXaxis().SetTitle("Distance between sim and ppg Y coordinates [cm]")
+histo17.SetTitle("Station 2")
+histo17.GetXaxis().SetTitle("Difference in Y coordinate [cm]")
 histo17.GetYaxis().SetTitle("Entries")
-histo17.SetStats(0)
+histo17.SetStats(1)
 c17.SetLeftMargin(0.15)  #Space for printing Y label
 histo17.DrawCopy('COL')
 c17.Print("./plots/"+c17.GetName()+".png")
@@ -263,10 +263,11 @@ c20.SetLeftMargin(0.15)  #Space for printing Y label
 histo20 = gROOT.FindObject('hVPPGPT1')
 histo20.GetXaxis().SetTitle("Transverse Momentum from Vertex [GeV]")
 histo20.GetYaxis().SetTitle("Transverse Momentum Propagated [GeV]")
-histo20.SetTitle("Station 1 entry")
+histo20.SetTitle("Station 1")
 histo20.SetStats(0)
 fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
 histo20.Fit("fitFunc1", "R", " ")
+fitFunc1.SetLineWidth(1)  # Thinner line
 fitFunc1.Draw('same')
 histo20.DrawCopy('COL')
 c20.Print("./plots/"+c20.GetName()+".png")
@@ -279,7 +280,7 @@ c21.SetLeftMargin(0.15)  #Space for printing Y label
 histo21 = gROOT.FindObject('hVPPGPT2')
 histo21.GetXaxis().SetTitle("Transverse Momentum from Vertex [GeV]")
 histo21.GetYaxis().SetTitle("Transverse Momentum Propagated [GeV]")
-histo21.SetTitle("Station 2 entry")
+histo21.SetTitle("Station 2")
 histo21.SetStats(0)
 fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
 histo21.Fit("fitFunc1", "R", " ")
@@ -288,6 +289,7 @@ histo21.DrawCopy('COL')
 c21.Print("./plots/"+c21.GetName()+".png")
 c21.Update()
 input('press enter to exit')
+
 
 #zad 17.3 
 c22 = TCanvas('cVSPT1', 'Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry', 600, 600)
@@ -320,7 +322,7 @@ histo23.DrawCopy('COL')
 c23.Print("./plots/"+c23.GetName()+".png")
 c23.Update()
 input('press enter to exit')
-'''
+
 #zad 17.5
 c24 = TCanvas('c1Dtest', 'Transverse momentum station 1', 600, 600)
 histo24 = gROOT.FindObject('h1Dtest')
@@ -346,7 +348,7 @@ c26.Print("./plots/"+c26.GetName()+".png")
 c26.Update()
 input('press enter to exit')
 
-'''
+
 #zad 18
 c25 = TCanvas('cLandau', 'Landau', 600, 600)
 histo25 = gROOT.FindObject('hLandau')
@@ -364,7 +366,7 @@ c25.Print("./plots/"+c25.GetName()+".png")
 c25.Update()
 input('press enter to exit')
 
-
+'''
 
 
 #zad 19
@@ -426,7 +428,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-
+'''
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
 c30.SetLeftMargin(0.15)  #Space for printing Y label
@@ -453,7 +455,7 @@ histo31.DrawCopy('COL')
 c31.Print("./plots/"+c31.GetName()+".png")
 c31.Update()
 input('press enter to exit')
-
+'''
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
 c32.SetLeftMargin(0.15)  #Space for printing Y label
@@ -728,4 +730,36 @@ for (code_value) in range(2, 7):
 
 print("Finished generating projections and saving plots")
 
-'''
+
+
+c46 = TCanvas('cNewGvsPPG1', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry', 600, 600)
+c46.SetLeftMargin(0.15)  #Space for printing Y label
+histo46 = gROOT.FindObject('hNewGvsPPG1')
+histo46.GetXaxis().SetTitle("Transverse Momentum Difference [GeV]")
+histo46.GetYaxis().SetTitle("Entries")
+histo46.SetTitle("Station 1")
+histo46.SetStats(1)
+#fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+#histo46.Fit("fitFunc1", "R", " ")
+#fitFunc1.SetLineWidth(1)  # Thinner line
+#fitFunc1.Draw('same')
+histo46.DrawCopy('COL')
+c46.Print("./plots/"+c46.GetName()+".png")
+c46.Update()
+input('press enter to exit')
+
+c47 = TCanvas('cNewGvsPPG2', 'Comparison of Tranverse Momentum from Propagation and Vertex at Station 1 entry', 600, 600)
+c47.SetLeftMargin(0.15)  #Space for printing Y label
+histo47 = gROOT.FindObject('hNewGvsPPG2')
+histo47.GetXaxis().SetTitle("Transverse Momentum Difference [GeV]")
+histo47.GetYaxis().SetTitle("Entries")
+histo47.SetTitle("Station 2")
+histo47.SetStats(1)
+#fitFunc1=TF1("fitFunc1", "pol1", 0, 80)
+#histo46.Fit("fitFunc1", "R", " ")
+#fitFunc1.SetLineWidth(1)  # Thinner line
+#fitFunc1.Draw('same')
+histo47.DrawCopy('COL')
+c47.Print("./plots/"+c47.GetName()+".png")
+c47.Update()
+input('press enter to exit')
