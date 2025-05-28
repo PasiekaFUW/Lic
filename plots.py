@@ -366,7 +366,7 @@ c25.Print("./plots/"+c25.GetName()+".png")
 c25.Update()
 input('press enter to exit')
 
-'''
+
 
 
 #zad 19
@@ -428,7 +428,7 @@ c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
 
-'''
+
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
 c30.SetLeftMargin(0.15)  #Space for printing Y label
@@ -455,7 +455,7 @@ histo31.DrawCopy('COL')
 c31.Print("./plots/"+c31.GetName()+".png")
 c31.Update()
 input('press enter to exit')
-'''
+
 #zad 25.1
 c32 = TCanvas('cPhiCompareSt1', 'Phi Comp st 1', 600, 600)
 c32.SetLeftMargin(0.15)  #Space for printing Y label
@@ -762,4 +762,17 @@ histo47.SetStats(1)
 histo47.DrawCopy('COL')
 c47.Print("./plots/"+c47.GetName()+".png")
 c47.Update()
+input('press enter to exit')
+'''
+c48 = TCanvas('cQualityInEvent', 'Code distribution', 600, 600)
+c48.SetLeftMargin(0.15)  #Space for printing Y label
+histo48 = gROOT.FindObject('hQualityInEvent')
+histo48.GetXaxis().SetTitle("Quality Code")
+histo48.GetYaxis().SetTitle("Entries")
+histo48.GetYaxis().SetRangeUser(0, 50000)
+histo48.SetTitle("Quality Code Distribution in Phase-1")
+histo48.SetStats(0)
+histo48.DrawCopy("PFC TEXT")
+c48.Print("./plots/"+c48.GetName()+".png")
+c48.Update()
 input('press enter to exit')

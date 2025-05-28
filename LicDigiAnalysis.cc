@@ -134,7 +134,7 @@ public:
     hELossSV->Write(); //zad 31
     hDeltaCodeSt1->Write(); //zad 32.1
     hDeltaCodeSt2->Write(); //zad 32.2
-
+    hQualityInEvent->Write(); //GJ quality
 
 
     f.Write();
@@ -214,6 +214,8 @@ private:
   TH2D *hELossSV; //zad 31
   TH2D *hDeltaCodeSt1; //zad 32.1
   TH2D *hDeltaCodeSt2; //zad 32.2
+  TH1D *hQualityInEvent; //GJ quality
+
 
 
 };
@@ -281,11 +283,13 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
   hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.01, 0.01); //zad 29.1
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.01, 0.01); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 10, 0, 9, 4000, -0.4, 0.4); //zad 30.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 9, 0, 9, 4000, -0.4, 0.4); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 9, 0, 9, 4000, -0.4, 0.4); //zad 30.2
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
   hDeltaCodeSt1 = new TH2D("hDeltaCodeSt1", "Delta Phi in the chDigi.code() variable function, st1", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.1
   hDeltaCodeSt2 = new TH2D("hDeltaCodeSt2", "Delta Phi in the chDigi.code() variable function, st2", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.2
+  hQualityInEvent = new TH1D("hQualityInEvent", "Evaluate quality distribution", 9, -1, 8); //GJ quality
+
 
  
 }
@@ -347,7 +351,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int n_X2 = 0; //zad 18.2
   int n_Y1 = 0; //zad 18.3
   int n_Y2 = 0; //zad 18.4
-
+  int ahSize = 0; //GJ Count
+  int Debuging_iterator0 = 0;
+  int Debuging_station0 = 0;
+  int helping = 0;
 
   hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
 
@@ -543,7 +550,24 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     //if (dtLayerId.superlayerId().superlayer() == 2) continue;
  
     if(debug_manual){
-      std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - entry.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << std::endl;
+          //Debugowanie
+      if (Debuging_station0 != 0 && Debuging_station0 < station_S) {
+        std::cout << "Hits in station: " << Debuging_iterator0 << " Hits in event: " << ahSize << std::endl;
+        Debuging_iterator0 = 0;
+      }
+      if (ah.trackId() != 1 && helping == 0) {
+        std::cout << "Hits in station: " << Debuging_iterator0 << " Hits in event: " << ahSize << std::endl;
+        Debuging_iterator0 = 0;
+        helping++;
+      }
+
+      Debuging_iterator0++;
+      Debuging_station0 = station_S;
+
+      
+
+      if (helping < 1) std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - entry.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << " Id: " << ah.trackId() << std::endl;
+      
     }
   }
 
@@ -556,6 +580,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double PhiB_Rec_St2 = 0; //zad 26
   int codeSt1 = 0; //zad 30.1
   int codeSt2 = 0; //zad 30.2
+  int helper = 0;
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
   edm::Handle<L1MuDTChambPhContainer> digiCollectionDTPh_leg;
@@ -597,10 +622,13 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       codeSt2 = chDigi.code(); //zad 30.2
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
+    hQualityInEvent->Fill(chDigi.code()); //GJ quality
+    hQualityInEvent->Fill(-1); //GJ quality
     if (abs(chDigi.whNum()) != 2) continue;
     if (chDigi.stNum() ==4) continue;
     if (chDigi.bxNum() != 0) continue;
-    if (chDigi.code()==7) continue;
+    // if (chDigi.code()==7) continue;
+    
     // DTChamberId chId(chDigi.whNum(),chDigi.stNum(),chDigi.scNum()+1);
     theAllDtPDigisCnt++;
     if (debug) std::cout <<"DtDataWord64 BMTF    " 
@@ -613,17 +641,22 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
         <<" code(q): "<< chDigi.code()
         << std::endl;
     hLicExample->Fill(chDigi.scNum()+1,chDigi.code()); //Example
+
    //std::cout<< "Quality Code: " << chDigi.code() << std::endl; //No code 0 and 1
-   //Debugowanie
-    double debugPhi = 0;
-    debugPhi = chDigi.phi();
-    debugPhi /= 4096.;
-    debugPhi += M_PI/6. * (chDigi.scNum() + 0) ;
-    if(debugPhi > M_PI){
-      debugPhi -= 2.*M_PI;
-    }
     if(debug_manual){
-      std::cout << "Bx:" << chDigi.bxNum() << " Wh:" << chDigi.whNum() << " St:" << chDigi.stNum() << " Se:" << chDigi.scNum() <<  " Phi: " << debugPhi << " PhiB: " << chDigi.phiB() / 512. << " Code_HW:" << chDigi.code() << std::endl;
+   //Debugowanie
+      double debugPhi = 0;
+      debugPhi = chDigi.phi();
+      debugPhi /= 4096.;
+      debugPhi += M_PI/6. * (chDigi.scNum() + 0) ;
+      if(debugPhi > M_PI){
+        debugPhi -= 2.*M_PI;
+      }
+      if (helper == 0) {
+        std::cout<<"Start"<<std::endl;
+        helper++;
+      }
+      std::cout << "Bx:" << chDigi.bxNum() << " Wh:" << chDigi.whNum() << " St:" << chDigi.stNum() << " Se:" << chDigi.scNum() << " Phi: " << debugPhi << " PhiB: " << chDigi.phiB() / 512. << " Code_HW:" << chDigi.code() << std::endl;
     }
   }
   //zad 22.5
