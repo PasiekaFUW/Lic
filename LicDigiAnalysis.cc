@@ -283,11 +283,11 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hDeltaPhiB2 = new TH1D("hDeltaPhiB2", "Delta PhiB at station 2 entry", 2000, -0.1, 0.1); //zad 28.2
   hDeltaPhi1 = new TH1D("hDeltaPhi1", "Delta Phi at station 1 entry", 2000, -0.01, 0.01); //zad 29.1
   hDeltaPhi2 = new TH1D("hDeltaPhi2", "Delta Phi at station 2 entry", 2000, -0.01, 0.01); //zad 29.2
-  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 9, 0, 9, 4000, -0.4, 0.4); //zad 30.1
-  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 9, 0, 9, 4000, -0.4, 0.4); //zad 30.2
+  hDeltaBCodeSt1 = new TH2D("hDeltaBCodeSt1", "Delta PhiB in the chDigi.code() variable function, st1", 8, 0, 8, 1600, -0.2, 0.2); //zad 30.1
+  hDeltaBCodeSt2 = new TH2D("hDeltaBCodeSt2", "Delta PhiB in the chDigi.code() variable function, st2", 8, 0, 8, 1600, -0.2, 0.2); //zad 30.2
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
-  hDeltaCodeSt1 = new TH2D("hDeltaCodeSt1", "Delta Phi in the chDigi.code() variable function, st1", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.1
-  hDeltaCodeSt2 = new TH2D("hDeltaCodeSt2", "Delta Phi in the chDigi.code() variable function, st2", 8, 0, 8, 2000, -0.1, 0.1); //zad 32.2
+  hDeltaCodeSt1 = new TH2D("hDeltaCodeSt1", "Delta Phi in the chDigi.code() variable function, st1", 8, 0, 8, 1600, -0.02, 0.02); //zad 32.1
+  hDeltaCodeSt2 = new TH2D("hDeltaCodeSt2", "Delta Phi in the chDigi.code() variable function, st2", 8, 0, 8, 1600, -0.02, 0.02); //zad 32.2
   hQualityInEvent = new TH1D("hQualityInEvent", "Evaluate quality distribution", 9, -1, 8); //GJ quality
 
 
@@ -349,8 +349,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int n_elos = 0; //zad 31
   int n_X1 = 0; //zad 18.1
   int n_X2 = 0; //zad 18.2
-  int n_Y1 = 0; //zad 18.3
-  int n_Y2 = 0; //zad 18.4
+  // int n_Y1 = 0; //zad 18.3
+  // int n_Y2 = 0; //zad 18.4
   int ahSize = 0; //GJ Count
   int Debuging_iterator0 = 0;
   int Debuging_station0 = 0;
@@ -450,8 +450,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       firsttime++;
     }
     
-    // GlobalPoint entry = geomDet->toGlobal(ah.entryPoint()); GJ TEST 
-    GlobalPoint entry = geomDet->toGlobal(ah.localPosition());
+    // GlobalPoint entry = geomDet->toGlobal(ah.entryPoint());
     GlobalPoint position = geomDet->toGlobal(ah.localPosition());
 
     //GlobalPoint exit = geomDet->toGlobal(ah.exitPoint());
@@ -462,30 +461,30 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       //hPhiComp -> Fill(ah.phiAtEntry(), globalMomentumPSimHit.phi());
       //hPhiComp -> Fill(globalHit.phi(), abs(exit.phi() - entry.phi()));
       //std::cout << "zad 19: phi= " << entry.phi() << "phiB= " << globalMomentumPSimHit.phi() - entry.phi() << std::endl;
-      hPhiComp -> Fill(entry.phi(), globalMomentumPSimHit.phi() - entry.phi());
+      hPhiComp -> Fill(position.phi(), globalMomentumPSimHit.phi() - position.phi());
 
     }
 
        //zad 27
     if(station_S==1 && ftst2 == 0){
       ftst2++; 
-      hPhiB_st1 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
+      hPhiB_st1 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - position.phi() );
     }
 
     //zad 20
     if(station_S==2 && ft == 0){
       ft++; 
       //hPhiB -> Fill( sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ), abs(exit.phi() - entry.phi()) );
-      hPhiB_st2 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - entry.phi() );
+      hPhiB_st2 -> Fill(tp.pt(), globalMomentumPSimHit.phi() - position.phi() );
 
     }
 
     // Mean value of first and last hit
     // std::cout << "Sl: " << dtLayerId.superlayerId().superlayer() << std::endl;
     if(station_S == 1) Phi_Sim_Vector_St1.push_back(position.phi());
-    if(station_S == 1) PhiB_Sim_Vector_St1.push_back(globalMomentumPSimHit.phi() - entry.phi());
+    if(station_S == 1) PhiB_Sim_Vector_St1.push_back(globalMomentumPSimHit.phi() - position.phi());
     if(station_S == 2) Phi_Sim_Vector_St2.push_back(position.phi());
-    if(station_S == 2) PhiB_Sim_Vector_St2.push_back(globalMomentumPSimHit.phi() - entry.phi());
+    if(station_S == 2) PhiB_Sim_Vector_St2.push_back(globalMomentumPSimHit.phi() - position.phi());
 
 
     // if(ftt == 0 && station_S == 1){
@@ -566,7 +565,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
       
 
-      if (helping < 1) std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - entry.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << " Id: " << ah.trackId() << std::endl;
+      if (helping < 1) std::cout << dtLayerId.superlayerId() << " l:" << dtLayerId.layer() << " Phi:" << position.phi() << " PhiB:" << globalMomentumPSimHit.phi() - position.phi() << " R:"<< position.perp() << " Z:" << position.z() << " Local Entry:" << ah.entryPoint() << " Local Exit:" << ah.exitPoint() << " PABS:" << ah.pabs() << " Id: " << ah.trackId() << std::endl;
       
     }
   }
@@ -575,12 +574,15 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double PhiB_Rec_St1 = 0; //zad 21
   double Phi_Rec_St1 = 0; //zad 25.1
   double Phi_Rec_St2 = 0; //zad 25.2
-  int ftt_rec_1 = 0; //zad 21
-  int ftt_rec_2 = 0; //zad 25.2
+  // int ftt_rec_1 = 0; //zad 21
+  // int ftt_rec_2 = 0; //zad 25.2
   double PhiB_Rec_St2 = 0; //zad 26
   int codeSt1 = 0; //zad 30.1
   int codeSt2 = 0; //zad 30.2
   int helper = 0;
+  int codeTestSt1 = 0; //GJ Reco modify
+  int codeTestSt2 = 0; //GJ Reco modify
+
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
   edm::Handle<L1MuDTChambPhContainer> digiCollectionDTPh_leg;
@@ -588,14 +590,25 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   const L1MuDTChambPhContainer& dtphDigisLeg= *digiCollectionDTPh_leg.product();
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
+
+    hQualityInEvent->Fill(chDigi.code()); //GJ quality
+    hQualityInEvent->Fill(-1); //GJ quality
+    // Conditions
+    if (abs(chDigi.whNum()) != 2) continue;
+    if (chDigi.stNum() ==4) continue;
+    if (chDigi.bxNum() != 0) continue;
+    // if (chDigi.code()==7) continue;
+    
     //zad 22
     if(chDigi.stNum()==1 && chDigi.scNum()==2) {
       hHowMany1->Fill(chDigi.phi());
     }
 
 
-    if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
-      ftt_rec_1++;
+    // if(chDigi.stNum() == 1 && ftt_rec_1 ==0){
+    if(chDigi.stNum() == 1 && codeTestSt1<=chDigi.code()){
+      codeTestSt1 = chDigi.code();
+      // ftt_rec_1++;
       PhiB_Rec_St1 = chDigi.phiB(); //zad 21
       PhiB_Rec_St1 /= 512.;
       Phi_Rec_St1 = chDigi.phi();
@@ -609,25 +622,22 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
       //scNum() from 0 to 11
       codeSt1 = chDigi.code(); //zad 30.1
     }
-    if(chDigi.stNum() == 2 && ftt_rec_2 == 0){
-      ftt_rec_2++;
-      PhiB_Rec_St2 = chDigi.phiB(); // / 512; //zad 26
-      PhiB_Rec_St2 /= 512.;
-      Phi_Rec_St2 = chDigi.phi();
-      Phi_Rec_St2 /= 4096.;
-      Phi_Rec_St2 += M_PI/6. * (chDigi.scNum() + 0) ;//zad 25.2
-      if(Phi_Rec_St2 > M_PI){
-        Phi_Rec_St2 -= 2.*M_PI;
-      }
-      codeSt2 = chDigi.code(); //zad 30.2
+    // if(chDigi.stNum() == 2 && ftt_rec_2 == 0){
+      if(chDigi.stNum() == 2 && codeTestSt2<=chDigi.code()){
+        codeTestSt2 = chDigi.code();
+        // ftt_rec_2++;
+        PhiB_Rec_St2 = chDigi.phiB(); // / 512; //zad 26
+        PhiB_Rec_St2 /= 512.;
+        Phi_Rec_St2 = chDigi.phi();
+        Phi_Rec_St2 /= 4096.;
+        Phi_Rec_St2 += M_PI/6. * (chDigi.scNum() + 0) ;//zad 25.2
+        if(Phi_Rec_St2 > M_PI){
+          Phi_Rec_St2 -= 2.*M_PI;
+        }
+        codeSt2 = chDigi.code(); //zad 30.2
     }
     //std::cout << chDigi.phiB() << "phiB" << std::endl;
-    hQualityInEvent->Fill(chDigi.code()); //GJ quality
-    hQualityInEvent->Fill(-1); //GJ quality
-    if (abs(chDigi.whNum()) != 2) continue;
-    if (chDigi.stNum() ==4) continue;
-    if (chDigi.bxNum() != 0) continue;
-    // if (chDigi.code()==7) continue;
+
     
     // DTChamberId chId(chDigi.whNum(),chDigi.stNum(),chDigi.scNum()+1);
     theAllDtPDigisCnt++;

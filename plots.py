@@ -384,14 +384,14 @@ c27.Update()
 input('press enter to exit')
 
 
-
+'''
 #zad 21
 c29 = TCanvas('cPhiBCompSt1', 'PhiB Comb', 600, 600)
 c29.SetLeftMargin(0.15)  #Space for printing Y label
 histo29 = gROOT.FindObject('hPhiBCompSt1')
 histo29.GetYaxis().SetTitle("PhiB Reconstructed [rad]")
 histo29.GetXaxis().SetTitle("PhiB Simulated [rad]")
-histo29.SetTitle("Comparing PhiB at Station 1 entry")
+histo29.SetTitle("Comparing PhiB at Station 1")
 histo29.SetStats(0)
 histo29.DrawCopy('COL')
 
@@ -414,7 +414,7 @@ c34.SetLeftMargin(0.15)  #Space for printing Y label
 histo34 = gROOT.FindObject('hPhiBCompSt2')
 histo34.GetYaxis().SetTitle("PhiB Reconstructed [rad]")
 histo34.GetXaxis().SetTitle("PhiB Simulated [rad]")
-histo34.SetTitle("Comparing PhiB at Station 2 entry")
+histo34.SetTitle("Comparing PhiB at Station 2")
 histo34.SetStats(0)
 #fitFunc1=TF1("fitFunc1", "pol1", 0, 300)
 #histo29.Fit("fitFunc1", "R", " ")
@@ -427,7 +427,7 @@ line.Draw("same")
 c34.Print("./plots/"+c34.GetName()+".png")
 c34.Update()
 input('press enter to exit')
-
+'''
 
 #zad 22
 c30 = TCanvas('cHowMany1', 'Phi at St1 Ch2', 600, 600)
@@ -462,7 +462,7 @@ c32.SetLeftMargin(0.15)  #Space for printing Y label
 histo32 = gROOT.FindObject('hPhiCompSt1')
 histo32.GetYaxis().SetTitle("Phi Reconstructed [rad]")
 histo32.GetXaxis().SetTitle("Phi Simulated [rad]")
-histo32.SetTitle("Comparing Phi at Station 1 entry")
+histo32.SetTitle("Comparing Phi at Station 1")
 #not working 
 #histo32.SetMarkerStyle(20)
 #histo32.SetMarkerSize(10.0) #Point Size
@@ -483,7 +483,7 @@ c33.SetLeftMargin(0.15)  #Space for printing Y label
 histo33 = gROOT.FindObject('hPhiCompSt2')
 histo33.GetYaxis().SetTitle("Phi Reconstructed [rad]")
 histo33.GetXaxis().SetTitle("Phi Simulated [rad]")
-histo33.SetTitle("Comparing Phi at Station 2 entry")
+histo33.SetTitle("Comparing Phi at Station 2")
 #histo33.SetMarkerSize(3.0)
 histo33.SetStats(0)
 histo33.DrawCopy('COL')
@@ -531,11 +531,11 @@ c28.Print("./plots/"+c28.GetName()+".png")
 c28.Update()
 input('press enter to exit')
 
-
+'''
 #zad 28.1
 c36 = TCanvas('cDeltaPhiB1', 'Delta PhiB at Station 1 entry', 600, 600)
 histo36 = gROOT.FindObject('hDeltaPhiB1')
-histo36.SetTitle("Delta PhiB at Station 1 entry")
+histo36.SetTitle("Delta PhiB at Station 1")
 histo36.GetXaxis().SetTitle("Delta PhiB [rad]")
 histo36.GetYaxis().SetTitle("Entries")
 #histo36.SetStats(0)
@@ -548,7 +548,7 @@ input('press enter to exit')
 #zad 28.2
 c37 = TCanvas('cDeltaPhiB2', 'Delta PhiB at Station 2 entry', 600, 600)
 histo37 = gROOT.FindObject('hDeltaPhiB2')
-histo37.SetTitle("Delta PhiB at Station 2 entry")
+histo37.SetTitle("Delta PhiB at Station 2")
 histo37.GetXaxis().SetTitle("Delta PhiB [rad]")
 histo37.GetYaxis().SetTitle("Entries")
 #histo37.SetStats(0)
@@ -557,14 +557,15 @@ histo37.DrawCopy('COL')
 c37.Print("./plots/"+c37.GetName()+".png")
 c37.Update()
 input('press enter to exit')
-
+'''
 #zad 29.1
 c38 = TCanvas('cDeltaPhi1', 'Delta Phi at station 1 entry', 600, 600)
 histo38 = gROOT.FindObject('hDeltaPhi1')
-histo38.SetTitle("Delta Phi at Station 1 entry")
+histo38.SetTitle("Delta Phi at Station 1")
 histo38.GetXaxis().SetTitle("Delta Phi [rad]")
 histo38.GetYaxis().SetTitle("Entries")
 histo38.GetXaxis().SetRangeUser(-0.01, 0.01)
+histo38.GetXaxis().SetNdivisions(507) #7 labels, 5 subdivisions
 #histo38.SetStats(0)
 c38.SetLeftMargin(0.15)  #Space for printing Y label
 histo38.DrawCopy('COL')
@@ -575,10 +576,11 @@ input('press enter to exit')
 #zad 29.2
 c39 = TCanvas('cDeltaPhi2', 'Delta Phi at station 2 entry', 600, 600)
 histo39 = gROOT.FindObject('hDeltaPhi2')
-histo39.SetTitle("Delta Phi at Station 2 entry")
+histo39.SetTitle("Delta Phi at Station 2")
 histo39.GetXaxis().SetTitle("Delta Phi [rad]")
 histo39.GetYaxis().SetTitle("Entries")
 histo39.GetXaxis().SetRangeUser(-0.01, 0.01)
+histo39.GetXaxis().SetNdivisions(507) #7 labels, 5 subdivisions
 #histo39.SetStats(0)
 c39.SetLeftMargin(0.15)  #Space for printing Y label
 histo39.DrawCopy('COL')
@@ -601,7 +603,7 @@ histo41.DrawCopy('COL')
 c41.Print("./plots/"+c41.GetName()+".png")
 c41.Update()
 input('press enter to exit')
-
+'''
 
 #zad 30.1
 histo40 = gROOT.FindObject('hDeltaBCodeSt1')
@@ -610,18 +612,25 @@ for (code_value) in range(2, 7):
     histo_projection = histo40.ProjectionY(f"histo_projection_{code_value}", bin_code, bin_code)
 
     c40 = TCanvas(f'cSt1Code{code_value}', f'Delta PhiB at Station 1 code {code_value}', 600, 600)
+    c40.SetLeftMargin(0.15)  #Space for printing Y label
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value}) [rad]')
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta PhiB at Station 1')
 
-    if code_value < 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.4, 0.4)
+    if code_value == 2:
+        histo_projection.Rebin(10)
+    if code_value == 3:
+        histo_projection.Rebin(16)
     if code_value == 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.2, 0.2)
-    if code_value == 5:
+        histo_projection.Rebin(8)
         histo_projection.GetXaxis().SetRangeUser(-0.1, 0.1)
-    if code_value == 6:
+    if code_value == 5:
+        histo_projection.Rebin()
         histo_projection.GetXaxis().SetRangeUser(-0.05, 0.05)
+    if code_value == 6:
+        histo_projection.Rebin()
+        histo_projection.GetXaxis().SetRangeUser(-0.02, 0.02)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
 
     #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
@@ -638,18 +647,25 @@ for (code_value) in range(2, 7):
     histo_projection = histo41.ProjectionY(f"histo_projection_{code_value}", bin_code, bin_code)
 
     c41 = TCanvas(f'cSt2Code{code_value}', f'Delta PhiB at Station 2 code {code_value}', 600, 600)
+    c41.SetLeftMargin(0.15)  #Space for printing Y label
     histo_projection.GetXaxis().SetTitle(f'DeltaPhiB (Code = {code_value}) [rad]')
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta PhiB at Station 2')
 
-    if code_value < 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.4, 0.4)
+    if code_value == 2:
+        histo_projection.Rebin(25)
+    if code_value == 3:
+        histo_projection.Rebin(32)
     if code_value == 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.2, 0.2)
-    if code_value == 5:
+        histo_projection.Rebin(8)
         histo_projection.GetXaxis().SetRangeUser(-0.1, 0.1)
-    if code_value == 6:
+    if code_value == 5:
+        histo_projection.Rebin(4)
         histo_projection.GetXaxis().SetRangeUser(-0.05, 0.05)
+    if code_value == 6:
+        histo_projection.Rebin()
+        histo_projection.GetXaxis().SetRangeUser(-0.02, 0.02)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
 
     #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
@@ -658,7 +674,7 @@ for (code_value) in range(2, 7):
     c41.Update()
 
 print("Finished generating projections and saving plots")
-
+'''
 #zad 31
 c42 = TCanvas('cELossSV', 'Energy loss at station 1 entry compared to energy at vertex', 600, 600)
 histo42 = gROOT.FindObject('hELossSV')
@@ -685,14 +701,22 @@ for (code_value) in range(2, 7):
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta Phi at Station 1')
 
-    if code_value < 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.1, 0.1)
+    if code_value == 2:
+        histo_projection.Rebin(4)
+        histo_projection.GetXaxis().SetRangeUser(-0.04, 0.04)
+    if code_value == 3:
+        histo_projection.Rebin(8)
+        histo_projection.GetXaxis().SetRangeUser(-0.02, 0.02)
     if code_value == 4:
+        histo_projection.Rebin()
         histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
     if code_value == 5:
-        histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.GetXaxis().SetRangeUser(-0.005, 0.005)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
     if code_value == 6:
-        histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.GetXaxis().SetRangeUser(-0.002, 0.002)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
 
     #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
@@ -713,14 +737,22 @@ for (code_value) in range(2, 7):
     histo_projection.GetYaxis().SetTitle('Entries')
     histo_projection.SetTitle('Delta Phi at Station 2')
 
-    if code_value < 4:
-        histo_projection.GetXaxis().SetRangeUser(-0.1, 0.1)
+    if code_value == 2:
+        histo_projection.Rebin(4)
+        histo_projection.GetXaxis().SetRangeUser(-0.04, 0.04)
+    if code_value == 3:
+        histo_projection.Rebin(8)
+        histo_projection.GetXaxis().SetRangeUser(-0.02, 0.02)
     if code_value == 4:
+        histo_projection.Rebin()
         histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
     if code_value == 5:
-        histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.GetXaxis().SetRangeUser(-0.005, 0.005)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
     if code_value == 6:
-        histo_projection.GetXaxis().SetRangeUser(-0.01, 0.01)
+        histo_projection.GetXaxis().SetRangeUser(-0.002, 0.002)
+        histo_projection.SetNdivisions(507) #7 labels, 5 subdivisions
 
     #histo_projection.SetStats(0)
     histo_projection.Draw("COL")
@@ -763,7 +795,7 @@ histo47.DrawCopy('COL')
 c47.Print("./plots/"+c47.GetName()+".png")
 c47.Update()
 input('press enter to exit')
-'''
+
 c48 = TCanvas('cQualityInEvent', 'Code distribution', 600, 600)
 c48.SetLeftMargin(0.15)  #Space for printing Y label
 histo48 = gROOT.FindObject('hQualityInEvent')
@@ -776,3 +808,4 @@ histo48.DrawCopy("PFC TEXT")
 c48.Print("./plots/"+c48.GetName()+".png")
 c48.Update()
 input('press enter to exit')
+'''
