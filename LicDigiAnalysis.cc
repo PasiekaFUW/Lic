@@ -137,6 +137,8 @@ public:
     hQualityInEvent->Write(); //GJ quality
 
 
+
+
     f.Write();
 
 
@@ -218,6 +220,7 @@ private:
 
 
 
+
 };
 
 void LicDigiAnalysis::printStat()
@@ -245,9 +248,9 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
  
 
   hLicExample = new TH2D("hLicExample","hLicExample", 12,0.5,12.5, 8,-0.5,7.5); //Example
-  hPt = new TH1D("hPt", "Muon Transverse Momentum", 105, 0, 105); //zad 1
+  hPt = new TH1D("hPt", "Muon Transverse Momentum", 550, -5, 105); //zad 1
   hVz = new TH1D("hVz", "Muon Vertex Z", 30, -15, 15); //zad 2
-  hEta = new TH2D("hEta", "Muon Pseudorapidity", 100, -2, 2, 100, -2, 2); //zad 3
+  hEta = new TH2D("hEta", "Muon Pseudorapidity", 4000, -2, 2, 4000, -2, 2); //zad 3
   hVxy = new TH2D("hVxy", "Muon Vertex X and Y", 1000, -0.005, 0.005, 1000, -0.005, 0.005); //zad 4
   hT = new TH2D("hT", "Determining the time's unit - ns", 1000, 0, 1e-9, 1000, 0, 1e-9); //zad 5 
   hPSimHit = new TH1D("hPSimHit", "Size of numberOfHits", 100, 0, 100); //zad 7
@@ -261,8 +264,8 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hVPPGPT2 = new TH2D("hVPPGPT2", "Comparison of Tranverse Momentum from Propagation and Vertex at Station 2 entry", 8000, 0, 80, 8000, 0, 80); //zad 17.2
   hNewGvsPPG1 = new TH1D("hNewGvsPPG1", "TP PPG vs Gen, St1", 1000, -1, 9); //GJ modify
   hNewGvsPPG2 = new TH1D("hNewGvsPPG2", "TP PPG vs Gen, St2", 1000, -1, 9); //GJ modify
-  hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 80, 0, 80, 80, 0, 80); //zad 17.3
-  hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 80, 0, 80, 80, 0, 80); //zad 17.4
+  hVSPT1 = new TH2D("hVSPT1", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 1 entry", 500, 0, 100, 500, 0, 100); //zad 17.3
+  hVSPT2 = new TH2D("hVSPT2", "Comparison of Tranverse Momentum from Simulation and Vertex at Station 2 entry", 500, 0, 100, 500, 0, 100); //zad 17.4
   h1Dtest = new TH1D("h1Dtest", "Transverse momentum for specific pt station 1", 100, 0.75, 1); //zad 17.5
   h2Dtest = new TH1D("h2Dtest", "Transverse momentum for specific pt station 2", 100, 0.75, 1); //zad zad 18.0
   hLandau = new TH1D("hLandau", "Landau Curve of tp loss between Stations 1-2", 120, 0, 3); //zad 18
@@ -288,7 +291,7 @@ LicDigiAnalysis::LicDigiAnalysis(const edm::ParameterSet & cfg)
   hELossSV = new TH2D("hELossSV", "Energy loss in simulation station 1", 150, 0, 150, 70, 0, 70); //zad 31
   hDeltaCodeSt1 = new TH2D("hDeltaCodeSt1", "Delta Phi in the chDigi.code() variable function, st1", 8, 0, 8, 1600, -0.02, 0.02); //zad 32.1
   hDeltaCodeSt2 = new TH2D("hDeltaCodeSt2", "Delta Phi in the chDigi.code() variable function, st2", 8, 0, 8, 1600, -0.02, 0.02); //zad 32.2
-  hQualityInEvent = new TH1D("hQualityInEvent", "Evaluate quality distribution", 9, -1, 8); //GJ quality
+  hQualityInEvent = new TH1D("hQualityInEvent", "Evaluate quality distribution", 10, -2, 8); //GJ quality
 
 
  
@@ -355,7 +358,8 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int Debuging_iterator0 = 0;
   int Debuging_station0 = 0;
   int helping = 0;
-
+  
+  hPt->Fill(tp.pt());
   hEta->Fill(tp.eta() , tp.eta() * tp.charge()); //zad 3 
 
   for(const auto & ah: myPSimHits) {
@@ -363,7 +367,6 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     int station_S = 0; //zad 17
     i_hits++;
      //std::cout << "ile hitow " << i_hits << std::endl;
-    if (ah.trackId() != 1) continue;
     //GlobalPoint trackPosition = globalGeometry.idToDet(ah.detUnitId())->position(); //not track but rather a detector
     //if(debug) std::cout << "trackPosition: " << trackPosition << std::endl; 
     const GeomDet * geomDet = globalGeometry.idToDet(ah.detUnitId()); //geographicalId() -> z DTChamberID.h DTChamberId
@@ -374,6 +377,10 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
 
     DTLayerId layer(geomDet->geographicalId()); // GJ Superlayer
     DTLayerId dtLayerId(ah.detUnitId()); //GJ Superlayer
+         //Conditions
+     if (ah.trackId() != 1) continue;
+     if (dtLayerId.superlayerId().superlayer() == 2) continue;
+
 
     if(stateAtDet.isValid() == 0) {
         ++FailedPPG;
@@ -426,12 +433,14 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     }
     //zad 17.3 
     GlobalVector globalMomentumPSimHit = geomDet->toGlobal(ah.momentumAtEntry());
-    if(i_hits==1 && station_S == 1) {
+    // if(i_hits==1 && station_S == 1) {
+    if(station_S == 1) {
     //hVSPT1->Fill(tp.pt(), ah.pabs()); 
     hVSPT1->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
     }
     //zad 17.4 
-    if(i_hits==1 && station_S == 2) {
+    // if(i_hits==1 && station_S == 2) {
+    if(station_S == 2) {
     //hVSPT2->Fill(tp.pt(), ah.pabs()); 
     hVSPT2->Fill(tp.pt(), sqrt( pow(globalMomentumPSimHit.x(), 2) + pow(globalMomentumPSimHit.y(), 2) ) );
     }
@@ -546,7 +555,6 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
     hPSimHitRZ->Fill(globalEntryHisto.z(), sqrt(pow(globalEntryHisto.x(), 2) + pow(globalEntryHisto.y(), 2))); //zad 13 
     hPSimHitXY->Fill(globalEntryHisto.x(), globalEntryHisto.y()); //zad 16 
         
-    //if (dtLayerId.superlayerId().superlayer() == 2) continue;
  
     if(debug_manual){
           //Debugowanie
@@ -582,6 +590,7 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   int helper = 0;
   int codeTestSt1 = 0; //GJ Reco modify
   int codeTestSt2 = 0; //GJ Reco modify
+  int Helper_Iterator = 0;
 
   if (debug) std::cout << "-------- HERE DIGI COMPARE DT ---------" << std::endl;
   //std::cout << "gtp w digi = " << gtp << std::endl;
@@ -591,14 +600,22 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   if (debug) std::cout <<" DTPh digis from BMTF " << dtphDigisLeg.getContainer()->size()<< std::endl; //Container Size
   for (const auto &  chDigi : *dtphDigisLeg.getContainer() ) {
 
-    hQualityInEvent->Fill(chDigi.code()); //GJ quality
-    hQualityInEvent->Fill(-1); //GJ quality
+
     // Conditions
     if (abs(chDigi.whNum()) != 2) continue;
     if (chDigi.stNum() ==4) continue;
     if (chDigi.bxNum() != 0) continue;
     // if (chDigi.code()==7) continue;
-    
+
+    if(chDigi.stNum() != 3){
+      hQualityInEvent->Fill(chDigi.code()); //GJ quality
+       if(Helper_Iterator != chDigi.stNum()) {
+        hQualityInEvent->Fill(-1);
+        Helper_Iterator = chDigi.stNum();
+      }
+    }
+
+
     //zad 22
     if(chDigi.stNum()==1 && chDigi.scNum()==2) {
       hHowMany1->Fill(chDigi.phi());
@@ -680,14 +697,23 @@ void LicDigiAnalysis::analyzeDT( const edm::Event &ev, const edm::EventSetup& es
   double Phi2 = 0;
   double PhiB1 = 0;
   double PhiB2 = 0;
-  if(Phi_Sim_Vector_St1.empty() == 0 && PhiB_Sim_Vector_St1.empty() == 0) {
+  if(Phi_Sim_Vector_St1.size() >= 2 && PhiB_Sim_Vector_St1.size() >= 2) {
     Phi1 = (Phi_Sim_Vector_St1.front() + Phi_Sim_Vector_St1.back() )/2.;
     PhiB1 = (PhiB_Sim_Vector_St1.front() + PhiB_Sim_Vector_St1.back() )/2.;
-    if(Phi_Sim_Vector_St2.empty() == 0 && PhiB_Sim_Vector_St2.empty() == 0) {
-      Phi2 = (Phi_Sim_Vector_St2.front() + Phi_Sim_Vector_St2.back() )/2.;
-      PhiB2 =(PhiB_Sim_Vector_St2.front() + PhiB_Sim_Vector_St2.back() )/2.;
-    }
   }
+
+  if(Phi_Sim_Vector_St2.size() >= 2 && PhiB_Sim_Vector_St2.size() >= 2) {
+    Phi2 = (Phi_Sim_Vector_St2.front() + Phi_Sim_Vector_St2.back() )/2.;
+    PhiB2 =(PhiB_Sim_Vector_St2.front() + PhiB_Sim_Vector_St2.back() )/2.;
+  }
+  
+  if(Phi_Sim_Vector_St1.size() >= 2 && PhiB_Sim_Vector_St1.size() >= 2) {
+    hQualityInEvent->Fill(-2); 
+  }
+  if(Phi_Sim_Vector_St2.size() >= 2 && PhiB_Sim_Vector_St2.size() >= 2) {
+    hQualityInEvent->Fill(-2); 
+  }
+
 
   if(Phi_Rec_St1 != 0 && Phi1 != 0) {
     // std::cout<< Phi1 << "; " << Phi_Sim_Vector_St1.front() << "; "<< (Phi_Sim_Vector_St1.front() + Phi_Sim_Vector_St1.back() )/2. << std::endl;
